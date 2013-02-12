@@ -18,6 +18,13 @@
 		50E5A59216C9FE8A00D21111 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E5A59116C9FE8A00D21111 /* Default-568h@2x.png */; };
 		50E5A59516C9FE8A00D21111 /* D3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A59416C9FE8A00D21111 /* D3ViewController.m */; };
 		50E5A59816C9FE8A00D21111 /* D3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E5A59616C9FE8A00D21111 /* D3ViewController.xib */; };
+		50E5A59F16C9FECD00D21111 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E5A59E16C9FECD00D21111 /* libsqlite3.dylib */; };
+		50E5A5A216C9FEF500D21111 /* D3Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5A116C9FEF500D21111 /* D3Object.m */; };
+		50E5A5A516C9FFB200D21111 /* D3Career.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5A416C9FFB200D21111 /* D3Career.m */; };
+		50E5A5A816C9FFC700D21111 /* D3Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5A716C9FFC700D21111 /* D3Hero.m */; };
+		50E5A5AB16C9FFEA00D21111 /* D3Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5AA16C9FFE900D21111 /* D3Item.m */; };
+		50E5A5AE16C9FFF600D21111 /* D3Follower.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5AD16C9FFF600D21111 /* D3Follower.m */; };
+		50E5A5B116CA000200D21111 /* D3Artisan.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5B016CA000200D21111 /* D3Artisan.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +44,19 @@
 		50E5A59316C9FE8A00D21111 /* D3ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = D3ViewController.h; sourceTree = "<group>"; };
 		50E5A59416C9FE8A00D21111 /* D3ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D3ViewController.m; sourceTree = "<group>"; };
 		50E5A59716C9FE8A00D21111 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/D3ViewController.xib; sourceTree = "<group>"; };
+		50E5A59E16C9FECD00D21111 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		50E5A5A016C9FEF500D21111 /* D3Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Object.h; sourceTree = "<group>"; };
+		50E5A5A116C9FEF500D21111 /* D3Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Object.m; sourceTree = "<group>"; };
+		50E5A5A316C9FFB200D21111 /* D3Career.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Career.h; sourceTree = "<group>"; };
+		50E5A5A416C9FFB200D21111 /* D3Career.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Career.m; sourceTree = "<group>"; };
+		50E5A5A616C9FFC700D21111 /* D3Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Hero.h; sourceTree = "<group>"; };
+		50E5A5A716C9FFC700D21111 /* D3Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Hero.m; sourceTree = "<group>"; };
+		50E5A5A916C9FFE900D21111 /* D3Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Item.h; sourceTree = "<group>"; };
+		50E5A5AA16C9FFE900D21111 /* D3Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Item.m; sourceTree = "<group>"; };
+		50E5A5AC16C9FFF600D21111 /* D3Follower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Follower.h; sourceTree = "<group>"; };
+		50E5A5AD16C9FFF600D21111 /* D3Follower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Follower.m; sourceTree = "<group>"; };
+		50E5A5AF16CA000200D21111 /* D3Artisan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Artisan.h; sourceTree = "<group>"; };
+		50E5A5B016CA000200D21111 /* D3Artisan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Artisan.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50E5A59F16C9FECD00D21111 /* libsqlite3.dylib in Frameworks */,
 				50E5A57C16C9FE8A00D21111 /* UIKit.framework in Frameworks */,
 				50E5A57E16C9FE8A00D21111 /* Foundation.framework in Frameworks */,
 				50E5A58016C9FE8A00D21111 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +94,7 @@
 		50E5A57A16C9FE8A00D21111 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50E5A59E16C9FECD00D21111 /* libsqlite3.dylib */,
 				50E5A57B16C9FE8A00D21111 /* UIKit.framework */,
 				50E5A57D16C9FE8A00D21111 /* Foundation.framework */,
 				50E5A57F16C9FE8A00D21111 /* CoreGraphics.framework */,
@@ -83,11 +105,8 @@
 		50E5A58116C9FE8A00D21111 /* D3-api-ios */ = {
 			isa = PBXGroup;
 			children = (
-				50E5A58A16C9FE8A00D21111 /* D3AppDelegate.h */,
-				50E5A58B16C9FE8A00D21111 /* D3AppDelegate.m */,
-				50E5A59316C9FE8A00D21111 /* D3ViewController.h */,
-				50E5A59416C9FE8A00D21111 /* D3ViewController.m */,
-				50E5A59616C9FE8A00D21111 /* D3ViewController.xib */,
+				50E5A5B216CA000A00D21111 /* api-classes */,
+				50E5A5B316CA004E00D21111 /* app-classes */,
 				50E5A58216C9FE8A00D21111 /* Supporting Files */,
 			);
 			path = "D3-api-ios";
@@ -105,6 +124,37 @@
 				50E5A59116C9FE8A00D21111 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50E5A5B216CA000A00D21111 /* api-classes */ = {
+			isa = PBXGroup;
+			children = (
+				50E5A5A016C9FEF500D21111 /* D3Object.h */,
+				50E5A5A116C9FEF500D21111 /* D3Object.m */,
+				50E5A5A316C9FFB200D21111 /* D3Career.h */,
+				50E5A5A416C9FFB200D21111 /* D3Career.m */,
+				50E5A5A616C9FFC700D21111 /* D3Hero.h */,
+				50E5A5A716C9FFC700D21111 /* D3Hero.m */,
+				50E5A5A916C9FFE900D21111 /* D3Item.h */,
+				50E5A5AA16C9FFE900D21111 /* D3Item.m */,
+				50E5A5AC16C9FFF600D21111 /* D3Follower.h */,
+				50E5A5AD16C9FFF600D21111 /* D3Follower.m */,
+				50E5A5AF16CA000200D21111 /* D3Artisan.h */,
+				50E5A5B016CA000200D21111 /* D3Artisan.m */,
+			);
+			name = "api-classes";
+			sourceTree = "<group>";
+		};
+		50E5A5B316CA004E00D21111 /* app-classes */ = {
+			isa = PBXGroup;
+			children = (
+				50E5A58A16C9FE8A00D21111 /* D3AppDelegate.h */,
+				50E5A58B16C9FE8A00D21111 /* D3AppDelegate.m */,
+				50E5A59316C9FE8A00D21111 /* D3ViewController.h */,
+				50E5A59416C9FE8A00D21111 /* D3ViewController.m */,
+				50E5A59616C9FE8A00D21111 /* D3ViewController.xib */,
+			);
+			name = "app-classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +227,12 @@
 				50E5A58816C9FE8A00D21111 /* main.m in Sources */,
 				50E5A58C16C9FE8A00D21111 /* D3AppDelegate.m in Sources */,
 				50E5A59516C9FE8A00D21111 /* D3ViewController.m in Sources */,
+				50E5A5A216C9FEF500D21111 /* D3Object.m in Sources */,
+				50E5A5A516C9FFB200D21111 /* D3Career.m in Sources */,
+				50E5A5A816C9FFC700D21111 /* D3Hero.m in Sources */,
+				50E5A5AB16C9FFEA00D21111 /* D3Item.m in Sources */,
+				50E5A5AE16C9FFF600D21111 /* D3Follower.m in Sources */,
+				50E5A5B116CA000200D21111 /* D3Artisan.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +283,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -252,7 +308,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;

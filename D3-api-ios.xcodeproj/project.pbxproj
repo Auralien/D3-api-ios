@@ -25,6 +25,9 @@
 		50E5A5AB16C9FFEA00D21111 /* D3Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5AA16C9FFE900D21111 /* D3Item.m */; };
 		50E5A5AE16C9FFF600D21111 /* D3Follower.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5AD16C9FFF600D21111 /* D3Follower.m */; };
 		50E5A5B116CA000200D21111 /* D3Artisan.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5B016CA000200D21111 /* D3Artisan.m */; };
+		8BDEAB8E16CB9433001734FC /* D3Progression.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEAB8D16CB9433001734FC /* D3Progression.m */; };
+		8BDEAB9216CB971D001734FC /* D3HeroProgression.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEAB9116CB971C001734FC /* D3HeroProgression.m */; };
+		8BDEAB9516CB98B4001734FC /* D3CareerProgression.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEAB9416CB98B4001734FC /* D3CareerProgression.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +60,12 @@
 		50E5A5AD16C9FFF600D21111 /* D3Follower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Follower.m; sourceTree = "<group>"; };
 		50E5A5AF16CA000200D21111 /* D3Artisan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Artisan.h; sourceTree = "<group>"; };
 		50E5A5B016CA000200D21111 /* D3Artisan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Artisan.m; sourceTree = "<group>"; };
+		8BDEAB8C16CB9432001734FC /* D3Progression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Progression.h; sourceTree = "<group>"; };
+		8BDEAB8D16CB9433001734FC /* D3Progression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Progression.m; sourceTree = "<group>"; };
+		8BDEAB9016CB971C001734FC /* D3HeroProgression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3HeroProgression.h; sourceTree = "<group>"; };
+		8BDEAB9116CB971C001734FC /* D3HeroProgression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3HeroProgression.m; sourceTree = "<group>"; };
+		8BDEAB9316CB98B4001734FC /* D3CareerProgression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3CareerProgression.h; sourceTree = "<group>"; };
+		8BDEAB9416CB98B4001734FC /* D3CareerProgression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3CareerProgression.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +150,12 @@
 				50E5A5AD16C9FFF600D21111 /* D3Follower.m */,
 				50E5A5AF16CA000200D21111 /* D3Artisan.h */,
 				50E5A5B016CA000200D21111 /* D3Artisan.m */,
+				8BDEAB8C16CB9432001734FC /* D3Progression.h */,
+				8BDEAB8D16CB9433001734FC /* D3Progression.m */,
+				8BDEAB9016CB971C001734FC /* D3HeroProgression.h */,
+				8BDEAB9116CB971C001734FC /* D3HeroProgression.m */,
+				8BDEAB9316CB98B4001734FC /* D3CareerProgression.h */,
+				8BDEAB9416CB98B4001734FC /* D3CareerProgression.m */,
 			);
 			name = "api-classes";
 			sourceTree = "<group>";
@@ -233,6 +248,9 @@
 				50E5A5AB16C9FFEA00D21111 /* D3Item.m in Sources */,
 				50E5A5AE16C9FFF600D21111 /* D3Follower.m in Sources */,
 				50E5A5B116CA000200D21111 /* D3Artisan.m in Sources */,
+				8BDEAB8E16CB9433001734FC /* D3Progression.m in Sources */,
+				8BDEAB9216CB971D001734FC /* D3HeroProgression.m in Sources */,
+				8BDEAB9516CB98B4001734FC /* D3CareerProgression.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +375,7 @@
 				50E5A59D16C9FE8A00D21111 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

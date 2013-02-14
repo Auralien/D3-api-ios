@@ -35,12 +35,16 @@ typedef enum {
 @property (nonatomic) D3HeroGender heroGender;
 /// Hero level
 @property (nonatomic) NSInteger heroLevel;
+/// Hero paragon level
+@property (nonatomic) NSInteger heroParagonLevel;
 /// Hero hardcore flag, YES for hardcore
 @property (nonatomic) BOOL isHardcoreHero;
 /// Date and time for hero's information last update
 @property (nonatomic, strong) NSDate *heroLastUpdated;
 /// Elite mobs killed number
-@property (nonatomic) NSInteger elitesKilled;
+@property (nonatomic) NSInteger killsElites;
+/// Hero dead flag, YES for death
+@property (nonatomic) BOOL isDead;
 
 #pragma mark - Init Methods
 
@@ -53,8 +57,10 @@ typedef enum {
            heroClass:(D3HeroClass)heroClassVal
           heroGender:(D3HeroGender)heroGenderVal
            heroLevel:(NSInteger)heroLevelVal
-        hardcoreFlag:(BOOL)isHardcoreHeroVal
+    heroParagonLevel:(NSInteger)heroParagonLevelVal
+  heroIsHardcoreFlag:(BOOL)isHardcoreHeroVal
      heroLastUpdated:(NSDate *)heroLastUpdatedVal
-        elitesKilled:(NSInteger)elitesKilledVal;
+         killsElites:(NSInteger)killsElitesVal
+      heroIsDeadFlag:(BOOL)isDeadVal;
 
 @end

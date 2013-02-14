@@ -10,7 +10,7 @@
 
 @implementation D3Hero
 
-@synthesize heroID, heroName, heroClass, heroGender, heroLevel, isHardcoreHero, heroLastUpdated, elitesKilled;
+@synthesize heroID, heroName, heroClass, heroGender, heroLevel, heroParagonLevel, isHardcoreHero, heroLastUpdated, killsElites, isDead;
 
 #pragma mark - Init Methods
 
@@ -21,9 +21,11 @@
                       heroClass:kD3HeroClassUndefined
                      heroGender:kD3HeroGenderUndefined
                       heroLevel:0
-                   hardcoreFlag:NO
+               heroParagonLevel:0
+             heroIsHardcoreFlag:NO
                 heroLastUpdated:[NSDate dateWithTimeIntervalSince1970:0]
-                   elitesKilled:0];
+                    killsElites:0
+                 heroIsDeadFlag:NO];
 }
 
 /// Initialize hero object with defined values
@@ -32,18 +34,22 @@
            heroClass:(D3HeroClass)heroClassVal
           heroGender:(D3HeroGender)heroGenderVal
            heroLevel:(NSInteger)heroLevelVal
-        hardcoreFlag:(BOOL)isHardcoreHeroVal
+    heroParagonLevel:(NSInteger)heroParagonLevelVal
+  heroIsHardcoreFlag:(BOOL)isHardcoreHeroVal
      heroLastUpdated:(NSDate *)heroLastUpdatedVal
-        elitesKilled:(NSInteger)elitesKilledVal {
+         killsElites:(NSInteger)killsElitesVal
+      heroIsDeadFlag:(BOOL)isDeadVal {
     if (self = [super init]) {
         [self setHeroID:heroIDVal];
         [self setHeroName:heroNameVal];
         [self setHeroClass:heroClassVal];
         [self setHeroGender:heroGenderVal];
         [self setHeroLevel:heroLevelVal];
+        [self setHeroParagonLevel:heroParagonLevelVal];
         [self setIsHardcoreHero:isHardcoreHeroVal];
         [self setHeroLastUpdated:heroLastUpdatedVal];
-        [self setElitesKilled:elitesKilledVal];
+        [self setKillsElites:killsElitesVal];
+        [self setIsDead:isDeadVal];
     }
     return self;
 }

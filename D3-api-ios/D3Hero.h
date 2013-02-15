@@ -25,33 +25,94 @@ typedef enum {
 
 @interface D3Hero : D3Object
 
-/// Hero unique ID
+/// Hero's unique ID
 @property (nonatomic) NSInteger heroID;
-/// Hero name
+/// Hero's name
 @property (nonatomic, copy) NSString *heroName;
-/// Hero class from enumeration @a D3HeroClass
+/// Hero's class from enumeration @a D3HeroClass
 @property (nonatomic) D3HeroClass heroClass;
-/// Hero gender from enumeration @a D3HeroGender
+/// Hero's gender from enumeration @a D3HeroGender
 @property (nonatomic) D3HeroGender heroGender;
-/// Hero level
+/// Hero's level
 @property (nonatomic) NSInteger heroLevel;
-/// Hero paragon level
+/// Hero's paragon level
 @property (nonatomic) NSInteger heroParagonLevel;
-/// Hero hardcore flag, YES for hardcore
+/// Hero's hardcore flag, YES for hardcore
 @property (nonatomic) BOOL isHardcoreHero;
 /// Date and time for hero's information last update
 @property (nonatomic, strong) NSDate *heroLastUpdated;
 /// Elite mobs killed number
 @property (nonatomic) NSInteger killsElites;
-/// Hero dead flag, YES for death
+/// Hero's dead flag, YES for death
 @property (nonatomic) BOOL isDead;
+
+#pragma mark - Hero's Stats
+
+/// Hero's life amount
+@property (nonatomic) NSInteger life;
+/// Hero's damage
+@property (nonatomic, strong) NSNumber *damage;
+/// Hero's attack speed
+@property (nonatomic, strong) NSNumber *attackSpeed;
+/// Hero's armor value
+@property (nonatomic) NSInteger armor;
+/// Hero's Strength
+@property (nonatomic) NSInteger strength;
+/// Hero's Dexterity
+@property (nonatomic) NSInteger dexterity;
+/// Hero's Vitality
+@property (nonatomic) NSInteger vitality;
+/// Hero's Intelligence
+@property (nonatomic) NSInteger intelligence;
+/// Hero's physical resistance
+@property (nonatomic) NSInteger resistPhysical;
+/// Hero's fire resistance
+@property (nonatomic) NSInteger resistFire;
+/// Hero's cold resistance
+@property (nonatomic) NSInteger resistCold;
+/// Hero's lightning resistance
+@property (nonatomic) NSInteger resistLightning;
+/// Hero's poison resistance
+@property (nonatomic) NSInteger resistPoison;
+/// Hero's arcane resistance
+@property (nonatomic) NSInteger resistArcane;
+/// Hero's critical damage
+@property (nonatomic, strong) NSNumber *critDamage;
+/// Hero's block chance
+@property (nonatomic, strong) NSNumber *blockChance;
+/// Hero's minimun block amount
+@property (nonatomic) NSInteger blockAmountMin;
+/// Hero's maximum block amount
+@property (nonatomic) NSInteger blockAmountMax;
+/// Hero's damage increase
+@property (nonatomic, strong) NSNumber *damageIncrease;
+/// Hero's critical chance
+@property (nonatomic, strong) NSNumber *critChance;
+/// Hero's damage reduction
+@property (nonatomic, strong) NSNumber *damageReduction;
+/// Hero's thorns
+@property (nonatomic, strong) NSNumber *thorns;
+/// Hero's life steal
+@property (nonatomic, strong) NSNumber *lifeSteal;
+/// Hero's life per kill
+@property (nonatomic, strong) NSNumber *lifePerKill;
+/// Hero's gold find
+@property (nonatomic, strong) NSNumber *goldFind;
+/// Hero's magic find
+@property (nonatomic, strong) NSNumber *magicFind;
+/// Hero's life on hit
+@property (nonatomic, strong) NSNumber *lifeOnHit;
+/// Hero's primary resource amount
+@property (nonatomic) NSInteger primaryResource;
+/// Hero's secondary resource amount
+@property (nonatomic) NSInteger secondaryResource;
 
 #pragma mark - Init Methods
 
-/// Initialize hero object with zero values
+/// Initialize Hero object with zero values
 - (id)init;
 
-/// Initialize hero object with defined values
+/// Initialize Hero object with defined values
 - (id)initWithHeroID:(NSInteger)heroIDVal
             heroName:(NSString *)heroNameVal
            heroClass:(D3HeroClass)heroClassVal

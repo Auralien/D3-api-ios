@@ -27,6 +27,8 @@ typedef enum {
 
 /// Hero's unique ID
 @property (nonatomic) NSInteger heroID;
+/// Career battle tag for Hero
+@property (nonatomic, copy) NSString *battleTag;
 /// Hero's name
 @property (nonatomic, copy) NSString *heroName;
 /// Hero's class from enumeration @a D3HeroClass
@@ -109,11 +111,43 @@ typedef enum {
 
 #pragma mark - Init Methods
 
+/// Update hero object with hero's stats
+- (void)updateHeroWithLife:(NSInteger)lifeVal
+                    damage:(NSNumber *)damageVal
+               attackSpeed:(NSNumber *)attackSpeedVal
+                     armor:(NSInteger)armorVal
+                  strength:(NSInteger)strengthVal
+                 dexterity:(NSInteger)dexterityVal
+                  vitality:(NSInteger)vitalityVal
+              intelligence:(NSInteger)intelligenceVal
+            resistPhysical:(NSInteger)resistPhysicalVal
+                resistFire:(NSInteger)resistFireVal
+                resistCold:(NSInteger)resistColdVal
+           resistLightning:(NSInteger)resistLightningVal
+              resistPoison:(NSInteger)resistPoisonVal
+              resistArcane:(NSInteger)resistArcaneVal
+                critDamage:(NSNumber *)critDamageVal
+               blockChance:(NSNumber *)blockChanceVal
+            blockAmountMin:(NSInteger)blockAmountMinVal
+            blockAmountMax:(NSInteger)blockAmountMaxVal
+            damageIncrease:(NSNumber *)damageIncreaseVal
+                critChance:(NSNumber *)critChanceVal
+           damageReduction:(NSNumber *)damageReductionVal
+                    thorns:(NSNumber *)thornsVal
+                 lifeSteal:(NSNumber *)lifeStealVal
+               lifePerKill:(NSNumber *)lifePerKillVal
+                  goldFind:(NSNumber *)goldFindVal
+                 magicFind:(NSNumber *)magicFindVal
+                 lifeOnHit:(NSNumber *)lifeOnHitVal
+           primaryResource:(NSInteger)primaryResourceVal
+         secondaryResource:(NSInteger)secondaryResourceVal;
+
 /// Initialize Hero object with zero values
 - (id)init;
 
 /// Initialize Hero object with defined values
 - (id)initWithHeroID:(NSInteger)heroIDVal
+           battleTag:(NSString *)battleTagVal
             heroName:(NSString *)heroNameVal
            heroClass:(D3HeroClass)heroClassVal
           heroGender:(D3HeroGender)heroGenderVal

@@ -25,6 +25,7 @@
 		50E5A5AB16C9FFEA00D21111 /* D3Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5AA16C9FFE900D21111 /* D3Item.m */; };
 		50E5A5AE16C9FFF600D21111 /* D3Follower.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5AD16C9FFF600D21111 /* D3Follower.m */; };
 		50E5A5B116CA000200D21111 /* D3Artisan.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5B016CA000200D21111 /* D3Artisan.m */; };
+		8BDADAE616CE3C6D00B90CE7 /* D3Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDADAE516CE3C6C00B90CE7 /* D3Skill.m */; };
 		8BDEAB8E16CB9433001734FC /* D3Progression.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEAB8D16CB9433001734FC /* D3Progression.m */; };
 		8BDEAB9216CB971D001734FC /* D3HeroProgression.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEAB9116CB971C001734FC /* D3HeroProgression.m */; };
 		8BDEAB9516CB98B4001734FC /* D3CareerProgression.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEAB9416CB98B4001734FC /* D3CareerProgression.m */; };
@@ -60,6 +61,8 @@
 		50E5A5AD16C9FFF600D21111 /* D3Follower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Follower.m; sourceTree = "<group>"; };
 		50E5A5AF16CA000200D21111 /* D3Artisan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Artisan.h; sourceTree = "<group>"; };
 		50E5A5B016CA000200D21111 /* D3Artisan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Artisan.m; sourceTree = "<group>"; };
+		8BDADAE416CE3C6C00B90CE7 /* D3Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Skill.h; sourceTree = "<group>"; };
+		8BDADAE516CE3C6C00B90CE7 /* D3Skill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Skill.m; sourceTree = "<group>"; };
 		8BDEAB8C16CB9432001734FC /* D3Progression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Progression.h; sourceTree = "<group>"; };
 		8BDEAB8D16CB9433001734FC /* D3Progression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Progression.m; sourceTree = "<group>"; };
 		8BDEAB9016CB971C001734FC /* D3HeroProgression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3HeroProgression.h; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 				50E5A5A416C9FFB200D21111 /* D3Career.m */,
 				50E5A5A616C9FFC700D21111 /* D3Hero.h */,
 				50E5A5A716C9FFC700D21111 /* D3Hero.m */,
+				8BDADAE416CE3C6C00B90CE7 /* D3Skill.h */,
+				8BDADAE516CE3C6C00B90CE7 /* D3Skill.m */,
 				50E5A5A916C9FFE900D21111 /* D3Item.h */,
 				50E5A5AA16C9FFE900D21111 /* D3Item.m */,
 				50E5A5AC16C9FFF600D21111 /* D3Follower.h */,
@@ -251,6 +256,7 @@
 				8BDEAB8E16CB9433001734FC /* D3Progression.m in Sources */,
 				8BDEAB9216CB971D001734FC /* D3HeroProgression.m in Sources */,
 				8BDEAB9516CB98B4001734FC /* D3CareerProgression.m in Sources */,
+				8BDADAE616CE3C6D00B90CE7 /* D3Skill.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

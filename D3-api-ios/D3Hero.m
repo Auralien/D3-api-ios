@@ -10,7 +10,7 @@
 
 @implementation D3Hero
 
-@synthesize heroID, heroName, heroClass, heroGender, heroLevel, heroParagonLevel, isHardcoreHero, heroLastUpdated, killsElites, isDead, life, damage, attackSpeed, armor, strength, dexterity, vitality, intelligence, resistPhysical, resistFire, resistCold, resistLightning, resistPoison, resistArcane, critDamage, blockChance, blockAmountMin, blockAmountMax, damageIncrease, critChance, damageReduction, thorns, lifeSteal, lifePerKill, goldFind, magicFind, lifeOnHit, primaryResource, secondaryResource;
+@synthesize heroID, battleTag, heroName, heroClass, heroGender, heroLevel, heroParagonLevel, isHardcoreHero, heroLastUpdated, killsElites, isDead, life, damage, attackSpeed, armor, strength, dexterity, vitality, intelligence, resistPhysical, resistFire, resistCold, resistLightning, resistPoison, resistArcane, critDamage, blockChance, blockAmountMin, blockAmountMax, damageIncrease, critChance, damageReduction, thorns, lifeSteal, lifePerKill, goldFind, magicFind, lifeOnHit, primaryResource, secondaryResource;
 
 #pragma mark - Init Methods
 
@@ -44,12 +44,41 @@
                  lifeOnHit:(NSNumber *)lifeOnHitVal
            primaryResource:(NSInteger)primaryResourceVal
          secondaryResource:(NSInteger)secondaryResourceVal {
-    
+    [self setLife:lifeVal];
+    [self setDamage:damageVal];
+    [self setAttackSpeed:attackSpeedVal];
+    [self setArmor:armorVal];
+    [self setStrength:strengthVal];
+    [self setDexterity:dexterityVal];
+    [self setVitality:vitalityVal];
+    [self setIntelligence:intelligenceVal];
+    [self setResistPhysical:resistPhysicalVal];
+    [self setResistFire:resistFireVal];
+    [self setResistCold:resistColdVal];
+    [self setResistLightning:resistLightningVal];
+    [self setResistPoison:resistPoisonVal];
+    [self setResistArcane:resistArcaneVal];
+    [self setCritDamage:critDamageVal];
+    [self setBlockChance:blockChanceVal];
+    [self setBlockAmountMin:blockAmountMinVal];
+    [self setBlockAmountMax:blockAmountMaxVal];
+    [self setDamageIncrease:damageIncreaseVal];
+    [self setCritChance:critChanceVal];
+    [self setDamageReduction:damageReductionVal];
+    [self setThorns:thornsVal];
+    [self setLifeSteal:lifeStealVal];
+    [self setLifePerKill:lifePerKillVal];
+    [self setGoldFind:goldFindVal];
+    [self setMagicFind:magicFindVal];
+    [self setLifeOnHit:lifeOnHitVal];
+    [self setPrimaryResource:primaryResourceVal];
+    [self setSecondaryResource:secondaryResourceVal];
 }
 
 /// Initialize hero object with zero values
 - (id)init {
     return [self initWithHeroID:0
+                      battleTag:@""
                        heroName:@""
                       heroClass:kD3HeroClassUndefined
                      heroGender:kD3HeroGenderUndefined
@@ -63,6 +92,7 @@
 
 /// Initialize hero object with defined values
 - (id)initWithHeroID:(NSInteger)heroIDVal
+           battleTag:(NSString *)battleTagVal
             heroName:(NSString *)heroNameVal
            heroClass:(D3HeroClass)heroClassVal
           heroGender:(D3HeroGender)heroGenderVal
@@ -74,6 +104,7 @@
       heroIsDeadFlag:(BOOL)isDeadVal {
     if (self = [super init]) {
         [self setHeroID:heroIDVal];
+        [self setBattleTag:battleTagVal];
         [self setHeroName:heroNameVal];
         [self setHeroClass:heroClassVal];
         [self setHeroGender:heroGenderVal];

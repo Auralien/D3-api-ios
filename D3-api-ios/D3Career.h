@@ -10,16 +10,27 @@
 
 @interface D3Career : D3Object
 
+/// Player's battle tag
 @property (nonatomic, copy) NSString *battleTag;
+/// Player's last hero's played ID
 @property (nonatomic) NSInteger lastHeroPlayed;
+/// Player's last information update date and time
 @property (nonatomic, strong) NSDate *lastUpdated;
+/// Player's barbarian time
 @property (nonatomic, strong) NSNumber *timePlayedBarbarian;
+/// Player's demon hunter time
 @property (nonatomic, strong) NSNumber *timePlayedDemonHunter;
+/// Player's monk time
 @property (nonatomic, strong) NSNumber *timePlayedMonk;
+/// Player's witch doctor time
 @property (nonatomic, strong) NSNumber *timePlayedWitchDoctor;
+/// Player's wizard time
 @property (nonatomic, strong) NSNumber *timePlayedWizard;
+/// Player's mosters killed
 @property (nonatomic) NSInteger killsMonsters;
+/// Player's elite monsters killed
 @property (nonatomic) NSInteger killsElites;
+/// Player's hardcore monsters killed
 @property (nonatomic) NSInteger killsHardcoreMonsters;
 
 #pragma mark - Init Methods

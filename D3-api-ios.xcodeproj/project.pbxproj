@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50463E9E16D09C61004C2ED6 /* D3DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50463E9D16D09C61004C2ED6 /* D3DataManager.m */; };
 		50E5A57C16C9FE8A00D21111 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E5A57B16C9FE8A00D21111 /* UIKit.framework */; };
 		50E5A57E16C9FE8A00D21111 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E5A57D16C9FE8A00D21111 /* Foundation.framework */; };
 		50E5A58016C9FE8A00D21111 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E5A57F16C9FE8A00D21111 /* CoreGraphics.framework */; };
@@ -32,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50463E9C16D09C61004C2ED6 /* D3DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3DataManager.h; sourceTree = "<group>"; };
+		50463E9D16D09C61004C2ED6 /* D3DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3DataManager.m; sourceTree = "<group>"; };
 		50E5A57816C9FE8A00D21111 /* D3-api-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D3-api-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E5A57B16C9FE8A00D21111 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50E5A57D16C9FE8A00D21111 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -143,6 +146,8 @@
 			children = (
 				50E5A5A016C9FEF500D21111 /* D3Object.h */,
 				50E5A5A116C9FEF500D21111 /* D3Object.m */,
+				50463E9C16D09C61004C2ED6 /* D3DataManager.h */,
+				50463E9D16D09C61004C2ED6 /* D3DataManager.m */,
 				50E5A5A316C9FFB200D21111 /* D3Career.h */,
 				50E5A5A416C9FFB200D21111 /* D3Career.m */,
 				50E5A5A616C9FFC700D21111 /* D3Hero.h */,
@@ -257,6 +262,7 @@
 				8BDEAB9216CB971D001734FC /* D3HeroProgression.m in Sources */,
 				8BDEAB9516CB98B4001734FC /* D3CareerProgression.m in Sources */,
 				8BDADAE616CE3C6D00B90CE7 /* D3Skill.m in Sources */,
+				50463E9E16D09C61004C2ED6 /* D3DataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

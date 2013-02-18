@@ -8,6 +8,8 @@
 
 #import "D3Object.h"
 
+#define kD3DataManagerCareerPath              @"http://%@.battle.net/api/d3/profile/"
+
 typedef void (^D3DataManagerFetchURLSuccessBlock)(NSDictionary *json);
 typedef void (^D3DataManagerFetchURLFailureBlock)(NSError *error);
 

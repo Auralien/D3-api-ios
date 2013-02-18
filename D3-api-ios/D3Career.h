@@ -8,6 +8,14 @@
 
 #import "D3Object.h"
 
+typedef enum {
+    kD3CareerRegionUndefined,
+    kD3CareerRegionAmericas,
+    kD3CareerRegionEurope,
+    kD3CareerRegionKorea,
+    kD3CareerRegionTaiwan
+} D3CareerRegion;
+
 @interface D3Career : D3Object
 
 /// Player's battle tag

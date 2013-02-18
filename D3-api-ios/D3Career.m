@@ -7,6 +7,14 @@
 //
 
 #import "D3Career.h"
+#import "D3DataManager.h"
+
+@interface D3Career ()
+
+/// Method returns career object parsed from JSON
++ (D3Career *)getCareerFromJSON:(NSDictionary *)json;
+
+@end
 
 @implementation D3Career
 
@@ -55,6 +63,48 @@
         [self setKillsHardcoreMonsters:killsHardcoreMonstersVal];
     }
     return self;
+}
+
+#pragma mark - Fetch And Parse Methods
+
+/// Method fetches career data from Diablo 3 API
++ (void)fetchCareerForBattleTag:(NSString *)battleTag
+                        success:(void (^)(D3Career *career))success
+                        failure:(void (^)(NSError *error))failure {
+    D3DataManager *manager = [[D3DataManager alloc] init];
+    [manager fetchDataWithURL:@"http://eu.battle.net/api/d3/profile/Auralien-2166/"
+                 successBlock:^(NSDictionary *json){
+                     
+                     D3Career *career = [D3Career getCareerFromJSON:json];
+                     if (success)
+                         success(career);
+    }
+                 failureBlock:failure];
+}
+
+/// Method returns career object parsed from JSON
++ (D3Career *)getCareerFromJSON:(NSDictionary *)json {
+    NSDate *lastUpdated = [NSDate dateWithTimeIntervalSince1970:0.0];
+    NSString *lastUpdatedString = json[@"lastUpdated"];
+    if (lastUpdatedString) {
+        NSTimeInterval interval = [lastUpdatedString doubleValue];
+        lastUpdated = [NSDate dateWithTimeIntervalSince1970:interval];
+    }
+    
+    NSDictionary *timePlayed = json[@"timePlayed"];
+    NSDictionary *kills = json[@"kills"];
+    D3Career *career = [[D3Career alloc] initWithBattleTag:json[@"battleTag"]
+                                            lastHeroPlayed:[json[@"lastHeroPlayed"] integerValue]
+                                               lastUpdated:lastUpdated
+                                       timePlayedBarbarian:[NSNumber numberWithDouble:[timePlayed[@"barbarian"] doubleValue]]
+                                     timePlayedDemonHunter:[NSNumber numberWithDouble:[timePlayed[@"demon-hunter"] doubleValue]]
+                                            timePlayedMonk:[NSNumber numberWithDouble:[timePlayed[@"monk"] doubleValue]]
+                                     timePlayedWitchDoctor:[NSNumber numberWithDouble:[timePlayed[@"witch-doctor"] doubleValue]]
+                                          timePlayedWizard:[NSNumber numberWithDouble:[timePlayed[@"wizard"] doubleValue]]
+                                             killsMonsters:[kills[@"monsters"] integerValue]
+                                               killsElites:[kills[@"elites"] integerValue]
+                                     killsHardcoreMonsters:[kills[@"hardcoreMonsters"] integerValue]];
+    return career;
 }
 
 @end

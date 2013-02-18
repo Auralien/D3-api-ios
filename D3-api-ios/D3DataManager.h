@@ -8,14 +8,14 @@
 
 #import "D3Object.h"
 
-typedef void (^D3ObjectDictionaryForURLResultingBlock)(NSDictionary *json);
-typedef void (^D3ObjectForAccessFailureBlock)(NSError *error);
+typedef void (^D3DataManagerFetchURLSuccessBlock)(NSDictionary *json);
+typedef void (^D3DataManagerFetchURLFailureBlock)(NSError *error);
 
 @interface D3DataManager : D3Object <NSURLConnectionDataDelegate>
 
 /// Methods starts request to server
-- (void)fetchDataWithURL:(NSString *)urlVal
-            successBlock:(D3ObjectDictionaryForURLResultingBlock)resultingBlockVal
-              errorBlock:(D3ObjectForAccessFailureBlock)failureBlockVal;
+- (void)fetchDataWithURL:(NSString *)url
+            successBlock:(D3DataManagerFetchURLSuccessBlock)successBlock
+            failureBlock:(D3DataManagerFetchURLFailureBlock)failureBlock;
 
 @end

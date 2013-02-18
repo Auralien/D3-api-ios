@@ -51,4 +51,11 @@
             killsElites:(NSInteger)killsElitesVal
   killsHardcoreMonsters:(NSInteger)killsHardcoreMonstersVal;
 
+#pragma mark - Fetch Career Methods
+
+/// Method fetches career data from Diablo 3 API
++ (void)fetchCareerForBattleTag:(NSString *)battleTag
+                        success:(void (^)(D3Career *career))success
+                        failure:(void (^)(NSError *error))failure;
+
 @end

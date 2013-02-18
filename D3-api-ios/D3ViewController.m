@@ -7,56 +7,35 @@
 //
 
 #import "D3ViewController.h"
-#import "D3DataManager.h"
+#import "D3Career.h"
 
 @interface D3ViewController ()
 
-@property (nonatomic, strong) NSDictionary *dict1;
+@property (nonatomic, strong) D3Career *career;
 
 @end
 
 @implementation D3ViewController
 
-@synthesize dict1;
+@synthesize label;
 
-//+ (NSDictionary *)returnJSONDict
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.dict1 = [NSDictionary dictionary];
-    //__block NSDictionary *dictionary = nil;
-    
-    
-    //void (^successBlock)(NSDictionary *) = ^(NSDictionary *json) {
-    D3ObjectDictionaryForURLResultingBlock successBlock = ^(NSDictionary *json){
-        //dictionary = json;
-        self.dict1 = json;
-        //NSLog(@"dictionary: %@", self.dict1);
-        //[[NSNotificationCenter defaultCenter] postNotificationName:@"test" object:nil userInfo:@{@"json" : json}];
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"test" object:nil userInfo:[NSDictionary dictionaryWithObject:json forKey:@"json"]];
-        });
-    };
-    
-    //dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        D3DataManager *manager = [[D3DataManager alloc] init];
-        [manager fetchDataWithURL:@"http://eu.battle.net/api/d3/profile/Auralien-2166/"
-                     successBlock:successBlock
-                       errorBlock:NULL];
-        /*dispatch_sync(dispatch_get_main_queue(), ^{
-            NSLog(@"dictionary: %@", self.dict1);
-        });*/
-    //});
-    
-    //if (dictionary)
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(success) name:@"test" object:nil];
+    [D3Career fetchCareerForBattleTag:@"1234"
+                              success:^(D3Career *career){
+                                  NSLog(@"career battletag = %@", career.battleTag);
+                                  NSLog(@"monk time played = %f", [career.timePlayedMonk doubleValue]);
+                                  self.career = career;
+                                  self.label.text = career.battleTag;
+                              }
+                              failure:^(NSError *error) {
+                                  NSLog(@"Error happened: %@", [error localizedDescription]);
+                              }];
 }
 
-- (void)success:(NSNotification *)notification {
-    NSDictionary *dict = [[notification userInfo] objectForKey:@"json"];
-    NSLog(@"successful notification!");
+- (IBAction)buttonPressed:(id)sender {
+    NSLog(@"Career battle tag: %@", self.career.battleTag);
 }
 
 @end

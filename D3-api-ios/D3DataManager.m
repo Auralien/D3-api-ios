@@ -10,41 +10,40 @@
 
 @interface D3DataManager ()
 
-@property (nonatomic, strong) NSMutableData *requestData;
-
-@property (nonatomic, copy) D3ObjectDictionaryForURLResultingBlock resultBlock;
-@property (nonatomic, copy) D3ObjectForAccessFailureBlock failureBlock;
+@property (nonatomic, strong) NSMutableData *rawJSONData;
+@property (nonatomic, copy) D3DataManagerFetchURLSuccessBlock resultBlock;
+@property (nonatomic, copy) D3DataManagerFetchURLFailureBlock failureBlock;
 
 @end
 
 @implementation D3DataManager
 
 /// Methods starts request to server
-- (void)fetchDataWithURL:(NSString *)urlVal
-            successBlock:(D3ObjectDictionaryForURLResultingBlock)resultingBlockVal
-              errorBlock:(D3ObjectForAccessFailureBlock)failureBlockVal {
-    self.resultBlock = resultingBlockVal;
-    self.failureBlock = failureBlockVal;
+- (void)fetchDataWithURL:(NSString *)url
+            successBlock:(D3DataManagerFetchURLSuccessBlock)successBlock
+            failureBlock:(D3DataManagerFetchURLFailureBlock)failureBlock {
+    self.resultBlock = successBlock;
+    self.failureBlock = failureBlock;
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlVal]
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]
                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
                                          timeoutInterval:5.0];
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
     if (connection) {
-        self.requestData = [NSMutableData data];
+        self.rawJSONData = [NSMutableData data];
     } else {
-        NSLog(@"Connection failed");
+        NSLog(@"Connection failed!");
     }
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    [self.requestData setLength:0];
+    [self.rawJSONData setLength:0];
     NSLog(@"connection:didReceiveResponse:");
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [self.requestData appendData:data];
+    [self.rawJSONData appendData:data];
     NSLog(@"connection:didReceiveData:");
 }
 
@@ -54,19 +53,17 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSLog(@"Succeeded! Recieved %d bytes of data", [self.requestData length]);
+    NSLog(@"Succeeded! Recieved %d bytes of data", [self.rawJSONData length]);
     
-    //NSString *jsonString = [[NSString alloc] initWithData:self.requestData encoding:NSUTF8StringEncoding];
-    //NSLog(@"JSON: %@", jsonString);
+    //NSString *jsonString = [[NSString alloc] initWithData:self.rawJSONData encoding:NSUTF8StringEncoding];
+    //NSLog(@"JSON string: '%@'", jsonString);
     
     NSError *error = nil;
-    NSDictionary *object = [NSJSONSerialization JSONObjectWithData:self.requestData options:0 error:&error];
-    //dispatch_async(dispatch_get_main_queue(), ^{
+    NSDictionary *object = [NSJSONSerialization JSONObjectWithData:self.rawJSONData options:0 error:&error];
+    if (object) {
         self.resultBlock(object);
-    //});
-    //NSLog(@"object = %@", object);
-    if (!object) {
-        NSLog(@"Error parsing JSON! %@", [error localizedDescription]);
+    } else {
+        self.failureBlock(error);
     }
 }
 

@@ -10,4 +10,8 @@
 
 @interface D3ViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UILabel *label;
+
+- (IBAction)buttonPressed:(id)sender;
+
 @end

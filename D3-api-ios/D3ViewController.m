@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [D3Career fetchCareerForBattleTag:@"1234"
+    [D3Career fetchCareerForBattleTag:@"Auralien#2166"
                               success:^(D3Career *career){
                                   NSLog(@"career battletag = %@", career.battleTag);
                                   NSLog(@"monk time played = %f", [career.timePlayedMonk doubleValue]);

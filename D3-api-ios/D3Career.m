@@ -9,12 +9,6 @@
 #import "D3Career.h"
 #import "D3DataManager.h"
 
-#define kD3CareerBattleTagSeparator         @"#"
-#define kD3CareerRegionAmericasPath         @"us"
-#define kD3CareerRegionEuropePath           @"eu"
-#define kD3CareerRegionKoreaPath            @"kr"
-#define kD3CareerRegionTaiwanPath           @"tw"
-
 @interface D3Career ()
 
 /// Method returns career object parsed from JSON

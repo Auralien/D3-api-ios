@@ -9,6 +9,7 @@
 #import "D3Career.h"
 #import "D3DataManager.h"
 #import "D3Hero.h"
+#import "D3Artisan.h"
 
 @interface D3Career ()
 
@@ -145,7 +146,7 @@
         NSMutableArray *mutableHeroes = [NSMutableArray array];
         for (NSInteger i = 0; i < [heroes count]; i++) {
             NSDictionary *rawHero = heroes[i];
-            D3Hero *hero = [D3Hero parseHeroFromCareerJSON:rawHero andBattleTag:career.battleTag];
+            D3Hero *hero = [D3Hero parseHeroFromCareerJSON:rawHero withBattleTag:career.battleTag];
             [mutableHeroes addObject:hero];
         }
         career.heroes = mutableHeroes;
@@ -157,10 +158,34 @@
         NSMutableArray *mutableFallenHeroes = [NSMutableArray array];
         for (NSInteger i = 0; i < [fallenHeroes count]; i++) {
             NSDictionary *rawFallenHero = fallenHeroes[i];
-            D3Hero *fallenHero = [D3Hero parseFallenHeroFromCareerJSON:rawFallenHero andBattleTag:career.battleTag];
+            D3Hero *fallenHero = [D3Hero parseFallenHeroFromCareerJSON:rawFallenHero withBattleTag:career.battleTag];
             [mutableFallenHeroes addObject:fallenHero];
         }
         career.fallenHeroes = mutableFallenHeroes;
+    }
+    
+    /// Parsing artisans information and putting it into career.artisans array
+    NSArray *artisans = json[@"artisans"];
+    if (artisans) {
+        NSMutableArray *mutableArtisans = [NSMutableArray array];
+        for (NSInteger i = 0; i < [artisans count]; i++) {
+            NSDictionary *rawArtisan = artisans[i];
+            D3Artisan *artisan = [D3Artisan parseArtisanFromCareerJSON:rawArtisan withBattleTag:career.battleTag andHardcoreFlag:NO];
+            [mutableArtisans addObject:artisan];
+        }
+        career.artisans = mutableArtisans;
+    }
+    
+    /// Parsing hardcore artisans information and putting it into career.hardcoreArtisans array
+    NSArray *hardcoreArtisans = json[@"hardcoreArtisans"];
+    if (hardcoreArtisans) {
+        NSMutableArray *mutableHardcoreArtisans = [NSMutableArray array];
+        for (NSInteger i = 0; i < [hardcoreArtisans count]; i++) {
+            NSDictionary *rawHardcoreArtisan = hardcoreArtisans[i];
+            D3Artisan *hardcoreArtisan = [D3Artisan parseArtisanFromCareerJSON:rawHardcoreArtisan withBattleTag:career.battleTag andHardcoreFlag:YES];
+            [mutableHardcoreArtisans addObject:hardcoreArtisan];
+        }
+        career.hardcoreArtisans = mutableHardcoreArtisans;
     }
     
     return career;

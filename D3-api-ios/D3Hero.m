@@ -15,7 +15,7 @@
 #pragma mark - Fetch and Parse Methods
 
 /// Method parse Hero object from NSDictionary
-+ (D3Hero *)parseHeroFromCareerJSON:(NSDictionary *)json andBattleTag:(NSString *)battleTag {
++ (D3Hero *)parseHeroFromCareerJSON:(NSDictionary *)json withBattleTag:(NSString *)battleTag {
     D3Hero *hero = nil;
     
     if ([json isKindOfClass:[NSDictionary class]]) {
@@ -72,7 +72,7 @@
 }
 
 /// Method parse Hero object from NSDictionary
-+ (D3Hero *)parseFallenHeroFromCareerJSON:(NSDictionary *)json andBattleTag:(NSString *)battleTag {
++ (D3Hero *)parseFallenHeroFromCareerJSON:(NSDictionary *)json withBattleTag:(NSString *)battleTag {
     D3Hero *hero = nil;
     // TODO: Insert fallen hero parsing logic here
     return hero;

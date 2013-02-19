@@ -112,10 +112,10 @@ typedef enum {
 #pragma mark - Fetch and Parse Methods
 
 /// Method parse Hero object from NSDictionary
-+ (D3Hero *)parseHeroFromCareerJSON:(NSDictionary *)json andBattleTag:(NSString *)battleTag;
++ (D3Hero *)parseHeroFromCareerJSON:(NSDictionary *)json withBattleTag:(NSString *)battleTag;
 
 /// Method parse Hero object from NSDictionary
-+ (D3Hero *)parseFallenHeroFromCareerJSON:(NSDictionary *)json andBattleTag:(NSString *)battleTag;
++ (D3Hero *)parseFallenHeroFromCareerJSON:(NSDictionary *)json withBattleTag:(NSString *)battleTag;
 
 #pragma mark - Init Methods
 

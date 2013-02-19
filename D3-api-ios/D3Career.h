@@ -7,16 +7,11 @@
 //
 
 #import "D3Object.h"
-
-typedef enum {
-    kD3CareerRegionUndefined,
-    kD3CareerRegionAmericas,
-    kD3CareerRegionEurope,
-    kD3CareerRegionKorea,
-    kD3CareerRegionTaiwan
-} D3CareerRegion;
+#import "D3DataManager.h"
 
 @interface D3Career : D3Object
+
+#pragma mark - General Account Information
 
 /// Player's battle tag
 @property (nonatomic, copy) NSString *battleTag;
@@ -41,6 +36,20 @@ typedef enum {
 /// Player's hardcore monsters killed
 @property (nonatomic) NSInteger killsHardcoreMonsters;
 
+#pragma mark - Account Collections
+
+/// Player's heroes list
+@property (nonatomic, strong) NSArray *heroes;
+/// Player's artisans list
+@property (nonatomic, strong) NSArray *artisans;
+/// Player's fallen heroes list
+@property (nonatomic, strong) NSArray *fallenHeroes;
+/// Player's hardcore artisans list
+@property (nonatomic, strong) NSArray *hardcoreArtisans;
+
+//@property (nonatomic, strong) NSArray *progression;
+//@property (nonatomic, strong) NSArray *hardcoreProgression;
+
 #pragma mark - Init Methods
 
 /// Initialize career object with zero values
@@ -63,6 +72,7 @@ typedef enum {
 
 /// Method fetches career data from Diablo 3 API
 + (void)fetchCareerForBattleTag:(NSString *)battleTag
+                         region:(D3APIRegion)region
                         success:(void (^)(D3Career *career))success
                         failure:(void (^)(NSError *error))failure;
 

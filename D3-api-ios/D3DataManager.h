@@ -30,20 +30,40 @@
 /// follower-type ::= "enchantress" | "templar" | "scoundrel"
 /// url ::= <host> "/api/d3/data/follower/" < follower-type>
 
-#define kD3DataManagerAPIPath                 @"http://%@.battle.net/api/d3/"
-#define kD3DataManagerCareerPath              @"http://%@.battle.net/api/d3/profile/"
-#define kD3DataManagerHeroPartOfPath          @"hero"
+#define kD3DataManagerAPIPath                   @"http://%@.battle.net/api/d3/"
+#define kD3DataManagerProfilePartOfPath         @"profile"
+#define kD3DataManagerHeroPartOfPath            @"hero"
+#define kD3DataManagerDataPartOfPath            @"data"
+#define kD3DataManagerItemPartOfPath            @"item"
+#define kD3DataManagerArtisanPartOfPath         @"artisan"
+#define kD3DataManagerFollowerPartOfPath        @"follower"
+#define kD3DataManagerBlacksmithPartOfPath      @"blacksmith"
+#define kD3DataManagerJewelerPartOfPath         @"jeweler"
+#define kD3DataManagerEnchantressPartOfPath     @"enchantress"
+#define kD3DataManagerTemplarPartOfPath         @"templar"
+#define kD3DataManagerScoundrel                 @"scoundrel"
 
-#define kD3CareerBattleTagSeparator         @"#"
-#define kD3CareerRegionAmericasPath         @"us"
-#define kD3CareerRegionEuropePath           @"eu"
-#define kD3CareerRegionKoreaPath            @"kr"
-#define kD3CareerRegionTaiwanPath           @"tw"
+#define kD3CareerBattleTagSeparator             @"#"
+#define kD3CareerRegionAmericasPath             @"us"
+#define kD3CareerRegionEuropePath               @"eu"
+#define kD3CareerRegionKoreaPath                @"kr"
+#define kD3CareerRegionTaiwanPath               @"tw"
+
+typedef enum {
+    kD3APIRegionUndefined,
+    kD3APIRegionAmericas,
+    kD3APIRegionEurope,
+    kD3APIRegionKorea,
+    kD3APIRegionTaiwan
+} D3APIRegion;
 
 typedef void (^D3DataManagerFetchURLSuccessBlock)(NSDictionary *json);
 typedef void (^D3DataManagerFetchURLFailureBlock)(NSError *error);
 
 @interface D3DataManager : D3Object <NSURLConnectionDataDelegate>
+
+/// Method returns region code for url
++ (NSString *)getRegion:(D3APIRegion)apiRegion;
 
 /// Methods starts request to server
 - (void)fetchDataWithURL:(NSString *)url

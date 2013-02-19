@@ -7,6 +7,7 @@
 //
 
 #import "D3ViewController.h"
+#import "D3DataManager.h"
 #import "D3Career.h"
 
 @interface D3ViewController ()
@@ -23,6 +24,7 @@
     [super viewDidLoad];
     
     [D3Career fetchCareerForBattleTag:@"Auralien#2166"
+                               region:kD3APIRegionEurope
                               success:^(D3Career *career){
                                   NSLog(@"career battletag = %@", career.battleTag);
                                   NSLog(@"monk time played = %f", [career.timePlayedMonk doubleValue]);

@@ -12,6 +12,72 @@
 
 @synthesize heroID, battleTag, heroName, heroClass, heroGender, heroLevel, heroParagonLevel, isHardcoreHero, heroLastUpdated, killsElites, isDead, life, damage, attackSpeed, armor, strength, dexterity, vitality, intelligence, resistPhysical, resistFire, resistCold, resistLightning, resistPoison, resistArcane, critDamage, blockChance, blockAmountMin, blockAmountMax, damageIncrease, critChance, damageReduction, thorns, lifeSteal, lifePerKill, goldFind, magicFind, lifeOnHit, primaryResource, secondaryResource;
 
+#pragma mark - Fetch and Parse Methods
+
+/// Method parse Hero object from NSDictionary
++ (D3Hero *)parseHeroFromCareerJSON:(NSDictionary *)json andBattleTag:(NSString *)battleTag {
+    D3Hero *hero = nil;
+    
+    if ([json isKindOfClass:[NSDictionary class]]) {
+        D3HeroClass heroClass = kD3HeroClassUndefined;
+        if (json[@"class"]) {
+            if ([json[@"class"] isEqualToString:@"barbarian"]) {
+                heroClass = kD3HeroClassBarbarian;
+            } else if ([json[@"class"] isEqualToString:@"witch-doctor"]) {
+                heroClass = kD3HeroClassWitchDoctor;
+            } else if ([json[@"class"] isEqualToString:@"wizard"]) {
+                heroClass = kD3HeroClassWizard;
+            } else if ([json[@"class"] isEqualToString:@"monk"]) {
+                heroClass = kD3HeroClassMonk;
+            } else if ([json[@"class"] isEqualToString:@"demon-hunter"]) {
+                heroClass = kD3HeroClassDemonHunter;
+            }
+        }
+        
+        D3HeroGender heroGender = kD3HeroGenderUndefined;
+        if (json[@"gender"]) {
+            heroGender = [json[@"gender"] isEqualToNumber:[NSNumber numberWithInt:0]] ? kD3HeroGenderMale : kD3HeroGenderFemale;
+        }
+        
+        BOOL hardcoreHero = NO;
+        if (json[@"hardcore"]) {
+            hardcoreHero = [json[@"hardcore"] boolValue];
+        }
+        
+        BOOL deadHero = NO;
+        if (json[@"dead"]) {
+            deadHero = [json[@"dead"] boolValue];
+        }
+        
+        NSDate *lastUpdated = [NSDate dateWithTimeIntervalSince1970:0.0];
+        if (json[@"last-updated"]) {
+            NSTimeInterval seconds = [json[@"last-updated"] doubleValue];
+            lastUpdated = [NSDate dateWithTimeIntervalSince1970:seconds];
+        }
+        
+        hero = [[D3Hero alloc] initWithHeroID:[json[@"id"] integerValue]
+                                    battleTag:battleTag
+                                     heroName:json[@"name"]
+                                    heroClass:heroClass
+                                   heroGender:heroGender
+                                    heroLevel:[json[@"level"] integerValue]
+                             heroParagonLevel:[json[@"paragonLevel"] integerValue]
+                           heroIsHardcoreFlag:hardcoreHero
+                              heroLastUpdated:lastUpdated
+                                  killsElites:0
+                               heroIsDeadFlag:deadHero];
+    }
+    
+    return hero;
+}
+
+/// Method parse Hero object from NSDictionary
++ (D3Hero *)parseFallenHeroFromCareerJSON:(NSDictionary *)json andBattleTag:(NSString *)battleTag {
+    D3Hero *hero = nil;
+    // TODO: Insert fallen hero parsing logic here
+    return hero;
+}
+
 #pragma mark - Init Methods
 
 /// Update hero object with hero's stats

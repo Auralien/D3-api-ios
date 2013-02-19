@@ -10,19 +10,37 @@
 
 @interface D3DataManager ()
 
+/// Raw data with server response
 @property (nonatomic, strong) NSMutableData *rawJSONData;
-@property (nonatomic, copy) D3DataManagerFetchURLSuccessBlock resultBlock;
+/// Success block
+@property (nonatomic, copy) D3DataManagerFetchURLSuccessBlock successBlock;
+/// Failure block
 @property (nonatomic, copy) D3DataManagerFetchURLFailureBlock failureBlock;
 
 @end
 
 @implementation D3DataManager
 
+/// Method returns region code for url
++ (NSString *)getRegion:(D3APIRegion)apiRegion {
+    NSString *region = nil;
+    switch (apiRegion) {
+        case kD3APIRegionAmericas:   region = kD3CareerRegionAmericasPath;      break;
+        case kD3APIRegionEurope:     region = kD3CareerRegionEuropePath;        break;
+        case kD3APIRegionKorea:      region = kD3CareerRegionKoreaPath;         break;
+        case kD3APIRegionTaiwan:     region = kD3CareerRegionTaiwanPath;        break;
+        default:                                                                break;
+    }
+    return region;
+}
+
+#pragma mark - NSURLConnectionDataDelegate Methods
+
 /// Methods starts request to server
 - (void)fetchDataWithURL:(NSString *)url
             successBlock:(D3DataManagerFetchURLSuccessBlock)successBlock
             failureBlock:(D3DataManagerFetchURLFailureBlock)failureBlock {
-    self.resultBlock = successBlock;
+    self.successBlock = successBlock;
     self.failureBlock = failureBlock;
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]
@@ -61,7 +79,7 @@
     NSError *error = nil;
     NSDictionary *object = [NSJSONSerialization JSONObjectWithData:self.rawJSONData options:0 error:&error];
     if (object) {
-        self.resultBlock(object);
+        self.successBlock(object);
     } else {
         self.failureBlock(error);
     }

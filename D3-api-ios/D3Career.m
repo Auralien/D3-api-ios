@@ -8,20 +8,24 @@
 
 #import "D3Career.h"
 #import "D3DataManager.h"
+#import "D3Hero.h"
 
 @interface D3Career ()
 
-/// Method returns career object parsed from JSON
-+ (D3Career *)getCareerFromJSON:(NSDictionary *)json;
-
 /// Method checks battle tag for "#" in it
 + (BOOL)battleTagIsValid:(NSString *)battleTag;
+
+/// Method returns url for getting career from API
++ (NSString *)createCareerURLForBattleTag:(NSString *)battleTag forRegion:(D3APIRegion)region;
+
+/// Method returns career object parsed from JSON
++ (D3Career *)parseCareerFromJSON:(NSDictionary *)json;
 
 @end
 
 @implementation D3Career
 
-@synthesize battleTag, lastHeroPlayed, lastUpdated, timePlayedBarbarian, timePlayedDemonHunter, timePlayedMonk, timePlayedWitchDoctor, timePlayedWizard, killsMonsters, killsElites, killsHardcoreMonsters;
+@synthesize battleTag, lastHeroPlayed, lastUpdated, timePlayedBarbarian, timePlayedDemonHunter, timePlayedMonk, timePlayedWitchDoctor, timePlayedWizard, killsMonsters, killsElites, killsHardcoreMonsters, heroes, artisans, fallenHeroes, hardcoreArtisans;
 
 #pragma mark - Init Methods
 
@@ -72,23 +76,48 @@
 
 /// Method fetches career data from Diablo 3 API
 + (void)fetchCareerForBattleTag:(NSString *)battleTag
+                         region:(D3APIRegion)region
                         success:(void (^)(D3Career *career))success
                         failure:(void (^)(NSError *error))failure {
-    D3DataManager *manager = [[D3DataManager alloc] init];
-    D3CareerRegion region = kD3CareerRegionEurope;
-    NSString *careerUrl = [D3Career careerPathForRegion:region battleTag:battleTag];
-    [manager fetchDataWithURL:careerUrl/*@"http://eu.battle.net/api/d3/profile/Auralien-2166/"*/
-                 successBlock:^(NSDictionary *json){
-                     
-                     D3Career *career = [D3Career getCareerFromJSON:json];
-                     if (success)
-                         success(career);
+    /// TODO: think about return value for invalid battleTag
+    if ([D3Career battleTagIsValid:battleTag]) {
+        D3DataManager *manager = [[D3DataManager alloc] init];
+        NSString *careerURL = [D3Career createCareerURLForBattleTag:battleTag forRegion:region];
+        [manager fetchDataWithURL:careerURL
+                     successBlock:^(NSDictionary *json){
+                         D3Career *career = [D3Career parseCareerFromJSON:json];
+                         if (success)
+                             success(career);
+                     }
+                     failureBlock:failure];
     }
-                 failureBlock:failure];
+}
+
+/// Method checks battle tag for "#" in it
++ (BOOL)battleTagIsValid:(NSString *)battleTag {
+    if ([battleTag length] < 3)
+        return NO;
+    
+    NSRange separatorRange = [battleTag rangeOfString:kD3CareerBattleTagSeparator];
+    return separatorRange.location != NSNotFound;
+}
+
+/// Method returns url for getting career from API
++ (NSString *)createCareerURLForBattleTag:(NSString *)battleTag forRegion:(D3APIRegion)region {
+    NSString *careerPath = nil;
+    
+    if (region != kD3APIRegionUndefined) {
+        NSArray *battleTagComponents = [battleTag componentsSeparatedByString:kD3CareerBattleTagSeparator];
+        careerPath = [NSString stringWithFormat:kD3DataManagerAPIPath, [D3DataManager getRegion:region]];
+        careerPath = [careerPath stringByAppendingFormat:@"%@/%@-%@/", kD3DataManagerProfilePartOfPath, battleTagComponents[0], battleTagComponents[1]];
+    }
+    
+    NSLog(@"career path = %@", careerPath);
+    return careerPath;
 }
 
 /// Method returns career object parsed from JSON
-+ (D3Career *)getCareerFromJSON:(NSDictionary *)json {
++ (D3Career *)parseCareerFromJSON:(NSDictionary *)json {
     NSDate *lastUpdated = [NSDate dateWithTimeIntervalSince1970:0.0];
     NSString *lastUpdatedString = json[@"lastUpdated"];
     if (lastUpdatedString) {
@@ -109,43 +138,32 @@
                                              killsMonsters:[kills[@"monsters"] integerValue]
                                                killsElites:[kills[@"elites"] integerValue]
                                      killsHardcoreMonsters:[kills[@"hardcoreMonsters"] integerValue]];
+    
+    /// Parsing heroes information and putting it into career.heroes array
+    NSArray *heroes = json[@"heroes"];
+    if (heroes) {
+        NSMutableArray *mutableHeroes = [NSMutableArray array];
+        for (NSInteger i = 0; i < [heroes count]; i++) {
+            NSDictionary *rawHero = heroes[i];
+            D3Hero *hero = [D3Hero parseHeroFromCareerJSON:rawHero andBattleTag:career.battleTag];
+            [mutableHeroes addObject:hero];
+        }
+        career.heroes = mutableHeroes;
+    }
+    
+    /// Parsing fallen heroes information and putting it into career.fallenHeroes array
+    NSArray *fallenHeroes = json[@"fallenHeroes"];
+    if (fallenHeroes) {
+        NSMutableArray *mutableFallenHeroes = [NSMutableArray array];
+        for (NSInteger i = 0; i < [fallenHeroes count]; i++) {
+            NSDictionary *rawFallenHero = fallenHeroes[i];
+            D3Hero *fallenHero = [D3Hero parseFallenHeroFromCareerJSON:rawFallenHero andBattleTag:career.battleTag];
+            [mutableFallenHeroes addObject:fallenHero];
+        }
+        career.fallenHeroes = mutableFallenHeroes;
+    }
+    
     return career;
-}
-
-+ (NSString *)careerPathForRegion:(D3CareerRegion)region battleTag:(NSString *)battleTag {
-    NSString *careerPath = nil;
-    
-    if (region != kD3CareerRegionUndefined) {
-        NSArray *battleTagComponents = [battleTag componentsSeparatedByString:kD3CareerBattleTagSeparator];
-        careerPath = [NSString stringWithFormat:kD3DataManagerCareerPath, [D3Career getRegion:region]];
-        careerPath = [careerPath stringByAppendingFormat:@"%@-%@/", battleTagComponents[0], battleTagComponents[1]];
-    }
-    
-    NSLog(@"career path = %@", careerPath);
-    
-    return careerPath;
-}
-
-/// Method returns region code for career url
-+ (NSString *)getRegion:(D3CareerRegion)careerRegion {
-    NSString *region = nil;
-    switch (careerRegion) {
-        case kD3CareerRegionAmericas:   region = kD3CareerRegionAmericasPath;   break;
-        case kD3CareerRegionEurope:     region = kD3CareerRegionEuropePath;     break;
-        case kD3CareerRegionKorea:      region = kD3CareerRegionKoreaPath;      break;
-        case kD3CareerRegionTaiwan:     region = kD3CareerRegionTaiwanPath;     break;
-        default:                                                                break;
-    }
-    return region;
-}
-
-/// Method checks battle tag for "#" in it
-+ (BOOL)battleTagIsValid:(NSString *)battleTag {
-    if ([battleTag length] < 3)
-        return NO;
-    
-    NSRange separatorRange = [battleTag rangeOfString:kD3CareerBattleTagSeparator];
-    return separatorRange.location != NSNotFound;
 }
 
 @end

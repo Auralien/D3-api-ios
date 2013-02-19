@@ -109,6 +109,14 @@ typedef enum {
 /// Hero's secondary resource amount
 @property (nonatomic) NSInteger secondaryResource;
 
+#pragma mark - Fetch and Parse Methods
+
+/// Method parse Hero object from NSDictionary
++ (D3Hero *)parseHeroFromCareerJSON:(NSDictionary *)json andBattleTag:(NSString *)battleTag;
+
+/// Method parse Hero object from NSDictionary
++ (D3Hero *)parseFallenHeroFromCareerJSON:(NSDictionary *)json andBattleTag:(NSString *)battleTag;
+
 #pragma mark - Init Methods
 
 /// Update hero object with hero's stats

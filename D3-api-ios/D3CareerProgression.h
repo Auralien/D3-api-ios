@@ -13,6 +13,13 @@
 /// Career unique ID
 @property (nonatomic, copy) NSString *careerBattleTag;
 
+#pragma mark - Fetch and Parse Methods
+
+/// Method parses progression JSON and return array of D3CareerProgression objects
++ (NSArray *)parseCareerProgressionFromJSON:(NSDictionary *)json
+                              withBattleTag:(NSString *)battleTag
+                            andHardcoreFlag:(BOOL)hardcoreFlag;
+
 #pragma mark - Init Methods
 
 /// Initialize career progression object with zero values

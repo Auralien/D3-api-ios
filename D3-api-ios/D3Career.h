@@ -46,9 +46,10 @@
 @property (nonatomic, strong) NSArray *fallenHeroes;
 /// Player's hardcore artisans list
 @property (nonatomic, strong) NSArray *hardcoreArtisans;
-
-//@property (nonatomic, strong) NSArray *progression;
-//@property (nonatomic, strong) NSArray *hardcoreProgression;
+/// Player's progression acts list
+@property (nonatomic, strong) NSArray *progression;
+/// Player's hardcore progression acts list
+@property (nonatomic, strong) NSArray *hardcoreProgression;
 
 #pragma mark - Init Methods
 

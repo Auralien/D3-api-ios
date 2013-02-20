@@ -10,6 +10,7 @@
 #import "D3DataManager.h"
 #import "D3Hero.h"
 #import "D3Artisan.h"
+#import "D3CareerProgression.h"
 
 @interface D3Career ()
 
@@ -26,7 +27,7 @@
 
 @implementation D3Career
 
-@synthesize battleTag, lastHeroPlayed, lastUpdated, timePlayedBarbarian, timePlayedDemonHunter, timePlayedMonk, timePlayedWitchDoctor, timePlayedWizard, killsMonsters, killsElites, killsHardcoreMonsters, heroes, artisans, fallenHeroes, hardcoreArtisans;
+@synthesize battleTag, lastHeroPlayed, lastUpdated, timePlayedBarbarian, timePlayedDemonHunter, timePlayedMonk, timePlayedWitchDoctor, timePlayedWizard, killsMonsters, killsElites, killsHardcoreMonsters, heroes, artisans, fallenHeroes, hardcoreArtisans, progression, hardcoreProgression;
 
 #pragma mark - Init Methods
 
@@ -170,7 +171,9 @@
         NSMutableArray *mutableArtisans = [NSMutableArray array];
         for (NSInteger i = 0; i < [artisans count]; i++) {
             NSDictionary *rawArtisan = artisans[i];
-            D3Artisan *artisan = [D3Artisan parseArtisanFromCareerJSON:rawArtisan withBattleTag:career.battleTag andHardcoreFlag:NO];
+            D3Artisan *artisan = [D3Artisan parseArtisanFromCareerJSON:rawArtisan
+                                                         withBattleTag:career.battleTag
+                                                       andHardcoreFlag:NO];
             [mutableArtisans addObject:artisan];
         }
         career.artisans = mutableArtisans;
@@ -182,10 +185,28 @@
         NSMutableArray *mutableHardcoreArtisans = [NSMutableArray array];
         for (NSInteger i = 0; i < [hardcoreArtisans count]; i++) {
             NSDictionary *rawHardcoreArtisan = hardcoreArtisans[i];
-            D3Artisan *hardcoreArtisan = [D3Artisan parseArtisanFromCareerJSON:rawHardcoreArtisan withBattleTag:career.battleTag andHardcoreFlag:YES];
+            D3Artisan *hardcoreArtisan = [D3Artisan parseArtisanFromCareerJSON:rawHardcoreArtisan
+                                                                 withBattleTag:career.battleTag
+                                                               andHardcoreFlag:YES];
             [mutableHardcoreArtisans addObject:hardcoreArtisan];
         }
         career.hardcoreArtisans = mutableHardcoreArtisans;
+    }
+    
+    /// Parsing progression information and putting it into career.progression array
+    NSDictionary *progressionElements = json[@"progression"];
+    if (progressionElements) {
+        career.progression = [D3CareerProgression parseCareerProgressionFromJSON:progressionElements
+                                                                   withBattleTag:career.battleTag
+                                                                 andHardcoreFlag:NO];
+    }
+    
+    /// Parsing hardcore progression information and putting it into career.hardcoreProgression array
+    NSDictionary *hardcoreProgressionElements = json[@"hardcoreProgression"];
+    if (hardcoreProgressionElements) {
+        career.hardcoreProgression = [D3CareerProgression parseCareerProgressionFromJSON:hardcoreProgressionElements
+                                                                           withBattleTag:career.battleTag
+                                                                         andHardcoreFlag:YES];
     }
     
     return career;

@@ -14,6 +14,26 @@
 
 @interface D3Career ()
 
+#pragma mark - Init Methods
+
+/// Initialize career object with zero values
+- (id)init;
+
+/// Initialize career object with defined values
+- (id)initWithBattleTag:(NSString *)battleTagVal
+         lastHeroPlayed:(NSInteger)lastHeroPlayedVal
+            lastUpdated:(NSDate *)lastUpdatedVal
+    timePlayedBarbarian:(NSNumber *)timePlayedBarbarianVal
+  timePlayedDemonHunter:(NSNumber *)timePlayedDemonHunterVal
+         timePlayedMonk:(NSNumber *)timePlayedMonkVal
+  timePlayedWitchDoctor:(NSNumber *)timePlayedWitchDoctorVal
+       timePlayedWizard:(NSNumber *)timePlayedWizardVal
+          killsMonsters:(NSInteger)killsMonstersVal
+            killsElites:(NSInteger)killsElitesVal
+  killsHardcoreMonsters:(NSInteger)killsHardcoreMonstersVal;
+
+#pragma mark - Fetch And Parse Methods
+
 /// Method checks battle tag for "#" in it
 + (BOOL)battleTagIsValid:(NSString *)battleTag;
 
@@ -88,6 +108,7 @@
         [manager fetchDataWithURL:careerURL
                      successBlock:^(NSDictionary *json){
                          D3Career *career = [D3Career parseCareerFromJSON:json];
+                         [career setCareerRegion:region];
                          if (success)
                              success(career);
                      }
@@ -148,6 +169,7 @@
         for (NSInteger i = 0; i < [heroes count]; i++) {
             NSDictionary *rawHero = heroes[i];
             D3Hero *hero = [D3Hero parseHeroFromCareerJSON:rawHero withBattleTag:career.battleTag];
+            [hero setCareer:career];
             [mutableHeroes addObject:hero];
         }
         career.heroes = mutableHeroes;
@@ -160,6 +182,7 @@
         for (NSInteger i = 0; i < [fallenHeroes count]; i++) {
             NSDictionary *rawFallenHero = fallenHeroes[i];
             D3Hero *fallenHero = [D3Hero parseFallenHeroFromCareerJSON:rawFallenHero withBattleTag:career.battleTag];
+            [fallenHero setCareer:career];
             [mutableFallenHeroes addObject:fallenHero];
         }
         career.fallenHeroes = mutableFallenHeroes;

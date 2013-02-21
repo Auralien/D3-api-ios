@@ -7,6 +7,61 @@
 //
 
 #import "D3Hero.h"
+#import "D3Career.h"
+#import "D3DataManager.h"
+
+@interface D3Hero ()
+
+#pragma mark - Init Methods
+
+/// Update hero object with hero's stats
+- (void)updateHeroWithLife:(NSInteger)lifeVal
+                    damage:(NSNumber *)damageVal
+               attackSpeed:(NSNumber *)attackSpeedVal
+                     armor:(NSInteger)armorVal
+                  strength:(NSInteger)strengthVal
+                 dexterity:(NSInteger)dexterityVal
+                  vitality:(NSInteger)vitalityVal
+              intelligence:(NSInteger)intelligenceVal
+            resistPhysical:(NSInteger)resistPhysicalVal
+                resistFire:(NSInteger)resistFireVal
+                resistCold:(NSInteger)resistColdVal
+           resistLightning:(NSInteger)resistLightningVal
+              resistPoison:(NSInteger)resistPoisonVal
+              resistArcane:(NSInteger)resistArcaneVal
+                critDamage:(NSNumber *)critDamageVal
+               blockChance:(NSNumber *)blockChanceVal
+            blockAmountMin:(NSInteger)blockAmountMinVal
+            blockAmountMax:(NSInteger)blockAmountMaxVal
+            damageIncrease:(NSNumber *)damageIncreaseVal
+                critChance:(NSNumber *)critChanceVal
+           damageReduction:(NSNumber *)damageReductionVal
+                    thorns:(NSNumber *)thornsVal
+                 lifeSteal:(NSNumber *)lifeStealVal
+               lifePerKill:(NSNumber *)lifePerKillVal
+                  goldFind:(NSNumber *)goldFindVal
+                 magicFind:(NSNumber *)magicFindVal
+                 lifeOnHit:(NSNumber *)lifeOnHitVal
+           primaryResource:(NSInteger)primaryResourceVal
+         secondaryResource:(NSInteger)secondaryResourceVal;
+
+/// Initialize Hero object with zero values
+- (id)init;
+
+/// Initialize Hero object with defined values
+- (id)initWithHeroID:(NSInteger)heroIDVal
+           battleTag:(NSString *)battleTagVal
+            heroName:(NSString *)heroNameVal
+           heroClass:(D3HeroClass)heroClassVal
+          heroGender:(D3HeroGender)heroGenderVal
+           heroLevel:(NSInteger)heroLevelVal
+    heroParagonLevel:(NSInteger)heroParagonLevelVal
+  heroIsHardcoreFlag:(BOOL)isHardcoreHeroVal
+     heroLastUpdated:(NSDate *)heroLastUpdatedVal
+         killsElites:(NSInteger)killsElitesVal
+      heroIsDeadFlag:(BOOL)isDeadVal;
+
+@end
 
 @implementation D3Hero
 
@@ -212,6 +267,43 @@
         [self setSecondaryResource:0];
     }
     return self;
+}
+
+#pragma mark - Fetch And Parse Methods
+
+/// Method fetches hero data from Diablo 3 API
+- (void)completeHeroProfileWithSuccess:(void (^)(D3Hero *hero))success
+                               failure:(void (^)(NSError *error))failure {
+    
+    D3DataManager *manager = [[D3DataManager alloc] init];
+    NSString *heroURL = [self createHeroURLForHeroID:self.heroID forRegion:self.career.careerRegion];
+    [manager fetchDataWithURL:heroURL
+                 successBlock:^(NSDictionary *json){
+                     [self parseHeroFromJSON:json];
+                     if (success)
+                         success(self);
+                 }
+                 failureBlock:failure];
+}
+
+/// Method returns url for getting hero from API
+- (NSString *)createHeroURLForHeroID:(NSInteger)heroIDVal forRegion:(D3APIRegion)region {
+    NSString *heroPath = nil;
+    
+    if (region != kD3APIRegionUndefined) {
+        //<host> "/api/d3/profile/" <battletag-name> "-" <battletag-code> "/hero/" <hero-id>
+        NSArray *battleTagComponents = [self.career.battleTag componentsSeparatedByString:kD3CareerBattleTagSeparator];
+        heroPath = [NSString stringWithFormat:kD3DataManagerAPIPath, [D3DataManager getRegion:region]];
+        heroPath = [heroPath stringByAppendingFormat:@"%@/%@-%@/%@/%d", kD3DataManagerProfilePartOfPath, battleTagComponents[0], battleTagComponents[1], kD3DataManagerHeroPartOfPath, self.heroID];
+    }
+    
+    NSLog(@"hero path = %@", heroPath);
+    return heroPath;
+}
+
+/// Methods updates hero's data from JSON
+- (void)parseHeroFromJSON:(NSDictionary *)json {
+    
 }
 
 @end

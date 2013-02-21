@@ -15,6 +15,8 @@
 
 /// Player's battle tag
 @property (nonatomic, copy) NSString *battleTag;
+
+@property (nonatomic) D3APIRegion careerRegion;
 /// Player's last hero's played ID
 @property (nonatomic) NSInteger lastHeroPlayed;
 /// Player's last information update date and time
@@ -50,24 +52,6 @@
 @property (nonatomic, strong) NSArray *progression;
 /// Player's hardcore progression acts list
 @property (nonatomic, strong) NSArray *hardcoreProgression;
-
-#pragma mark - Init Methods
-
-/// Initialize career object with zero values
-- (id)init;
-
-/// Initialize career object with defined values
-- (id)initWithBattleTag:(NSString *)battleTagVal
-         lastHeroPlayed:(NSInteger)lastHeroPlayedVal
-            lastUpdated:(NSDate *)lastUpdatedVal
-    timePlayedBarbarian:(NSNumber *)timePlayedBarbarianVal
-  timePlayedDemonHunter:(NSNumber *)timePlayedDemonHunterVal
-         timePlayedMonk:(NSNumber *)timePlayedMonkVal
-  timePlayedWitchDoctor:(NSNumber *)timePlayedWitchDoctorVal
-       timePlayedWizard:(NSNumber *)timePlayedWizardVal
-          killsMonsters:(NSInteger)killsMonstersVal
-            killsElites:(NSInteger)killsElitesVal
-  killsHardcoreMonsters:(NSInteger)killsHardcoreMonstersVal;
 
 #pragma mark - Fetch Career Methods
 

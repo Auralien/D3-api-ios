@@ -23,7 +23,12 @@ typedef enum {
     kD3HeroClassDemonHunter
 } D3HeroClass;
 
+@class D3Career;
+
 @interface D3Hero : D3Object
+
+/// Career reference
+@property (nonatomic, weak) D3Career *career;
 
 /// Hero's unique ID
 @property (nonatomic) NSInteger heroID;
@@ -117,53 +122,8 @@ typedef enum {
 /// Method parse Hero object from NSDictionary
 + (D3Hero *)parseFallenHeroFromCareerJSON:(NSDictionary *)json withBattleTag:(NSString *)battleTag;
 
-#pragma mark - Init Methods
-
-/// Update hero object with hero's stats
-- (void)updateHeroWithLife:(NSInteger)lifeVal
-                    damage:(NSNumber *)damageVal
-               attackSpeed:(NSNumber *)attackSpeedVal
-                     armor:(NSInteger)armorVal
-                  strength:(NSInteger)strengthVal
-                 dexterity:(NSInteger)dexterityVal
-                  vitality:(NSInteger)vitalityVal
-              intelligence:(NSInteger)intelligenceVal
-            resistPhysical:(NSInteger)resistPhysicalVal
-                resistFire:(NSInteger)resistFireVal
-                resistCold:(NSInteger)resistColdVal
-           resistLightning:(NSInteger)resistLightningVal
-              resistPoison:(NSInteger)resistPoisonVal
-              resistArcane:(NSInteger)resistArcaneVal
-                critDamage:(NSNumber *)critDamageVal
-               blockChance:(NSNumber *)blockChanceVal
-            blockAmountMin:(NSInteger)blockAmountMinVal
-            blockAmountMax:(NSInteger)blockAmountMaxVal
-            damageIncrease:(NSNumber *)damageIncreaseVal
-                critChance:(NSNumber *)critChanceVal
-           damageReduction:(NSNumber *)damageReductionVal
-                    thorns:(NSNumber *)thornsVal
-                 lifeSteal:(NSNumber *)lifeStealVal
-               lifePerKill:(NSNumber *)lifePerKillVal
-                  goldFind:(NSNumber *)goldFindVal
-                 magicFind:(NSNumber *)magicFindVal
-                 lifeOnHit:(NSNumber *)lifeOnHitVal
-           primaryResource:(NSInteger)primaryResourceVal
-         secondaryResource:(NSInteger)secondaryResourceVal;
-
-/// Initialize Hero object with zero values
-- (id)init;
-
-/// Initialize Hero object with defined values
-- (id)initWithHeroID:(NSInteger)heroIDVal
-           battleTag:(NSString *)battleTagVal
-            heroName:(NSString *)heroNameVal
-           heroClass:(D3HeroClass)heroClassVal
-          heroGender:(D3HeroGender)heroGenderVal
-           heroLevel:(NSInteger)heroLevelVal
-    heroParagonLevel:(NSInteger)heroParagonLevelVal
-  heroIsHardcoreFlag:(BOOL)isHardcoreHeroVal
-     heroLastUpdated:(NSDate *)heroLastUpdatedVal
-         killsElites:(NSInteger)killsElitesVal
-      heroIsDeadFlag:(BOOL)isDeadVal;
+/// Method fetches hero data from Diablo 3 API
+- (void)completeHeroProfileWithSuccess:(void (^)(D3Hero *hero))success
+                               failure:(void (^)(NSError *error))failure;
 
 @end

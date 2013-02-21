@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		502A528A16D69203000A0074 /* D3HeroCompletedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = 502A528916D69202000A0074 /* D3HeroCompletedQuest.m */; };
+		502A528D16D69397000A0074 /* D3CareerCompletedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = 502A528C16D69397000A0074 /* D3CareerCompletedQuest.m */; };
 		50463E9E16D09C61004C2ED6 /* D3DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50463E9D16D09C61004C2ED6 /* D3DataManager.m */; };
 		50E5A57C16C9FE8A00D21111 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E5A57B16C9FE8A00D21111 /* UIKit.framework */; };
 		50E5A57E16C9FE8A00D21111 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E5A57D16C9FE8A00D21111 /* Foundation.framework */; };
@@ -34,6 +36,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		502A528816D69202000A0074 /* D3HeroCompletedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3HeroCompletedQuest.h; sourceTree = "<group>"; };
+		502A528916D69202000A0074 /* D3HeroCompletedQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3HeroCompletedQuest.m; sourceTree = "<group>"; };
+		502A528B16D69397000A0074 /* D3CareerCompletedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3CareerCompletedQuest.h; sourceTree = "<group>"; };
+		502A528C16D69397000A0074 /* D3CareerCompletedQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3CareerCompletedQuest.m; sourceTree = "<group>"; };
 		50463E9C16D09C61004C2ED6 /* D3DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3DataManager.h; sourceTree = "<group>"; };
 		50463E9D16D09C61004C2ED6 /* D3DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3DataManager.m; sourceTree = "<group>"; };
 		50E5A57816C9FE8A00D21111 /* D3-api-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D3-api-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,12 +171,16 @@
 				50E5A5B016CA000200D21111 /* D3Artisan.m */,
 				8BDEAB8C16CB9432001734FC /* D3Progression.h */,
 				8BDEAB8D16CB9433001734FC /* D3Progression.m */,
-				8B92685816D625A300E1A230 /* D3CompletedQuest.h */,
-				8B92685916D625A300E1A230 /* D3CompletedQuest.m */,
 				8BDEAB9016CB971C001734FC /* D3HeroProgression.h */,
 				8BDEAB9116CB971C001734FC /* D3HeroProgression.m */,
 				8BDEAB9316CB98B4001734FC /* D3CareerProgression.h */,
 				8BDEAB9416CB98B4001734FC /* D3CareerProgression.m */,
+				8B92685816D625A300E1A230 /* D3CompletedQuest.h */,
+				8B92685916D625A300E1A230 /* D3CompletedQuest.m */,
+				502A528816D69202000A0074 /* D3HeroCompletedQuest.h */,
+				502A528916D69202000A0074 /* D3HeroCompletedQuest.m */,
+				502A528B16D69397000A0074 /* D3CareerCompletedQuest.h */,
+				502A528C16D69397000A0074 /* D3CareerCompletedQuest.m */,
 			);
 			name = "api-classes";
 			sourceTree = "<group>";
@@ -269,6 +279,8 @@
 				8BDADAE616CE3C6D00B90CE7 /* D3Skill.m in Sources */,
 				50463E9E16D09C61004C2ED6 /* D3DataManager.m in Sources */,
 				8B92685A16D625A300E1A230 /* D3CompletedQuest.m in Sources */,
+				502A528A16D69203000A0074 /* D3HeroCompletedQuest.m in Sources */,
+				502A528D16D69397000A0074 /* D3CareerCompletedQuest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

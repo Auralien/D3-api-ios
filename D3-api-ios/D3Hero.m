@@ -303,6 +303,45 @@
 
 /// Methods updates hero's data from JSON
 - (void)parseHeroFromJSON:(NSDictionary *)json {
+    NSDictionary *heroStats = json[@"stats"];
+    
+    [self updateHeroWithLife:[heroStats[@"life"] integerValue]
+                      damage:[NSNumber numberWithDouble:[heroStats[@"damage"] doubleValue]]
+                 attackSpeed:[NSNumber numberWithDouble:[heroStats[@"attackSpeed"] doubleValue]]
+                       armor:[heroStats[@"armor"] integerValue]
+                    strength:[heroStats[@"strength"] integerValue]
+                   dexterity:[heroStats[@"dexterity"] integerValue]
+                    vitality:[heroStats[@"vitality"] integerValue]
+                intelligence:[heroStats[@"intelligence"] integerValue]
+              resistPhysical:[heroStats[@"physicalResist"] integerValue]
+                  resistFire:[heroStats[@"fireResist"] integerValue]
+                  resistCold:[heroStats[@"coldResist"] integerValue]
+             resistLightning:[heroStats[@"lightningResist"] integerValue]
+                resistPoison:[heroStats[@"poisonResist"] integerValue]
+                resistArcane:[heroStats[@"arcaneResist"] integerValue]
+                  critDamage:[NSNumber numberWithDouble:[heroStats[@"critDamage"] doubleValue]]
+                 blockChance:[NSNumber numberWithDouble:[heroStats[@"blockChance"] doubleValue]]
+              blockAmountMin:[heroStats[@"blockAmountMin"] integerValue]
+              blockAmountMax:[heroStats[@"blockAmountMax"] integerValue]
+              damageIncrease:[NSNumber numberWithDouble:[heroStats[@"damageIncrease"] doubleValue]]
+                  critChance:[NSNumber numberWithDouble:[heroStats[@"critChance"] doubleValue]]
+             damageReduction:[NSNumber numberWithDouble:[heroStats[@"damageReduction"] doubleValue]]
+                      thorns:[NSNumber numberWithDouble:[heroStats[@"thorns"] doubleValue]]
+                   lifeSteal:[NSNumber numberWithDouble:[heroStats[@"lifeSteal"] doubleValue]]
+                 lifePerKill:[NSNumber numberWithDouble:[heroStats[@"lifePerKill"] doubleValue]]
+                    goldFind:[NSNumber numberWithDouble:[heroStats[@"goldFind"] doubleValue]]
+                   magicFind:[NSNumber numberWithDouble:[heroStats[@"magicFind"] doubleValue]]
+                   lifeOnHit:[NSNumber numberWithDouble:[heroStats[@"lifeOnHit"] doubleValue]]
+             primaryResource:[heroStats[@"primaryResource"] integerValue]
+           secondaryResource:[heroStats[@"secondaryResource"] integerValue]];
+    
+    if (json[@"kills"]) {
+        NSDictionary *kills = json[@"kills"];
+        if (kills[@"elites"]) {
+            [self setKillsElites:[kills[@"elites"] integerValue]];
+        }
+    }
+    
     
 }
 

@@ -24,11 +24,30 @@ typedef enum {
     kD3ItemOwnerTypeFollowerEnchantress
 } D3ItemOwnerType;
 
+typedef enum {
+    kD3ItemSlotUndefined,
+    kD3ItemSlotHead,
+    kD3ItemSlotTorso,
+    kD3ItemSlotFeet,
+    kD3ItemSlotHands,
+    kD3ItemSlotShoulders,
+    kD3ItemSlotLegs,
+    kD3ItemSlotBracers,
+    kD3ItemSlotMainHand,
+    kD3ItemSlotOffHand,
+    kD3ItemSlotWaist,
+    kD3ItemSlotRightFinger,
+    kD3ItemSlotLeftFinger,
+    kD3ItemSlotNeck,
+    kD3ItemSlotSpecial
+} D3ItemSlot;
+
 @interface D3Item : D3Object
 
 @property (nonatomic, copy) NSString *itemID;
 @property (nonatomic) NSInteger itemOwnerHeroID;
 @property (nonatomic) D3ItemOwnerType itemOwnerType;
+@property (nonatomic) D3ItemSlot itemSlot;
 @property (nonatomic, copy) NSString *itemName;
 @property (nonatomic, copy) NSString *itemIcon;
 @property (nonatomic) D3ItemDisplayColor itemDisplayColor;
@@ -43,6 +62,7 @@ typedef enum {
 - (id)initWithID:(NSString *)itemIDVal
      ownerHeroID:(NSInteger)itemOwnerHeroIDVal
        ownerType:(D3ItemOwnerType)itemOwnerTypeVal
+            slot:(D3ItemSlot)itemSlotVal
             name:(NSString *)itemNameVal
             icon:(NSString *)itemIconVal
     displayColor:(D3ItemDisplayColor)itemDisplayColorVal

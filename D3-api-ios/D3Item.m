@@ -19,6 +19,7 @@
     return [self initWithID:@""
                 ownerHeroID:0
                   ownerType:kD3ItemOwnerTypeUndefined
+                       slot:kD3ItemSlotUndefined
                        name:@""
                        icon:@""
                displayColor:kD3ItemDisplayColorUndefined
@@ -29,6 +30,7 @@
 - (id)initWithID:(NSString *)itemIDVal
      ownerHeroID:(NSInteger)itemOwnerHeroIDVal
        ownerType:(D3ItemOwnerType)itemOwnerTypeVal
+            slot:(D3ItemSlot)itemSlotVal
             name:(NSString *)itemNameVal
             icon:(NSString *)itemIconVal
     displayColor:(D3ItemDisplayColor)itemDisplayColorVal
@@ -37,6 +39,7 @@
         [self setItemID:itemIDVal];
         [self setItemOwnerHeroID:itemOwnerHeroIDVal];
         [self setItemOwnerType:itemOwnerTypeVal];
+        [self setItemSlot:itemSlotVal];
         [self setItemName:itemNameVal];
         [self setItemIcon:itemIconVal];
         [self setItemDisplayColor:itemDisplayColorVal];

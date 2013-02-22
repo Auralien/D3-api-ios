@@ -37,7 +37,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "247"
          endingLineNumber = "247"
-         landmarkName = "-createHeroURLForHeroID:forRegion:"
+         landmarkName = "-initWithHeroID:battleTag:heroName:heroClass:heroGender:heroLevel:heroParagonLevel:heroIsHardcoreFlag:heroLastUpdated:killsElites:heroIsDeadFlag:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

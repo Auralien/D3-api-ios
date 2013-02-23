@@ -44,13 +44,21 @@ typedef enum {
 
 @interface D3Item : D3Object
 
+/// Item unique ID
 @property (nonatomic, copy) NSString *itemID;
+/// Item's owner unique ID
 @property (nonatomic) NSInteger itemOwnerHeroID;
+/// Item's owner's type - hero or one of followers
 @property (nonatomic) D3ItemOwnerType itemOwnerType;
+/// Item's slot
 @property (nonatomic) D3ItemSlot itemSlot;
+/// Item name
 @property (nonatomic, copy) NSString *itemName;
+/// Item's icon path
 @property (nonatomic, copy) NSString *itemIcon;
+/// Item's color
 @property (nonatomic) D3ItemDisplayColor itemDisplayColor;
+/// Item's tooltip path
 @property (nonatomic, copy) NSString *itemTooltipParams;
 
 #pragma mark - Init Methods

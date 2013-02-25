@@ -10,4 +10,6 @@
 
 @implementation D3Follower
 
+@synthesize followerType, followerHeroID, followerLevel, followerGoldFind, followerMagicFind, followerExperienceBonus, followerItems, followerSkills;
+
 @end

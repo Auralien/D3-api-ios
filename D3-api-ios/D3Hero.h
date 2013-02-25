@@ -114,6 +114,13 @@ typedef enum {
 /// Hero's secondary resource amount
 @property (nonatomic) NSInteger secondaryResource;
 
+#pragma mark - Hero's collection objects
+
+/// Hero's active skills list
+@property (nonatomic, strong) NSArray *activeSkills;
+/// Hero's passive skills list
+@property (nonatomic, strong) NSArray *passiveSkills;
+
 #pragma mark - Fetch and Parse Methods
 
 /// Method parse Hero object from NSDictionary
@@ -125,5 +132,8 @@ typedef enum {
 /// Method fetches hero data from Diablo 3 API
 - (void)completeHeroProfileWithSuccess:(void (^)(D3Hero *hero))success
                                failure:(void (^)(NSError *error))failure;
+
+/// Methods updates hero's data from JSON
+- (void)parseHeroFromJSON:(NSDictionary *)json;
 
 @end

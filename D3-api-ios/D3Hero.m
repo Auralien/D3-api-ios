@@ -9,6 +9,7 @@
 #import "D3Hero.h"
 #import "D3Career.h"
 #import "D3DataManager.h"
+#import "D3Skill.h"
 
 @interface D3Hero ()
 
@@ -65,7 +66,7 @@
 
 @implementation D3Hero
 
-@synthesize heroID, battleTag, heroName, heroClass, heroGender, heroLevel, heroParagonLevel, isHardcoreHero, heroLastUpdated, killsElites, isDead, life, damage, attackSpeed, armor, strength, dexterity, vitality, intelligence, resistPhysical, resistFire, resistCold, resistLightning, resistPoison, resistArcane, critDamage, blockChance, blockAmountMin, blockAmountMax, damageIncrease, critChance, damageReduction, thorns, lifeSteal, lifePerKill, goldFind, magicFind, lifeOnHit, primaryResource, secondaryResource;
+@synthesize heroID, battleTag, heroName, heroClass, heroGender, heroLevel, heroParagonLevel, isHardcoreHero, heroLastUpdated, killsElites, isDead, life, damage, attackSpeed, armor, strength, dexterity, vitality, intelligence, resistPhysical, resistFire, resistCold, resistLightning, resistPoison, resistArcane, critDamage, blockChance, blockAmountMin, blockAmountMax, damageIncrease, critChance, damageReduction, thorns, lifeSteal, lifePerKill, goldFind, magicFind, lifeOnHit, primaryResource, secondaryResource, activeSkills, passiveSkills;
 
 #pragma mark - Fetch and Parse Methods
 
@@ -339,6 +340,45 @@
         NSDictionary *kills = json[@"kills"];
         if (kills[@"elites"]) {
             [self setKillsElites:[kills[@"elites"] integerValue]];
+        }
+    }
+    
+    if (json[@"skills"]) {
+        NSDictionary *rawSkills = json[@"skills"];
+        if (rawSkills[@"active"]) {
+            NSMutableArray *mutableActiveSkills = [NSMutableArray array];
+            
+            NSArray *rawActiveSkills = rawSkills[@"active"];
+            for (NSDictionary *rawActiveSkill in rawActiveSkills) {
+                if (rawActiveSkill[@"skill"]) {
+                    D3Skill *skill = [[D3Skill alloc] initWithJSON:rawActiveSkill[@"skill"]
+                                                  skillOwnerHeroID:self.heroID
+                                                    skillOwnerType:kD3SkillOwnerTypeHero
+                                                         skillType:kD3SkillTypeActive];
+                    [mutableActiveSkills addObject:skill];
+                }
+                
+                if (rawActiveSkill[@"rune"]) {
+                    /// TODO: Add runes support
+                }
+            }
+            
+            [self setActiveSkills:mutableActiveSkills];
+        }
+        
+        if (rawSkills[@"passive"]) {
+            NSMutableArray *mutablePassiveSkills = [NSMutableArray array];
+            
+            NSArray *rawPassiveSkills = rawSkills[@"passive"];
+            for (NSDictionary *rawPassiveSkill in rawPassiveSkills) {
+                D3Skill *skill = [[D3Skill alloc] initWithJSON:rawPassiveSkill
+                                              skillOwnerHeroID:self.heroID
+                                                skillOwnerType:kD3SkillOwnerTypeHero
+                                                     skillType:kD3SkillTypePassive];
+                [mutablePassiveSkills addObject:skill];
+            }
+            
+            [self setPassiveSkills:mutablePassiveSkills];
         }
     }
     

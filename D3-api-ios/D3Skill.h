@@ -35,14 +35,22 @@ typedef enum {
 @property (nonatomic) NSInteger skillOwnerHeroID;
 /// Type of skill's owner (hero himself or one of followers)
 @property (nonatomic) D3SkillOwnerType skillOwnerType;
+/// Skill's available level
+@property (nonatomic) NSInteger skillLevel;
+/// Skill's category ID
+@property (nonatomic, copy) NSString *skillCategoryID;
 /// Skill's icon
 @property (nonatomic, copy) NSString *skillIcon;
 /// Skill's tooltips parameters
-@property (nonatomic, copy) NSString *skillTooltipParams;
+@property (nonatomic, copy) NSString *skillTooltipURL;
 /// Skill's description
 @property (nonatomic, copy) NSString *skillDescription;
 /// Skill's simple description
 @property (nonatomic, copy) NSString *skillSimpleDescription;
+/// Skill's calculator ID
+@property (nonatomic, copy) NSString *skillCalculatorID;
+/// Skill's flavor text
+@property (nonatomic, copy) NSString *skillFlavorText;
 
 #pragma mark - Init Methods
 
@@ -59,5 +67,11 @@ typedef enum {
      tooltipParams:(NSString *)skillTooltipParamsVal
        description:(NSString *)skillDescriptionVal
  simpleDescription:(NSString *)skillSimpleDescriptionVal;
+
+/// Initialize skill object with json dictionary
+- (id)initWithJSON:(NSDictionary *)json
+  skillOwnerHeroID:(NSInteger)skillOwnerHeroIDVal
+    skillOwnerType:(D3SkillOwnerType)skillOwnerTypeVal
+         skillType:(D3SkillType)skillTypeVal;
 
 @end

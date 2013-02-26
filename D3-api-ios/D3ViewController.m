@@ -9,6 +9,7 @@
 #import "D3ViewController.h"
 #import "D3DataManager.h"
 #import "D3Career.h"
+#import "D3Hero.h"
 
 @interface D3ViewController ()
 
@@ -30,6 +31,16 @@
                                   NSLog(@"monk time played = %f", [career.timePlayedMonk doubleValue]);
                                   self.career = career;
                                   self.label.text = career.battleTag;
+                                  
+                                  /// Test Hero profiles update
+                                  for (D3Hero *hero in self.career.heroes) {
+                                      [hero completeHeroProfileWithSuccess:^(D3Hero *hero){
+                                          NSLog(@"hero = %@", hero);
+                                      }
+                                                                   failure:^(NSError *error){
+                                                                       NSLog(@"Error fetching full hero profile: %@", [error localizedDescription]);
+                                                                   }];
+                                  }
                               }
                               failure:^(NSError *error) {
                                   NSLog(@"Error happened: %@", [error localizedDescription]);

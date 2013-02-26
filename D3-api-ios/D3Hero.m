@@ -371,11 +371,13 @@
             
             NSArray *rawPassiveSkills = rawSkills[@"passive"];
             for (NSDictionary *rawPassiveSkill in rawPassiveSkills) {
-                D3Skill *skill = [[D3Skill alloc] initWithJSON:rawPassiveSkill
-                                              skillOwnerHeroID:self.heroID
-                                                skillOwnerType:kD3SkillOwnerTypeHero
-                                                     skillType:kD3SkillTypePassive];
-                [mutablePassiveSkills addObject:skill];
+                if (rawPassiveSkill[@"skill"]) {
+                    D3Skill *skill = [[D3Skill alloc] initWithJSON:rawPassiveSkill[@"skill"]
+                                                  skillOwnerHeroID:self.heroID
+                                                    skillOwnerType:kD3SkillOwnerTypeHero
+                                                         skillType:kD3SkillTypePassive];
+                    [mutablePassiveSkills addObject:skill];
+                }
             }
             
             [self setPassiveSkills:mutablePassiveSkills];

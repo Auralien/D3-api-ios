@@ -88,7 +88,7 @@
     /// Parsing follower's items into @a followerItems
     if (json[@"items"]) {
         NSDictionary *rawItems = json[@"items"];
-        NSMutableArray *mutableFollowerItems = [NSMutableArray array];
+        NSMutableArray *mutableFollowerItems = [NSMutableArray array]; /// TODO: replace of NSMutableDictionary
         
         D3ItemOwnerType itemOwnerType;
         
@@ -184,9 +184,7 @@
         
         for (NSDictionary *rawSkill in rawSkills) {
             if (rawSkill[@"skill"]) {
-                NSDictionary *rawSkill = rawSkill[@"skill"];
-                
-                D3Skill *skill = [[D3Skill alloc] initWithJSON:rawSkill
+                D3Skill *skill = [[D3Skill alloc] initWithJSON:rawSkill[@"skill"]
                                               skillOwnerHeroID:[follower followerHeroID]
                                                 skillOwnerType:skillOwnerType
                                                      skillType:kD3SkillTypeFollower];

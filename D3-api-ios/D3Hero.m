@@ -9,6 +9,7 @@
 #import "D3Hero.h"
 #import "D3Career.h"
 #import "D3DataManager.h"
+#import "D3Item.h"
 #import "D3Skill.h"
 #import "D3Follower.h"
 
@@ -350,7 +351,116 @@
     }
     
     /// Parsing items information
-    /// TODO: items parsing
+    if (json[@"items"]) {
+        NSDictionary *rawItems = json[@"items"];
+        NSMutableDictionary *mutableItems = [NSMutableDictionary dictionary];
+        
+        if (rawItems[@"head"]) {
+            D3Item *item = [[D3Item alloc] initWithJSON:rawItems[@"head"]
+                                        itemOwnerHeroID:[self heroID]
+                                          itemOwnerType:kD3ItemOwnerTypeHero
+                                               itemSlot:kD3ItemSlotHead];
+            [mutableItems setObject:item forKey:@"head"];
+        }
+        
+        if (rawItems[@"torso"]) {
+            D3Item *item = [[D3Item alloc] initWithJSON:rawItems[@"torso"]
+                                        itemOwnerHeroID:[self heroID]
+                                          itemOwnerType:kD3ItemOwnerTypeHero
+                                               itemSlot:kD3ItemSlotTorso];
+            [mutableItems setObject:item forKey:@"torso"];
+        }
+        
+        if (rawItems[@"feet"]) {
+            D3Item *item = [[D3Item alloc] initWithJSON:rawItems[@"feet"]
+                                        itemOwnerHeroID:[self heroID]
+                                          itemOwnerType:kD3ItemOwnerTypeHero
+                                               itemSlot:kD3ItemSlotFeet];
+            [mutableItems setObject:item forKey:@"feet"];
+        }
+        
+        if (rawItems[@"hands"]) {
+            D3Item *item = [[D3Item alloc] initWithJSON:rawItems[@"hands"]
+                                        itemOwnerHeroID:[self heroID]
+                                          itemOwnerType:kD3ItemOwnerTypeHero
+                                               itemSlot:kD3ItemSlotHands];
+            [mutableItems setObject:item forKey:@"hands"];
+        }
+        
+        if (rawItems[@"shoulders"]) {
+            D3Item *item = [[D3Item alloc] initWithJSON:rawItems[@"shoulders"]
+                                        itemOwnerHeroID:[self heroID]
+                                          itemOwnerType:kD3ItemOwnerTypeHero
+                                               itemSlot:kD3ItemSlotShoulders];
+            [mutableItems setObject:item forKey:@"shoulders"];
+        }
+        
+        if (rawItems[@"legs"]) {
+            D3Item *item = [[D3Item alloc] initWithJSON:rawItems[@"legs"]
+                                        itemOwnerHeroID:[self heroID]
+                                          itemOwnerType:kD3ItemOwnerTypeHero
+                                               itemSlot:kD3ItemSlotLegs];
+            [mutableItems setObject:item forKey:@"legs"];
+        }
+        
+        if (rawItems[@"bracers"]) {
+            D3Item *item = [[D3Item alloc] initWithJSON:rawItems[@"bracers"]
+                                        itemOwnerHeroID:[self heroID]
+                                          itemOwnerType:kD3ItemOwnerTypeHero
+                                               itemSlot:kD3ItemSlotBracers];
+            [mutableItems setObject:item forKey:@"bracers"];
+        }
+        
+        if (rawItems[@"mainHand"]) {
+            D3Item *item = [[D3Item alloc] initWithJSON:rawItems[@"mainHand"]
+                                        itemOwnerHeroID:[self heroID]
+                                          itemOwnerType:kD3ItemOwnerTypeHero
+                                               itemSlot:kD3ItemSlotMainHand];
+            [mutableItems setObject:item forKey:@"mainHand"];
+        }
+        
+        if (rawItems[@"offHand"]) {
+            D3Item *item = [[D3Item alloc] initWithJSON:rawItems[@"offHand"]
+                                        itemOwnerHeroID:[self heroID]
+                                          itemOwnerType:kD3ItemOwnerTypeHero
+                                               itemSlot:kD3ItemSlotOffHand];
+            [mutableItems setObject:item forKey:@"offHand"];
+        }
+        
+        if (rawItems[@"waist"]) {
+            D3Item *item = [[D3Item alloc] initWithJSON:rawItems[@"waist"]
+                                        itemOwnerHeroID:[self heroID]
+                                          itemOwnerType:kD3ItemOwnerTypeHero
+                                               itemSlot:kD3ItemSlotWaist];
+            [mutableItems setObject:item forKey:@"waist"];
+        }
+        
+        if (rawItems[@"rightFinger"]) {
+            D3Item *item = [[D3Item alloc] initWithJSON:rawItems[@"rightFinger"]
+                                        itemOwnerHeroID:[self heroID]
+                                          itemOwnerType:kD3ItemOwnerTypeHero
+                                               itemSlot:kD3ItemSlotRightFinger];
+            [mutableItems setObject:item forKey:@"rightFinger"];
+        }
+        
+        if (rawItems[@"leftFinger"]) {
+            D3Item *item = [[D3Item alloc] initWithJSON:rawItems[@"leftFinger"]
+                                        itemOwnerHeroID:[self heroID]
+                                          itemOwnerType:kD3ItemOwnerTypeHero
+                                               itemSlot:kD3ItemSlotLeftFinger];
+            [mutableItems setObject:item forKey:@"leftFinger"];
+        }
+        
+        if (rawItems[@"neck"]) {
+            D3Item *item = [[D3Item alloc] initWithJSON:rawItems[@"neck"]
+                                        itemOwnerHeroID:[self heroID]
+                                          itemOwnerType:kD3ItemOwnerTypeHero
+                                               itemSlot:kD3ItemSlotNeck];
+            [mutableItems setObject:item forKey:@"neck"];
+        }
+        
+        [self setItems:mutableItems];
+    }
     
     /// Parsing followers information
     if (json[@"followers"]) {

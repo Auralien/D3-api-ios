@@ -80,6 +80,8 @@
             [item setItemDisplayColor:kD3ItemDisplayColorYellow];
         } else if ([json[@"displayColor"] isEqualToString:@"orange"]) {
             [item setItemDisplayColor:kD3ItemDisplayColorOrange];
+        } else if ([json[@"displayColor"] isEqualToString:@"green"]) {
+            [item setItemDisplayColor:kD3ItemDisplayColorGreen];
         }
     }
     

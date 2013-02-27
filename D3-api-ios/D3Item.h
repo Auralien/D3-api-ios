@@ -13,7 +13,8 @@ typedef enum {
     kD3ItemDisplayColorWhite,
     kD3ItemDisplayColorBlue,
     kD3ItemDisplayColorYellow,
-    kD3ItemDisplayColorOrange
+    kD3ItemDisplayColorOrange,
+    kD3ItemDisplayColorGreen
 } D3ItemDisplayColor;
 
 typedef enum {

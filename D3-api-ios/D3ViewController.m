@@ -11,6 +11,9 @@
 #import "D3Career.h"
 #import "D3Hero.h"
 
+//#define kTestBattleTag      @"Auralien#2166"
+#define kTestBattleTag      @"Kanonik#2981"
+
 @interface D3ViewController ()
 
 @property (nonatomic, strong) D3Career *career;
@@ -24,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [D3Career fetchCareerForBattleTag:@"Auralien#2166"
+    [D3Career fetchCareerForBattleTag:kTestBattleTag
                                region:kD3APIRegionEurope
                               success:^(D3Career *career){
                                   NSLog(@"career battletag = %@", career.battleTag);

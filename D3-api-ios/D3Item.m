@@ -48,4 +48,46 @@
     return self;
 }
 
+/// Initialize item object with json dictionary
+- (id)initWithJSON:(NSDictionary *)json
+   itemOwnerHeroID:(NSInteger)itemOwnerHeroIDVal
+     itemOwnerType:(D3ItemOwnerType)itemOwnerTypeVal
+          itemSlot:(D3ItemSlot)itemSlotVal {
+    D3Item *item = [[D3Item alloc] init];
+    
+    [item setItemOwnerHeroID:itemOwnerHeroIDVal];
+    [item setItemOwnerType:itemOwnerTypeVal];
+    [item setItemSlot:itemSlotVal];
+    
+    if (json[@"id"]) {
+        [item setItemID:json[@"id"]];
+    }
+    
+    if (json[@"name"]) {
+        [item setItemName:json[@"name"]];
+    }
+    
+    if (json[@"icon"]) {
+        [item setItemIcon:json[@"icon"]];
+    }
+    
+    if (json[@"displayColor"]) {
+        if ([json[@"displayColor"] isEqualToString:@"white"]) {
+            [item setItemDisplayColor:kD3ItemDisplayColorWhite];
+        } else if ([json[@"displayColor"] isEqualToString:@"blue"]) {
+            [item setItemDisplayColor:kD3ItemDisplayColorBlue];
+        } else if ([json[@"displayColor"] isEqualToString:@"yellow"]) {
+            [item setItemDisplayColor:kD3ItemDisplayColorYellow];
+        } else if ([json[@"displayColor"] isEqualToString:@"orange"]) {
+            [item setItemDisplayColor:kD3ItemDisplayColorOrange];
+        }
+    }
+    
+    if (json[@"tooltipParams"]) {
+        [item setItemTooltipParams:json[@"tooltipParams"]];
+    }
+    
+    return item;
+}
+
 @end

@@ -336,6 +336,7 @@
              primaryResource:[heroStats[@"primaryResource"] integerValue]
            secondaryResource:[heroStats[@"secondaryResource"] integerValue]];
     
+    /// Parsing kills information
     if (json[@"kills"]) {
         NSDictionary *kills = json[@"kills"];
         if (kills[@"elites"]) {
@@ -343,8 +344,10 @@
         }
     }
     
+    /// Parsing skills information
     if (json[@"skills"]) {
         NSDictionary *rawSkills = json[@"skills"];
+        /// Parsing active skills
         if (rawSkills[@"active"]) {
             NSMutableArray *mutableActiveSkills = [NSMutableArray array];
             
@@ -366,6 +369,7 @@
             [self setActiveSkills:mutableActiveSkills];
         }
         
+        /// Parsing passive skills
         if (rawSkills[@"passive"]) {
             NSMutableArray *mutablePassiveSkills = [NSMutableArray array];
             

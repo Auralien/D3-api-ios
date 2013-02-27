@@ -76,4 +76,10 @@ typedef enum {
     displayColor:(D3ItemDisplayColor)itemDisplayColorVal
    tooltipParams:(NSString *)itemTooltipParamsVal;
 
+/// Initialize item object with json dictionary
+- (id)initWithJSON:(NSDictionary *)json
+   itemOwnerHeroID:(NSInteger)itemOwnerHeroIDVal
+     itemOwnerType:(D3ItemOwnerType)itemOwnerTypeVal
+          itemSlot:(D3ItemSlot)itemSlotVal;
+
 @end

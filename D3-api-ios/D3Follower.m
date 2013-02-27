@@ -88,7 +88,7 @@
     /// Parsing follower's items into @a followerItems
     if (json[@"items"]) {
         NSDictionary *rawItems = json[@"items"];
-        NSMutableArray *mutableFollowerItems = [NSMutableArray array]; /// TODO: replace of NSMutableDictionary
+        NSMutableDictionary *mutableFollowerItems = [NSMutableDictionary dictionary];
         
         D3ItemOwnerType itemOwnerType;
         
@@ -113,7 +113,7 @@
                                                itemOwnerHeroID:[follower followerHeroID]
                                                  itemOwnerType:itemOwnerType
                                                       itemSlot:kD3ItemSlotSpecial];
-            [mutableFollowerItems addObject:specialItem];
+            [mutableFollowerItems setObject:specialItem forKey:@"special"];
         }
         
         if (rawItems[@"mainHand"]) {
@@ -121,7 +121,7 @@
                                                 itemOwnerHeroID:[follower followerHeroID]
                                                   itemOwnerType:itemOwnerType
                                                        itemSlot:kD3ItemSlotMainHand];
-            [mutableFollowerItems addObject:mainHandItem];
+            [mutableFollowerItems setObject:mainHandItem forKey:@"mainHand"];
         }
         
         if (rawItems[@"offHand"]) {
@@ -129,7 +129,7 @@
                                                itemOwnerHeroID:[follower followerHeroID]
                                                  itemOwnerType:itemOwnerType
                                                       itemSlot:kD3ItemSlotOffHand];
-            [mutableFollowerItems addObject:offHandItem];
+            [mutableFollowerItems setObject:offHandItem forKey:@"offHand"];
         }
         
         if (rawItems[@"rightFinger"]) {
@@ -137,7 +137,7 @@
                                                    itemOwnerHeroID:[follower followerHeroID]
                                                      itemOwnerType:itemOwnerType
                                                           itemSlot:kD3ItemSlotRightFinger];
-            [mutableFollowerItems addObject:rightFingerItem];
+            [mutableFollowerItems setObject:rightFingerItem forKey:@"rightFinger"];
         }
         
         if (rawItems[@"leftFinger"]) {
@@ -145,7 +145,7 @@
                                                   itemOwnerHeroID:[follower followerHeroID]
                                                     itemOwnerType:itemOwnerType
                                                          itemSlot:kD3ItemSlotLeftFinger];
-            [mutableFollowerItems addObject:leftFingerItem];
+            [mutableFollowerItems setObject:leftFingerItem forKey:@"leftFinger"];
         }
         
         if (rawItems[@"neck"]) {
@@ -153,7 +153,7 @@
                                             itemOwnerHeroID:[follower followerHeroID]
                                               itemOwnerType:itemOwnerType
                                                    itemSlot:kD3ItemSlotNeck];
-            [mutableFollowerItems addObject:neckItem];
+            [mutableFollowerItems setObject:neckItem forKey:@"neck"];
         }
         
         [self setFollowerItems:mutableFollowerItems];

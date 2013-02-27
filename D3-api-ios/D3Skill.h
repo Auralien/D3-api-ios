@@ -54,7 +54,7 @@ typedef enum {
 
 #pragma mark - Init Methods
 
-/// Initialize hero object with zero values
+/// Initialize skill object with zero values
 - (id)init;
 
 /// Initialize skill object with defined values

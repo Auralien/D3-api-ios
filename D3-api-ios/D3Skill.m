@@ -14,7 +14,7 @@
 
 #pragma mark - Init Methods
 
-/// Initialize hero object with zero values
+/// Initialize skill object with zero values
 - (id)init {
     if (self = [super init]) {
         [self setSkillSlug:@""];

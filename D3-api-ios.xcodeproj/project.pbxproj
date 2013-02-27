@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5003452C16DE80B000A6CB1C /* D3Rune.m in Sources */ = {isa = PBXBuildFile; fileRef = 5003452B16DE80B000A6CB1C /* D3Rune.m */; };
 		502A528A16D69203000A0074 /* D3HeroCompletedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = 502A528916D69202000A0074 /* D3HeroCompletedQuest.m */; };
 		502A528D16D69397000A0074 /* D3CareerCompletedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = 502A528C16D69397000A0074 /* D3CareerCompletedQuest.m */; };
 		50463E9E16D09C61004C2ED6 /* D3DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50463E9D16D09C61004C2ED6 /* D3DataManager.m */; };
@@ -36,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5003452A16DE80B000A6CB1C /* D3Rune.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Rune.h; sourceTree = "<group>"; };
+		5003452B16DE80B000A6CB1C /* D3Rune.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Rune.m; sourceTree = "<group>"; };
 		502A528816D69202000A0074 /* D3HeroCompletedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3HeroCompletedQuest.h; sourceTree = "<group>"; };
 		502A528916D69202000A0074 /* D3HeroCompletedQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3HeroCompletedQuest.m; sourceTree = "<group>"; };
 		502A528B16D69397000A0074 /* D3CareerCompletedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3CareerCompletedQuest.h; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				50E5A5A716C9FFC700D21111 /* D3Hero.m */,
 				8BDADAE416CE3C6C00B90CE7 /* D3Skill.h */,
 				8BDADAE516CE3C6C00B90CE7 /* D3Skill.m */,
+				5003452A16DE80B000A6CB1C /* D3Rune.h */,
+				5003452B16DE80B000A6CB1C /* D3Rune.m */,
 				50E5A5A916C9FFE900D21111 /* D3Item.h */,
 				50E5A5AA16C9FFE900D21111 /* D3Item.m */,
 				50E5A5AC16C9FFF600D21111 /* D3Follower.h */,
@@ -281,6 +286,7 @@
 				8B92685A16D625A300E1A230 /* D3CompletedQuest.m in Sources */,
 				502A528A16D69203000A0074 /* D3HeroCompletedQuest.m in Sources */,
 				502A528D16D69397000A0074 /* D3CareerCompletedQuest.m in Sources */,
+				5003452C16DE80B000A6CB1C /* D3Rune.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

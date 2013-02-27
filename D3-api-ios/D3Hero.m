@@ -11,6 +11,7 @@
 #import "D3DataManager.h"
 #import "D3Item.h"
 #import "D3Skill.h"
+#import "D3Rune.h"
 #import "D3Follower.h"
 
 @interface D3Hero ()
@@ -321,10 +322,11 @@
                                                     skillOwnerType:kD3SkillOwnerTypeHero
                                                          skillType:kD3SkillTypeActive];
                     [mutableActiveSkills addObject:skill];
-                }
-                
-                if (rawActiveSkill[@"rune"]) {
-                    /// TODO: Add runes support
+                    
+                    if (rawActiveSkill[@"rune"]) {
+                        D3Rune *rune = [[D3Rune alloc] initWithJSON:rawActiveSkill[@"rune"] ownerHeroID:self.heroID ownerType:kD3OwnerTypeHero skillID:skill.skillSlug];
+                        /// TODO: Add rune to skill (add rune property in skill class)
+                    }
                 }
             }
             

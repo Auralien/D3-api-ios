@@ -10,6 +10,14 @@
 
 #define kDatabase @"d3.sqlite3"
 
+typedef enum {
+    kD3OwnerTypeUndefined,
+    kD3OwnerTypeHero,
+    kD3OwnerTypeTemplar,
+    kD3OwnerTypeScoundrel,
+    kD3OwnerTypeEnchantress
+} D3OwnerType;
+
 @interface D3Object : NSObject
 
 @end

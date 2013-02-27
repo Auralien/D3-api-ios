@@ -30,7 +30,7 @@ typedef enum {
 /// Follower's experience bonus
 @property (nonatomic) NSInteger followerExperienceBonus;
 /// Follower's items list
-@property (nonatomic, strong) NSArray *followerItems;
+@property (nonatomic, strong) NSDictionary *followerItems;
 /// Follower's skills list
 @property (nonatomic, strong) NSArray *followerSkills;
 

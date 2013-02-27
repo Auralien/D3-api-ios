@@ -120,6 +120,8 @@ typedef enum {
 @property (nonatomic, strong) NSArray *activeSkills;
 /// Hero's passive skills list
 @property (nonatomic, strong) NSArray *passiveSkills;
+/// Hero's followers list
+@property (nonatomic, strong) NSDictionary *followers;
 
 #pragma mark - Fetch and Parse Methods
 

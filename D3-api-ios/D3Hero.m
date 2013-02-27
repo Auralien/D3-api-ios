@@ -10,6 +10,7 @@
 #import "D3Career.h"
 #import "D3DataManager.h"
 #import "D3Skill.h"
+#import "D3Follower.h"
 
 @interface D3Hero ()
 
@@ -66,7 +67,7 @@
 
 @implementation D3Hero
 
-@synthesize heroID, battleTag, heroName, heroClass, heroGender, heroLevel, heroParagonLevel, isHardcoreHero, heroLastUpdated, killsElites, isDead, life, damage, attackSpeed, armor, strength, dexterity, vitality, intelligence, resistPhysical, resistFire, resistCold, resistLightning, resistPoison, resistArcane, critDamage, blockChance, blockAmountMin, blockAmountMax, damageIncrease, critChance, damageReduction, thorns, lifeSteal, lifePerKill, goldFind, magicFind, lifeOnHit, primaryResource, secondaryResource, activeSkills, passiveSkills;
+@synthesize heroID, battleTag, heroName, heroClass, heroGender, heroLevel, heroParagonLevel, isHardcoreHero, heroLastUpdated, killsElites, isDead, life, damage, attackSpeed, armor, strength, dexterity, vitality, intelligence, resistPhysical, resistFire, resistCold, resistLightning, resistPoison, resistArcane, critDamage, blockChance, blockAmountMin, blockAmountMax, damageIncrease, critChance, damageReduction, thorns, lifeSteal, lifePerKill, goldFind, magicFind, lifeOnHit, primaryResource, secondaryResource, activeSkills, passiveSkills, followers;
 
 #pragma mark - Fetch and Parse Methods
 
@@ -304,46 +305,6 @@
 
 /// Methods updates hero's data from JSON
 - (void)parseHeroFromJSON:(NSDictionary *)json {
-    NSDictionary *heroStats = json[@"stats"];
-    
-    [self updateHeroWithLife:[heroStats[@"life"] integerValue]
-                      damage:[NSNumber numberWithDouble:[heroStats[@"damage"] doubleValue]]
-                 attackSpeed:[NSNumber numberWithDouble:[heroStats[@"attackSpeed"] doubleValue]]
-                       armor:[heroStats[@"armor"] integerValue]
-                    strength:[heroStats[@"strength"] integerValue]
-                   dexterity:[heroStats[@"dexterity"] integerValue]
-                    vitality:[heroStats[@"vitality"] integerValue]
-                intelligence:[heroStats[@"intelligence"] integerValue]
-              resistPhysical:[heroStats[@"physicalResist"] integerValue]
-                  resistFire:[heroStats[@"fireResist"] integerValue]
-                  resistCold:[heroStats[@"coldResist"] integerValue]
-             resistLightning:[heroStats[@"lightningResist"] integerValue]
-                resistPoison:[heroStats[@"poisonResist"] integerValue]
-                resistArcane:[heroStats[@"arcaneResist"] integerValue]
-                  critDamage:[NSNumber numberWithDouble:[heroStats[@"critDamage"] doubleValue]]
-                 blockChance:[NSNumber numberWithDouble:[heroStats[@"blockChance"] doubleValue]]
-              blockAmountMin:[heroStats[@"blockAmountMin"] integerValue]
-              blockAmountMax:[heroStats[@"blockAmountMax"] integerValue]
-              damageIncrease:[NSNumber numberWithDouble:[heroStats[@"damageIncrease"] doubleValue]]
-                  critChance:[NSNumber numberWithDouble:[heroStats[@"critChance"] doubleValue]]
-             damageReduction:[NSNumber numberWithDouble:[heroStats[@"damageReduction"] doubleValue]]
-                      thorns:[NSNumber numberWithDouble:[heroStats[@"thorns"] doubleValue]]
-                   lifeSteal:[NSNumber numberWithDouble:[heroStats[@"lifeSteal"] doubleValue]]
-                 lifePerKill:[NSNumber numberWithDouble:[heroStats[@"lifePerKill"] doubleValue]]
-                    goldFind:[NSNumber numberWithDouble:[heroStats[@"goldFind"] doubleValue]]
-                   magicFind:[NSNumber numberWithDouble:[heroStats[@"magicFind"] doubleValue]]
-                   lifeOnHit:[NSNumber numberWithDouble:[heroStats[@"lifeOnHit"] doubleValue]]
-             primaryResource:[heroStats[@"primaryResource"] integerValue]
-           secondaryResource:[heroStats[@"secondaryResource"] integerValue]];
-    
-    /// Parsing kills information
-    if (json[@"kills"]) {
-        NSDictionary *kills = json[@"kills"];
-        if (kills[@"elites"]) {
-            [self setKillsElites:[kills[@"elites"] integerValue]];
-        }
-    }
-    
     /// Parsing skills information
     if (json[@"skills"]) {
         NSDictionary *rawSkills = json[@"skills"];
@@ -388,6 +349,88 @@
         }
     }
     
+    /// Parsing items information
+    /// TODO: items parsing
+    
+    /// Parsing followers information
+    if (json[@"followers"]) {
+        NSDictionary *rawFollowers = json[@"followers"];
+        
+        NSMutableDictionary *mutableFollowers = [NSMutableDictionary dictionary];
+        
+        D3Follower *templar, *scoundrel, *enchantress;
+        
+        if (rawFollowers[@"templar"]) {
+            templar = [[D3Follower alloc] initWithJSON:rawFollowers[@"templar"]
+                                        followerHeroID:self.heroID];
+            [mutableFollowers setObject:templar forKey:@"templar"];
+        }
+        
+        if (rawFollowers[@"scoundrel"]) {
+            scoundrel = [[D3Follower alloc] initWithJSON:rawFollowers[@"scoundrel"]
+                                          followerHeroID:self.heroID];
+            [mutableFollowers setObject:scoundrel forKey:@"scoundrel"];
+        }
+        
+        if (rawFollowers[@"enchantress"]) {
+            enchantress = [[D3Follower alloc] initWithJSON:rawFollowers[@"enchantress"]
+                                            followerHeroID:self.heroID];
+            [mutableFollowers setObject:enchantress forKey:@"enchantress"];
+        }
+        
+        [self setFollowers:mutableFollowers];
+    }
+    
+    /// Parsing stats information
+    if (json[@"stats"]) {
+        NSDictionary *heroStats = json[@"stats"];
+        
+        [self updateHeroWithLife:[heroStats[@"life"] integerValue]
+                          damage:[NSNumber numberWithDouble:[heroStats[@"damage"] doubleValue]]
+                     attackSpeed:[NSNumber numberWithDouble:[heroStats[@"attackSpeed"] doubleValue]]
+                           armor:[heroStats[@"armor"] integerValue]
+                        strength:[heroStats[@"strength"] integerValue]
+                       dexterity:[heroStats[@"dexterity"] integerValue]
+                        vitality:[heroStats[@"vitality"] integerValue]
+                    intelligence:[heroStats[@"intelligence"] integerValue]
+                  resistPhysical:[heroStats[@"physicalResist"] integerValue]
+                      resistFire:[heroStats[@"fireResist"] integerValue]
+                      resistCold:[heroStats[@"coldResist"] integerValue]
+                 resistLightning:[heroStats[@"lightningResist"] integerValue]
+                    resistPoison:[heroStats[@"poisonResist"] integerValue]
+                    resistArcane:[heroStats[@"arcaneResist"] integerValue]
+                      critDamage:[NSNumber numberWithDouble:[heroStats[@"critDamage"] doubleValue]]
+                     blockChance:[NSNumber numberWithDouble:[heroStats[@"blockChance"] doubleValue]]
+                  blockAmountMin:[heroStats[@"blockAmountMin"] integerValue]
+                  blockAmountMax:[heroStats[@"blockAmountMax"] integerValue]
+                  damageIncrease:[NSNumber numberWithDouble:[heroStats[@"damageIncrease"] doubleValue]]
+                      critChance:[NSNumber numberWithDouble:[heroStats[@"critChance"] doubleValue]]
+                 damageReduction:[NSNumber numberWithDouble:[heroStats[@"damageReduction"] doubleValue]]
+                          thorns:[NSNumber numberWithDouble:[heroStats[@"thorns"] doubleValue]]
+                       lifeSteal:[NSNumber numberWithDouble:[heroStats[@"lifeSteal"] doubleValue]]
+                     lifePerKill:[NSNumber numberWithDouble:[heroStats[@"lifePerKill"] doubleValue]]
+                        goldFind:[NSNumber numberWithDouble:[heroStats[@"goldFind"] doubleValue]]
+                       magicFind:[NSNumber numberWithDouble:[heroStats[@"magicFind"] doubleValue]]
+                       lifeOnHit:[NSNumber numberWithDouble:[heroStats[@"lifeOnHit"] doubleValue]]
+                 primaryResource:[heroStats[@"primaryResource"] integerValue]
+               secondaryResource:[heroStats[@"secondaryResource"] integerValue]];
+    }
+    
+    /// Parsing progress information
+    /// TODO: progress parsing
+    
+    /// Parsing kills information
+    if (json[@"kills"]) {
+        NSDictionary *kills = json[@"kills"];
+        if (kills[@"elites"]) {
+            [self setKillsElites:[kills[@"elites"] integerValue]];
+        }
+    }
+    
+    /// Parsing last updated timestamp
+    if (json[@"last-updated"]) {
+        [self setHeroLastUpdated:[NSDate dateWithTimeIntervalSince1970:[json[@"last-updated"] doubleValue]]];
+    }
     
 }
 

@@ -23,6 +23,8 @@ typedef enum {
     kD3SkillOwnerTypeFollowerEnchantress
 } D3SkillOwnerType;
 
+@class D3Rune;
+
 @interface D3Skill : D3Object
 
 /// Skill ID
@@ -51,6 +53,8 @@ typedef enum {
 @property (nonatomic, copy) NSString *skillCalculatorID;
 /// Skill's flavor text
 @property (nonatomic, copy) NSString *skillFlavorText;
+/// Skill's rune
+@property (nonatomic, strong) D3Rune *skillRune;
 
 #pragma mark - Init Methods
 

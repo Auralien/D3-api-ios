@@ -18,11 +18,13 @@
 
 @property (nonatomic, strong) D3Career *career;
 
+@property (nonatomic, weak) IBOutlet UIImageView *classImage;
+
 @end
 
 @implementation D3ViewController
 
-@synthesize label;
+@synthesize label, classImage;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,10 +37,33 @@
                                   self.career = career;
                                   self.label.text = career.battleTag;
                                   
+                                  
+                                  
                                   /// Test Hero profiles update
                                   for (D3Hero *hero in self.career.heroes) {
                                       [hero completeHeroProfileWithSuccess:^(D3Hero *hero){
                                           NSLog(@"hero = %@", hero);
+                                          
+                                          switch (hero.heroClass) {
+                                              case kD3HeroClassBarbarian:
+                                                  [self.classImage setImage:[UIImage imageNamed:@"BarbarianCrest.png"]];
+                                                  break;
+                                              case kD3HeroClassDemonHunter:
+                                                  [self.classImage setImage:[UIImage imageNamed:@"DemonHunterCrest.png"]];
+                                                  break;
+                                              case kD3HeroClassMonk:
+                                                  [self.classImage setImage:[UIImage imageNamed:@"MonkCrest.png"]];
+                                                  break;
+                                              case kD3HeroClassWitchDoctor:
+                                                  [self.classImage setImage:[UIImage imageNamed:@"WitchDoctorCrest.png"]];
+                                                  break;
+                                              case kD3HeroClassWizard:
+                                                  [self.classImage setImage:[UIImage imageNamed:@"Wizard.png"]];
+                                                  break;
+                                                  
+                                              default:
+                                                  break;
+                                          }
                                       }
                                                                    failure:^(NSError *error){
                                                                        NSLog(@"Error fetching full hero profile: %@", [error localizedDescription]);

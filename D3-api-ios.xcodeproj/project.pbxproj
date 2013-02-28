@@ -29,6 +29,11 @@
 		50E5A5AB16C9FFEA00D21111 /* D3Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5AA16C9FFE900D21111 /* D3Item.m */; };
 		50E5A5AE16C9FFF600D21111 /* D3Follower.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5AD16C9FFF600D21111 /* D3Follower.m */; };
 		50E5A5B116CA000200D21111 /* D3Artisan.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5B016CA000200D21111 /* D3Artisan.m */; };
+		8B3E9B0316DF1E7200F42BBD /* BarbarianCrest.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9AFE16DF1E7200F42BBD /* BarbarianCrest.png */; };
+		8B3E9B0416DF1E7200F42BBD /* DemonHunterCrest.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9AFF16DF1E7200F42BBD /* DemonHunterCrest.png */; };
+		8B3E9B0516DF1E7200F42BBD /* MonkCrest.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B0016DF1E7200F42BBD /* MonkCrest.png */; };
+		8B3E9B0616DF1E7200F42BBD /* WitchDoctorCrest.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B0116DF1E7200F42BBD /* WitchDoctorCrest.png */; };
+		8B3E9B0716DF1E7200F42BBD /* WizardCrest.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B0216DF1E7200F42BBD /* WizardCrest.png */; };
 		8B92685A16D625A300E1A230 /* D3CompletedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B92685916D625A300E1A230 /* D3CompletedQuest.m */; };
 		8BDADAE616CE3C6D00B90CE7 /* D3Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDADAE516CE3C6C00B90CE7 /* D3Skill.m */; };
 		8BDEAB8E16CB9433001734FC /* D3Progression.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEAB8D16CB9433001734FC /* D3Progression.m */; };
@@ -74,6 +79,11 @@
 		50E5A5AD16C9FFF600D21111 /* D3Follower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Follower.m; sourceTree = "<group>"; };
 		50E5A5AF16CA000200D21111 /* D3Artisan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Artisan.h; sourceTree = "<group>"; };
 		50E5A5B016CA000200D21111 /* D3Artisan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Artisan.m; sourceTree = "<group>"; };
+		8B3E9AFE16DF1E7200F42BBD /* BarbarianCrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BarbarianCrest.png; sourceTree = "<group>"; };
+		8B3E9AFF16DF1E7200F42BBD /* DemonHunterCrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DemonHunterCrest.png; sourceTree = "<group>"; };
+		8B3E9B0016DF1E7200F42BBD /* MonkCrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MonkCrest.png; sourceTree = "<group>"; };
+		8B3E9B0116DF1E7200F42BBD /* WitchDoctorCrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WitchDoctorCrest.png; sourceTree = "<group>"; };
+		8B3E9B0216DF1E7200F42BBD /* WizardCrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WizardCrest.png; sourceTree = "<group>"; };
 		8B92685816D625A300E1A230 /* D3CompletedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3CompletedQuest.h; sourceTree = "<group>"; };
 		8B92685916D625A300E1A230 /* D3CompletedQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3CompletedQuest.m; sourceTree = "<group>"; };
 		8BDADAE416CE3C6C00B90CE7 /* D3Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Skill.h; sourceTree = "<group>"; };
@@ -142,6 +152,11 @@
 		50E5A58216C9FE8A00D21111 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8B3E9AFE16DF1E7200F42BBD /* BarbarianCrest.png */,
+				8B3E9AFF16DF1E7200F42BBD /* DemonHunterCrest.png */,
+				8B3E9B0016DF1E7200F42BBD /* MonkCrest.png */,
+				8B3E9B0116DF1E7200F42BBD /* WitchDoctorCrest.png */,
+				8B3E9B0216DF1E7200F42BBD /* WizardCrest.png */,
 				50E5A58316C9FE8A00D21111 /* D3-api-ios-Info.plist */,
 				50E5A58416C9FE8A00D21111 /* InfoPlist.strings */,
 				50E5A58716C9FE8A00D21111 /* main.m */,
@@ -259,6 +274,11 @@
 				50E5A59016C9FE8A00D21111 /* Default@2x.png in Resources */,
 				50E5A59216C9FE8A00D21111 /* Default-568h@2x.png in Resources */,
 				50E5A59816C9FE8A00D21111 /* D3ViewController.xib in Resources */,
+				8B3E9B0316DF1E7200F42BBD /* BarbarianCrest.png in Resources */,
+				8B3E9B0416DF1E7200F42BBD /* DemonHunterCrest.png in Resources */,
+				8B3E9B0516DF1E7200F42BBD /* MonkCrest.png in Resources */,
+				8B3E9B0616DF1E7200F42BBD /* WitchDoctorCrest.png in Resources */,
+				8B3E9B0716DF1E7200F42BBD /* WizardCrest.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

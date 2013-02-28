@@ -321,12 +321,17 @@
                                                   skillOwnerHeroID:self.heroID
                                                     skillOwnerType:kD3SkillOwnerTypeHero
                                                          skillType:kD3SkillTypeActive];
-                    [mutableActiveSkills addObject:skill];
                     
                     if (rawActiveSkill[@"rune"]) {
-                        D3Rune *rune = [[D3Rune alloc] initWithJSON:rawActiveSkill[@"rune"] ownerHeroID:self.heroID ownerType:kD3OwnerTypeHero skillID:skill.skillSlug];
-                        /// TODO: Add rune to skill (add rune property in skill class)
+                        D3Rune *rune = [[D3Rune alloc] initWithJSON:rawActiveSkill[@"rune"]
+                                                        ownerHeroID:self.heroID
+                                                          ownerType:kD3OwnerTypeHero
+                                                            skillID:skill.skillSlug];
+                        
+                        [skill setSkillRune:rune];
                     }
+                    
+                    [mutableActiveSkills addObject:skill];
                 }
             }
             

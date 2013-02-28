@@ -10,7 +10,7 @@
 
 @implementation D3Skill
 
-@synthesize skillSlug, skillName, skillType, skillOwnerHeroID, skillOwnerType, skillLevel, skillCategoryID, skillIcon, skillTooltipURL, skillDescription, skillSimpleDescription, skillCalculatorID, skillFlavorText;
+@synthesize skillSlug, skillName, skillType, skillOwnerHeroID, skillOwnerType, skillLevel, skillCategoryID, skillIcon, skillTooltipURL, skillDescription, skillSimpleDescription, skillCalculatorID, skillFlavorText, skillRune;
 
 #pragma mark - Init Methods
 

@@ -8,7 +8,7 @@
 
 #import "D3AppDelegate.h"
 
-#import "D3ViewController.h"
+#import "D3CareerVC.h"
 
 @implementation D3AppDelegate
 
@@ -16,7 +16,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[D3ViewController alloc] initWithNibName:@"D3ViewController" bundle:nil];
+    self.viewController = [[D3CareerVC alloc] initWithNibName:@"D3CareerView" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

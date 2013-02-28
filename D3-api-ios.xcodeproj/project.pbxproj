@@ -20,8 +20,6 @@
 		50E5A58E16C9FE8A00D21111 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E5A58D16C9FE8A00D21111 /* Default.png */; };
 		50E5A59016C9FE8A00D21111 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E5A58F16C9FE8A00D21111 /* Default@2x.png */; };
 		50E5A59216C9FE8A00D21111 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E5A59116C9FE8A00D21111 /* Default-568h@2x.png */; };
-		50E5A59516C9FE8A00D21111 /* D3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A59416C9FE8A00D21111 /* D3ViewController.m */; };
-		50E5A59816C9FE8A00D21111 /* D3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E5A59616C9FE8A00D21111 /* D3ViewController.xib */; };
 		50E5A59F16C9FECD00D21111 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E5A59E16C9FECD00D21111 /* libsqlite3.dylib */; };
 		50E5A5A216C9FEF500D21111 /* D3Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5A116C9FEF500D21111 /* D3Object.m */; };
 		50E5A5A516C9FFB200D21111 /* D3Career.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5A5A416C9FFB200D21111 /* D3Career.m */; };
@@ -34,6 +32,9 @@
 		8B3E9B0516DF1E7200F42BBD /* MonkCrest.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B0016DF1E7200F42BBD /* MonkCrest.png */; };
 		8B3E9B0616DF1E7200F42BBD /* WitchDoctorCrest.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B0116DF1E7200F42BBD /* WitchDoctorCrest.png */; };
 		8B3E9B0716DF1E7200F42BBD /* WizardCrest.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B0216DF1E7200F42BBD /* WizardCrest.png */; };
+		8B3E9B1316DF61C600F42BBD /* D3CareerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B1216DF61C500F42BBD /* D3CareerVC.m */; };
+		8B3E9B1516DF61E200F42BBD /* D3CareerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B1416DF61E200F42BBD /* D3CareerView.xib */; };
+		8B3E9B1716DF645400F42BBD /* CareerArtisans.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B1616DF645400F42BBD /* CareerArtisans.jpg */; };
 		8B92685A16D625A300E1A230 /* D3CompletedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B92685916D625A300E1A230 /* D3CompletedQuest.m */; };
 		8BDADAE616CE3C6D00B90CE7 /* D3Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDADAE516CE3C6C00B90CE7 /* D3Skill.m */; };
 		8BDEAB8E16CB9433001734FC /* D3Progression.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEAB8D16CB9433001734FC /* D3Progression.m */; };
@@ -63,9 +64,6 @@
 		50E5A58D16C9FE8A00D21111 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		50E5A58F16C9FE8A00D21111 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		50E5A59116C9FE8A00D21111 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		50E5A59316C9FE8A00D21111 /* D3ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = D3ViewController.h; sourceTree = "<group>"; };
-		50E5A59416C9FE8A00D21111 /* D3ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = D3ViewController.m; sourceTree = "<group>"; };
-		50E5A59716C9FE8A00D21111 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/D3ViewController.xib; sourceTree = "<group>"; };
 		50E5A59E16C9FECD00D21111 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		50E5A5A016C9FEF500D21111 /* D3Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Object.h; sourceTree = "<group>"; };
 		50E5A5A116C9FEF500D21111 /* D3Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Object.m; sourceTree = "<group>"; };
@@ -84,6 +82,10 @@
 		8B3E9B0016DF1E7200F42BBD /* MonkCrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MonkCrest.png; sourceTree = "<group>"; };
 		8B3E9B0116DF1E7200F42BBD /* WitchDoctorCrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WitchDoctorCrest.png; sourceTree = "<group>"; };
 		8B3E9B0216DF1E7200F42BBD /* WizardCrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WizardCrest.png; sourceTree = "<group>"; };
+		8B3E9B1116DF61C500F42BBD /* D3CareerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3CareerVC.h; sourceTree = "<group>"; };
+		8B3E9B1216DF61C500F42BBD /* D3CareerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3CareerVC.m; sourceTree = "<group>"; };
+		8B3E9B1416DF61E200F42BBD /* D3CareerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = D3CareerView.xib; sourceTree = "<group>"; };
+		8B3E9B1616DF645400F42BBD /* CareerArtisans.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CareerArtisans.jpg; sourceTree = "<group>"; };
 		8B92685816D625A300E1A230 /* D3CompletedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3CompletedQuest.h; sourceTree = "<group>"; };
 		8B92685916D625A300E1A230 /* D3CompletedQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3CompletedQuest.m; sourceTree = "<group>"; };
 		8BDADAE416CE3C6C00B90CE7 /* D3Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Skill.h; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 		50E5A58216C9FE8A00D21111 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8B3E9B1616DF645400F42BBD /* CareerArtisans.jpg */,
 				8B3E9AFE16DF1E7200F42BBD /* BarbarianCrest.png */,
 				8B3E9AFF16DF1E7200F42BBD /* DemonHunterCrest.png */,
 				8B3E9B0016DF1E7200F42BBD /* MonkCrest.png */,
@@ -210,9 +213,9 @@
 			children = (
 				50E5A58A16C9FE8A00D21111 /* D3AppDelegate.h */,
 				50E5A58B16C9FE8A00D21111 /* D3AppDelegate.m */,
-				50E5A59316C9FE8A00D21111 /* D3ViewController.h */,
-				50E5A59416C9FE8A00D21111 /* D3ViewController.m */,
-				50E5A59616C9FE8A00D21111 /* D3ViewController.xib */,
+				8B3E9B1116DF61C500F42BBD /* D3CareerVC.h */,
+				8B3E9B1216DF61C500F42BBD /* D3CareerVC.m */,
+				8B3E9B1416DF61E200F42BBD /* D3CareerView.xib */,
 			);
 			name = "app-classes";
 			sourceTree = "<group>";
@@ -273,12 +276,13 @@
 				50E5A58E16C9FE8A00D21111 /* Default.png in Resources */,
 				50E5A59016C9FE8A00D21111 /* Default@2x.png in Resources */,
 				50E5A59216C9FE8A00D21111 /* Default-568h@2x.png in Resources */,
-				50E5A59816C9FE8A00D21111 /* D3ViewController.xib in Resources */,
 				8B3E9B0316DF1E7200F42BBD /* BarbarianCrest.png in Resources */,
 				8B3E9B0416DF1E7200F42BBD /* DemonHunterCrest.png in Resources */,
 				8B3E9B0516DF1E7200F42BBD /* MonkCrest.png in Resources */,
 				8B3E9B0616DF1E7200F42BBD /* WitchDoctorCrest.png in Resources */,
 				8B3E9B0716DF1E7200F42BBD /* WizardCrest.png in Resources */,
+				8B3E9B1516DF61E200F42BBD /* D3CareerView.xib in Resources */,
+				8B3E9B1716DF645400F42BBD /* CareerArtisans.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +295,6 @@
 			files = (
 				50E5A58816C9FE8A00D21111 /* main.m in Sources */,
 				50E5A58C16C9FE8A00D21111 /* D3AppDelegate.m in Sources */,
-				50E5A59516C9FE8A00D21111 /* D3ViewController.m in Sources */,
 				50E5A5A216C9FEF500D21111 /* D3Object.m in Sources */,
 				50E5A5A516C9FFB200D21111 /* D3Career.m in Sources */,
 				50E5A5A816C9FFC700D21111 /* D3Hero.m in Sources */,
@@ -307,6 +310,7 @@
 				502A528A16D69203000A0074 /* D3HeroCompletedQuest.m in Sources */,
 				502A528D16D69397000A0074 /* D3CareerCompletedQuest.m in Sources */,
 				5003452C16DE80B000A6CB1C /* D3Rune.m in Sources */,
+				8B3E9B1316DF61C600F42BBD /* D3CareerVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,14 +323,6 @@
 				50E5A58516C9FE8A00D21111 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		50E5A59616C9FE8A00D21111 /* D3ViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				50E5A59716C9FE8A00D21111 /* en */,
-			);
-			name = D3ViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

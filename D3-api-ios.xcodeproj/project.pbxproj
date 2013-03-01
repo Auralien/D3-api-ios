@@ -50,6 +50,8 @@
 		8B3E9B1316DF61C600F42BBD /* D3CareerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B1216DF61C500F42BBD /* D3CareerVC.m */; };
 		8B3E9B1516DF61E200F42BBD /* D3CareerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B1416DF61E200F42BBD /* D3CareerView.xib */; };
 		8B3E9B1716DF645400F42BBD /* CareerArtisans.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B1616DF645400F42BBD /* CareerArtisans.jpg */; };
+		8B3E9B2B16E0B70400F42BBD /* D3HeroPortraitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B2A16E0B70400F42BBD /* D3HeroPortraitVC.m */; };
+		8B3E9B2D16E0B72000F42BBD /* D3HeroPortraitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B2C16E0B72000F42BBD /* D3HeroPortraitView.xib */; };
 		8B92685A16D625A300E1A230 /* D3CompletedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B92685916D625A300E1A230 /* D3CompletedQuest.m */; };
 		8BDADAE616CE3C6D00B90CE7 /* D3Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDADAE516CE3C6C00B90CE7 /* D3Skill.m */; };
 		8BDEAB8E16CB9433001734FC /* D3Progression.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEAB8D16CB9433001734FC /* D3Progression.m */; };
@@ -116,6 +118,9 @@
 		8B3E9B1216DF61C500F42BBD /* D3CareerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3CareerVC.m; sourceTree = "<group>"; };
 		8B3E9B1416DF61E200F42BBD /* D3CareerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = D3CareerView.xib; sourceTree = "<group>"; };
 		8B3E9B1616DF645400F42BBD /* CareerArtisans.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CareerArtisans.jpg; sourceTree = "<group>"; };
+		8B3E9B2916E0B70400F42BBD /* D3HeroPortraitVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3HeroPortraitVC.h; sourceTree = "<group>"; };
+		8B3E9B2A16E0B70400F42BBD /* D3HeroPortraitVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3HeroPortraitVC.m; sourceTree = "<group>"; };
+		8B3E9B2C16E0B72000F42BBD /* D3HeroPortraitView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = D3HeroPortraitView.xib; sourceTree = "<group>"; };
 		8B92685816D625A300E1A230 /* D3CompletedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3CompletedQuest.h; sourceTree = "<group>"; };
 		8B92685916D625A300E1A230 /* D3CompletedQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3CompletedQuest.m; sourceTree = "<group>"; };
 		8BDADAE416CE3C6C00B90CE7 /* D3Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Skill.h; sourceTree = "<group>"; };
@@ -261,6 +266,9 @@
 				8B3E9B1116DF61C500F42BBD /* D3CareerVC.h */,
 				8B3E9B1216DF61C500F42BBD /* D3CareerVC.m */,
 				8B3E9B1416DF61E200F42BBD /* D3CareerView.xib */,
+				8B3E9B2916E0B70400F42BBD /* D3HeroPortraitVC.h */,
+				8B3E9B2A16E0B70400F42BBD /* D3HeroPortraitVC.m */,
+				8B3E9B2C16E0B72000F42BBD /* D3HeroPortraitView.xib */,
 			);
 			name = "app-classes";
 			sourceTree = "<group>";
@@ -343,6 +351,7 @@
 				50836AF916DFDD430055DB78 /* HardcoreHeroPortraitInactive.jpg in Resources */,
 				50836AFA16DFDD430055DB78 /* NormalHeroPortraitActive.jpg in Resources */,
 				50836AFB16DFDD430055DB78 /* NormalHeroPortraitInactive.jpg in Resources */,
+				8B3E9B2D16E0B72000F42BBD /* D3HeroPortraitView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +380,7 @@
 				502A528D16D69397000A0074 /* D3CareerCompletedQuest.m in Sources */,
 				5003452C16DE80B000A6CB1C /* D3Rune.m in Sources */,
 				8B3E9B1316DF61C600F42BBD /* D3CareerVC.m in Sources */,
+				8B3E9B2B16E0B70400F42BBD /* D3HeroPortraitVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -182,8 +182,10 @@
         for (NSInteger i = 0; i < [fallenHeroes count]; i++) {
             NSDictionary *rawFallenHero = fallenHeroes[i];
             D3Hero *fallenHero = [D3Hero parseFallenHeroFromCareerJSON:rawFallenHero withBattleTag:career.battleTag];
-            [fallenHero setCareer:career];
-            [mutableFallenHeroes addObject:fallenHero];
+            if (fallenHero) {
+                [fallenHero setCareer:career];
+                [mutableFallenHeroes addObject:fallenHero];
+            }
         }
         career.fallenHeroes = mutableFallenHeroes;
     }

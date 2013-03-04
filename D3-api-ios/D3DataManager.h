@@ -30,6 +30,8 @@
 /// follower-type ::= "enchantress" | "templar" | "scoundrel"
 /// url ::= <host> "/api/d3/data/follower/" < follower-type>
 
+#define kD3DataManagerItemIconsPath             @"http://media.blizzard.com/d3/icons/items/large/"
+/// http://media.blizzard.com/d3/icons/items/large/gloves_204_barbarian_male.png
 #define kD3DataManagerAPIPath                   @"http://%@.battle.net/api/d3/"
 #define kD3DataManagerProfilePartOfPath         @"profile"
 #define kD3DataManagerHeroPartOfPath            @"hero"
@@ -58,6 +60,7 @@ typedef enum {
 } D3APIRegion;
 
 typedef void (^D3DataManagerFetchURLSuccessBlock)(NSDictionary *json);
+typedef void (^D3DataManagerFetchDataURLSuccessBlock)(NSData *data);
 typedef void (^D3DataManagerFetchURLFailureBlock)(NSError *error);
 
 @interface D3DataManager : D3Object <NSURLConnectionDataDelegate>
@@ -69,5 +72,10 @@ typedef void (^D3DataManagerFetchURLFailureBlock)(NSError *error);
 - (void)fetchDataWithURL:(NSString *)url
             successBlock:(D3DataManagerFetchURLSuccessBlock)successBlock
             failureBlock:(D3DataManagerFetchURLFailureBlock)failureBlock;
+
+/// Methods starts request for image fetching to server
+- (void)fetchImageDataWithURL:(NSString *)url
+                 successBlock:(D3DataManagerFetchDataURLSuccessBlock)successBlock
+                 failureBlock:(D3DataManagerFetchURLFailureBlock)failureBlock;
 
 @end

@@ -7,10 +7,24 @@
 //
 
 #import "D3Item.h"
+#import "D3DataManager.h"
 
 @implementation D3Item
 
 @synthesize itemID, itemOwnerHeroID, itemOwnerType, itemName, itemIcon, itemDisplayColor, itemTooltipParams;
+
+#pragma mark - Fetch Methods
+
+/// Method fetches career data from Diablo 3 API
++ (void)fetchItemImage:(NSString *)itemIconPath
+               success:(void (^)(NSData *data))success
+               failure:(void (^)(NSError *error))failure {
+    D3DataManager *manager = [[D3DataManager alloc] init];
+    NSString *imageURL = [NSString stringWithFormat:@"%@%@.png", kD3DataManagerItemIconsPath, itemIconPath];
+    [manager fetchImageDataWithURL:imageURL
+                      successBlock:success
+                      failureBlock:failure];
+}
 
 #pragma mark - Init Methods
 

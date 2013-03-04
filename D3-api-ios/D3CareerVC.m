@@ -12,6 +12,7 @@
 #import "D3Hero.h"
 #import "D3HeroPortraitVC.h"
 #import "D3ArtisansStatsVC.h"
+#import "D3Item.h"
 
 //#define kTestBattleTag      @"Auralien#2166"
 #define kTestBattleTag      @"Kanonik#2981"
@@ -29,18 +30,20 @@
 
 @property (nonatomic, weak) IBOutlet UIView *artisansView;
 
+@property (nonatomic, weak) IBOutlet UIImageView *testItemIcon;
+
 @end
 
 @implementation D3CareerVC
 
-@synthesize userCareer, battleTagLabel, battleTagTextField, hero1Portrait, hero2Portrait, hero3Portrait, artisansView;
+@synthesize userCareer, battleTagLabel, battleTagTextField, hero1Portrait, hero2Portrait, hero3Portrait, artisansView, testItemIcon;
 
 - (IBAction)findCareerButtonPressed:(id)sender {
     [battleTagTextField resignFirstResponder];
     
     NSString *battleTag = [battleTagTextField text];
     [D3Career fetchCareerForBattleTag:battleTag
-                               region:kD3APIRegionAmericas
+                               region:kD3APIRegionEurope
                               success:^(D3Career *career){
                                   NSLog(@"career battletag = %@", career.battleTag);
                                   NSLog(@"monk time played = %f", [career.timePlayedMonk doubleValue]);
@@ -100,6 +103,16 @@
                               failure:^(NSError *error) {
                                   NSLog(@"Error happened: %@", [error localizedDescription]);
                               }];
+    
+    /// Testing image download
+    [D3Item fetchItemImage:@"gloves_204_barbarian_male"
+                   success:^(NSData *data){
+                       UIImage *image = [[UIImage alloc] initWithData:data];
+                       [[self testItemIcon] setImage:image];
+                   }
+                   failure:^(NSError *error) {
+                       NSLog(@"Error happened: %@", [error localizedDescription]);
+                   }];
 }
 
 - (void)viewDidLoad {

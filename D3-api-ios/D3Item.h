@@ -62,6 +62,13 @@ typedef enum {
 /// Item's tooltip path
 @property (nonatomic, copy) NSString *itemTooltipParams;
 
+#pragma mark - Fetch Methods
+
+/// Method fetches career data from Diablo 3 API
++ (void)fetchItemImage:(NSString *)itemIconPath
+               success:(void (^)(NSData *data))success
+               failure:(void (^)(NSError *error))failure;
+
 #pragma mark - Init Methods
 
 /// Initialize item object with zero values

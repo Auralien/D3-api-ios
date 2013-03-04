@@ -57,6 +57,21 @@
 		8B3E9B2B16E0B70400F42BBD /* D3HeroPortraitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B2A16E0B70400F42BBD /* D3HeroPortraitVC.m */; };
 		8B3E9B2D16E0B72000F42BBD /* D3HeroPortraitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B2C16E0B72000F42BBD /* D3HeroPortraitView.xib */; };
 		8B92685A16D625A300E1A230 /* D3CompletedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B92685916D625A300E1A230 /* D3CompletedQuest.m */; };
+		8BD036B216E460EB004D08D3 /* TimePlayedBarbarianActive1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036A316E460EB004D08D3 /* TimePlayedBarbarianActive1.png */; };
+		8BD036B316E460EB004D08D3 /* TimePlayedBarbarianActive2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036A416E460EB004D08D3 /* TimePlayedBarbarianActive2.png */; };
+		8BD036B416E460EB004D08D3 /* TimePlayedBarbarianInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036A516E460EB004D08D3 /* TimePlayedBarbarianInactive.png */; };
+		8BD036B516E460EB004D08D3 /* TimePlayedDemonHunterActive1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036A616E460EB004D08D3 /* TimePlayedDemonHunterActive1.png */; };
+		8BD036B616E460EB004D08D3 /* TimePlayedDemonHunterActive2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036A716E460EB004D08D3 /* TimePlayedDemonHunterActive2.png */; };
+		8BD036B716E460EB004D08D3 /* TimePlayedDemonHunterInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036A816E460EB004D08D3 /* TimePlayedDemonHunterInactive.png */; };
+		8BD036B816E460EB004D08D3 /* TimePlayedMonkActive1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036A916E460EB004D08D3 /* TimePlayedMonkActive1.png */; };
+		8BD036B916E460EB004D08D3 /* TimePlayedMonkActive2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036AA16E460EB004D08D3 /* TimePlayedMonkActive2.png */; };
+		8BD036BA16E460EB004D08D3 /* TimePlayedMonkInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036AB16E460EB004D08D3 /* TimePlayedMonkInactive.png */; };
+		8BD036BB16E460EB004D08D3 /* TimePlayedWitchDoctorActive1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036AC16E460EB004D08D3 /* TimePlayedWitchDoctorActive1.png */; };
+		8BD036BC16E460EB004D08D3 /* TimePlayedWitchDoctorActive2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036AD16E460EB004D08D3 /* TimePlayedWitchDoctorActive2.png */; };
+		8BD036BD16E460EB004D08D3 /* TimePlayedWitchDoctorInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036AE16E460EB004D08D3 /* TimePlayedWitchDoctorInactive.png */; };
+		8BD036BE16E460EB004D08D3 /* TimePlayedWizardActive1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036AF16E460EB004D08D3 /* TimePlayedWizardActive1.png */; };
+		8BD036BF16E460EB004D08D3 /* TimePlayedWizardActive2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036B016E460EB004D08D3 /* TimePlayedWizardActive2.png */; };
+		8BD036C016E460EB004D08D3 /* TimePlayedWizardInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036B116E460EB004D08D3 /* TimePlayedWizardInactive.png */; };
 		8BDADAE616CE3C6D00B90CE7 /* D3Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDADAE516CE3C6C00B90CE7 /* D3Skill.m */; };
 		8BDEAB8E16CB9433001734FC /* D3Progression.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEAB8D16CB9433001734FC /* D3Progression.m */; };
 		8BDEAB9216CB971D001734FC /* D3HeroProgression.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEAB9116CB971C001734FC /* D3HeroProgression.m */; };
@@ -132,6 +147,21 @@
 		8B3E9B2C16E0B72000F42BBD /* D3HeroPortraitView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = D3HeroPortraitView.xib; sourceTree = "<group>"; };
 		8B92685816D625A300E1A230 /* D3CompletedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3CompletedQuest.h; sourceTree = "<group>"; };
 		8B92685916D625A300E1A230 /* D3CompletedQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3CompletedQuest.m; sourceTree = "<group>"; };
+		8BD036A316E460EB004D08D3 /* TimePlayedBarbarianActive1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedBarbarianActive1.png; sourceTree = "<group>"; };
+		8BD036A416E460EB004D08D3 /* TimePlayedBarbarianActive2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedBarbarianActive2.png; sourceTree = "<group>"; };
+		8BD036A516E460EB004D08D3 /* TimePlayedBarbarianInactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedBarbarianInactive.png; sourceTree = "<group>"; };
+		8BD036A616E460EB004D08D3 /* TimePlayedDemonHunterActive1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedDemonHunterActive1.png; sourceTree = "<group>"; };
+		8BD036A716E460EB004D08D3 /* TimePlayedDemonHunterActive2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedDemonHunterActive2.png; sourceTree = "<group>"; };
+		8BD036A816E460EB004D08D3 /* TimePlayedDemonHunterInactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedDemonHunterInactive.png; sourceTree = "<group>"; };
+		8BD036A916E460EB004D08D3 /* TimePlayedMonkActive1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedMonkActive1.png; sourceTree = "<group>"; };
+		8BD036AA16E460EB004D08D3 /* TimePlayedMonkActive2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedMonkActive2.png; sourceTree = "<group>"; };
+		8BD036AB16E460EB004D08D3 /* TimePlayedMonkInactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedMonkInactive.png; sourceTree = "<group>"; };
+		8BD036AC16E460EB004D08D3 /* TimePlayedWitchDoctorActive1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedWitchDoctorActive1.png; sourceTree = "<group>"; };
+		8BD036AD16E460EB004D08D3 /* TimePlayedWitchDoctorActive2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedWitchDoctorActive2.png; sourceTree = "<group>"; };
+		8BD036AE16E460EB004D08D3 /* TimePlayedWitchDoctorInactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedWitchDoctorInactive.png; sourceTree = "<group>"; };
+		8BD036AF16E460EB004D08D3 /* TimePlayedWizardActive1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedWizardActive1.png; sourceTree = "<group>"; };
+		8BD036B016E460EB004D08D3 /* TimePlayedWizardActive2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedWizardActive2.png; sourceTree = "<group>"; };
+		8BD036B116E460EB004D08D3 /* TimePlayedWizardInactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedWizardInactive.png; sourceTree = "<group>"; };
 		8BDADAE416CE3C6C00B90CE7 /* D3Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Skill.h; sourceTree = "<group>"; };
 		8BDADAE516CE3C6C00B90CE7 /* D3Skill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Skill.m; sourceTree = "<group>"; };
 		8BDEAB8C16CB9432001734FC /* D3Progression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Progression.h; sourceTree = "<group>"; };
@@ -221,6 +251,21 @@
 				50836AF416DFDD430055DB78 /* HardcoreHeroPortraitInactive.jpg */,
 				50836AF516DFDD430055DB78 /* NormalHeroPortraitActive.jpg */,
 				50836AF616DFDD430055DB78 /* NormalHeroPortraitInactive.jpg */,
+				8BD036A316E460EB004D08D3 /* TimePlayedBarbarianActive1.png */,
+				8BD036A416E460EB004D08D3 /* TimePlayedBarbarianActive2.png */,
+				8BD036A516E460EB004D08D3 /* TimePlayedBarbarianInactive.png */,
+				8BD036A616E460EB004D08D3 /* TimePlayedDemonHunterActive1.png */,
+				8BD036A716E460EB004D08D3 /* TimePlayedDemonHunterActive2.png */,
+				8BD036A816E460EB004D08D3 /* TimePlayedDemonHunterInactive.png */,
+				8BD036A916E460EB004D08D3 /* TimePlayedMonkActive1.png */,
+				8BD036AA16E460EB004D08D3 /* TimePlayedMonkActive2.png */,
+				8BD036AB16E460EB004D08D3 /* TimePlayedMonkInactive.png */,
+				8BD036AC16E460EB004D08D3 /* TimePlayedWitchDoctorActive1.png */,
+				8BD036AD16E460EB004D08D3 /* TimePlayedWitchDoctorActive2.png */,
+				8BD036AE16E460EB004D08D3 /* TimePlayedWitchDoctorInactive.png */,
+				8BD036AF16E460EB004D08D3 /* TimePlayedWizardActive1.png */,
+				8BD036B016E460EB004D08D3 /* TimePlayedWizardActive2.png */,
+				8BD036B116E460EB004D08D3 /* TimePlayedWizardInactive.png */,
 				50E5A58316C9FE8A00D21111 /* D3-api-ios-Info.plist */,
 				50E5A58416C9FE8A00D21111 /* InfoPlist.strings */,
 				50E5A58716C9FE8A00D21111 /* main.m */,
@@ -369,6 +414,21 @@
 				50836AFD16E0FFBE0055DB78 /* CareerBackground.jpg in Resources */,
 				50836AFF16E100AC0055DB78 /* CareerBottom.jpg in Resources */,
 				50836B0416E1028E0055DB78 /* D3ArtisansStatsView.xib in Resources */,
+				8BD036B216E460EB004D08D3 /* TimePlayedBarbarianActive1.png in Resources */,
+				8BD036B316E460EB004D08D3 /* TimePlayedBarbarianActive2.png in Resources */,
+				8BD036B416E460EB004D08D3 /* TimePlayedBarbarianInactive.png in Resources */,
+				8BD036B516E460EB004D08D3 /* TimePlayedDemonHunterActive1.png in Resources */,
+				8BD036B616E460EB004D08D3 /* TimePlayedDemonHunterActive2.png in Resources */,
+				8BD036B716E460EB004D08D3 /* TimePlayedDemonHunterInactive.png in Resources */,
+				8BD036B816E460EB004D08D3 /* TimePlayedMonkActive1.png in Resources */,
+				8BD036B916E460EB004D08D3 /* TimePlayedMonkActive2.png in Resources */,
+				8BD036BA16E460EB004D08D3 /* TimePlayedMonkInactive.png in Resources */,
+				8BD036BB16E460EB004D08D3 /* TimePlayedWitchDoctorActive1.png in Resources */,
+				8BD036BC16E460EB004D08D3 /* TimePlayedWitchDoctorActive2.png in Resources */,
+				8BD036BD16E460EB004D08D3 /* TimePlayedWitchDoctorInactive.png in Resources */,
+				8BD036BE16E460EB004D08D3 /* TimePlayedWizardActive1.png in Resources */,
+				8BD036BF16E460EB004D08D3 /* TimePlayedWizardActive2.png in Resources */,
+				8BD036C016E460EB004D08D3 /* TimePlayedWizardInactive.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

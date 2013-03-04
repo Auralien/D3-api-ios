@@ -106,7 +106,13 @@
         D3DataManager *manager = [[D3DataManager alloc] init];
         NSString *careerURL = [D3Career createCareerURLForBattleTag:battleTag forRegion:region];
         [manager fetchDataWithURL:careerURL
-                     successBlock:^(NSDictionary *json){
+                     successBlock:^(NSData *data){
+#ifdef DEBUG
+                         NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                         NSLog(@"JSON string: '%@'", jsonString);
+#endif
+                         NSError *error = nil;
+                         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
                          D3Career *career = [D3Career parseCareerFromJSON:json];
                          [career setCareerRegion:region];
                          if (success)
@@ -190,30 +196,38 @@
         career.fallenHeroes = mutableFallenHeroes;
     }
     
-    /// Parsing artisans information and putting it into career.artisans array
+    /// Parsing artisans information and putting it into career.artisans dictionary
     NSArray *artisans = json[@"artisans"];
     if (artisans) {
-        NSMutableArray *mutableArtisans = [NSMutableArray array];
+        NSMutableDictionary *mutableArtisans = [NSMutableDictionary dictionary];
         for (NSInteger i = 0; i < [artisans count]; i++) {
             NSDictionary *rawArtisan = artisans[i];
             D3Artisan *artisan = [D3Artisan parseArtisanFromCareerJSON:rawArtisan
                                                          withBattleTag:career.battleTag
                                                        andHardcoreFlag:NO];
-            [mutableArtisans addObject:artisan];
+            if ([artisan artisanType] == kD3ArtisanTypeBlacksmith) {
+                [mutableArtisans setObject:artisan forKey:@"blacksmith"];
+            } else if ([artisan artisanType] == kD3ArtisanTypeJeweler) {
+                [mutableArtisans setObject:artisan forKey:@"jeweler"];
+            }
         }
         career.artisans = mutableArtisans;
     }
     
-    /// Parsing hardcore artisans information and putting it into career.hardcoreArtisans array
+    /// Parsing hardcore artisans information and putting it into career.hardcoreArtisans dictionary
     NSArray *hardcoreArtisans = json[@"hardcoreArtisans"];
     if (hardcoreArtisans) {
-        NSMutableArray *mutableHardcoreArtisans = [NSMutableArray array];
+        NSMutableDictionary *mutableHardcoreArtisans = [NSMutableDictionary dictionary];
         for (NSInteger i = 0; i < [hardcoreArtisans count]; i++) {
             NSDictionary *rawHardcoreArtisan = hardcoreArtisans[i];
             D3Artisan *hardcoreArtisan = [D3Artisan parseArtisanFromCareerJSON:rawHardcoreArtisan
                                                                  withBattleTag:career.battleTag
                                                                andHardcoreFlag:YES];
-            [mutableHardcoreArtisans addObject:hardcoreArtisan];
+            if ([hardcoreArtisan artisanType] == kD3ArtisanTypeBlacksmith) {
+                [mutableHardcoreArtisans setObject:hardcoreArtisan forKey:@"blacksmith"];
+            } else {
+                [mutableHardcoreArtisans setObject:hardcoreArtisan forKey:@"jeweler"];
+            }
         }
         career.hardcoreArtisans = mutableHardcoreArtisans;
     }

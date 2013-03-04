@@ -43,11 +43,11 @@
 /// Player's heroes list
 @property (nonatomic, strong) NSArray *heroes;
 /// Player's artisans list
-@property (nonatomic, strong) NSArray *artisans;
+@property (nonatomic, strong) NSDictionary *artisans;
 /// Player's fallen heroes list
 @property (nonatomic, strong) NSArray *fallenHeroes;
 /// Player's hardcore artisans list
-@property (nonatomic, strong) NSArray *hardcoreArtisans;
+@property (nonatomic, strong) NSDictionary *hardcoreArtisans;
 /// Player's progression acts list
 @property (nonatomic, strong) NSArray *progression;
 /// Player's hardcore progression acts list

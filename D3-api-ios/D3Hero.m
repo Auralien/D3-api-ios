@@ -282,7 +282,9 @@
     D3DataManager *manager = [[D3DataManager alloc] init];
     NSString *heroURL = [self createHeroURLForHeroID:self.heroID forRegion:self.career.careerRegion];
     [manager fetchDataWithURL:heroURL
-                 successBlock:^(NSDictionary *json){
+                 successBlock:^(NSData *data){
+                     NSError *error = nil;
+                     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
                      [self parseHeroFromJSON:json];
                      if (success)
                          success(self);

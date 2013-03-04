@@ -59,8 +59,7 @@ typedef enum {
     kD3APIRegionTaiwan
 } D3APIRegion;
 
-typedef void (^D3DataManagerFetchURLSuccessBlock)(NSDictionary *json);
-typedef void (^D3DataManagerFetchDataURLSuccessBlock)(NSData *data);
+typedef void (^D3DataManagerFetchURLSuccessBlock)(NSData *data);
 typedef void (^D3DataManagerFetchURLFailureBlock)(NSError *error);
 
 @interface D3DataManager : D3Object <NSURLConnectionDataDelegate>
@@ -72,10 +71,5 @@ typedef void (^D3DataManagerFetchURLFailureBlock)(NSError *error);
 - (void)fetchDataWithURL:(NSString *)url
             successBlock:(D3DataManagerFetchURLSuccessBlock)successBlock
             failureBlock:(D3DataManagerFetchURLFailureBlock)failureBlock;
-
-/// Methods starts request for image fetching to server
-- (void)fetchImageDataWithURL:(NSString *)url
-                 successBlock:(D3DataManagerFetchDataURLSuccessBlock)successBlock
-                 failureBlock:(D3DataManagerFetchURLFailureBlock)failureBlock;
 
 @end

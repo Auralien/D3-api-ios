@@ -45,8 +45,6 @@
     [D3Career fetchCareerForBattleTag:battleTag
                                region:kD3APIRegionEurope
                               success:^(D3Career *career){
-                                  NSLog(@"career battletag = %@", career.battleTag);
-                                  NSLog(@"monk time played = %f", [career.timePlayedMonk doubleValue]);
                                   self.userCareer = career;
                                   self.battleTagLabel.text = career.battleTag;
                                   
@@ -73,8 +71,6 @@
                                       /// Test Hero profiles update
                                       for (D3Hero *hero in self.userCareer.heroes) {
                                           [hero completeHeroProfileWithSuccess:^(D3Hero *hero){
-                                              NSLog(@"hero = %@", hero);
-                                              
                                               if (sortedHeroes[0]) {
                                                   D3HeroPortraitVC *portrait1VC = [[D3HeroPortraitVC alloc] initWithNibName:@"D3HeroPortraitView" bundle:nil hero:sortedHeroes[0]];
                                                   [[self hero1Portrait] addSubview:portrait1VC.view];
@@ -131,9 +127,5 @@
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
     return UIInterfaceOrientationLandscapeLeft;
 }
-
-/*- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
-}*/
 
 @end

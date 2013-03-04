@@ -14,10 +14,13 @@
 
 @implementation D3ArtisansStatsVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+@synthesize normalArtisans, hardcoreArtisans;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil artisans:(NSDictionary *)normalArtisansVal hardcoreArtisans:(NSDictionary *)hardcoreArtisansVal {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        [self setNormalArtisans:normalArtisansVal];
+        [self setHardcoreArtisans:hardcoreArtisansVal];
     }
     return self;
 }

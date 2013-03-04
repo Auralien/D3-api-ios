@@ -88,7 +88,6 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil hero:(D3Hero *)heroVal {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
         [self setHero:heroVal];
         //[self prepareHeroImage];
     }
@@ -97,7 +96,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
     [self prepareHeroImage];
 }
 

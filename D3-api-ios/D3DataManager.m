@@ -14,8 +14,6 @@
 @property (nonatomic, strong) NSMutableData *rawData;
 /// Success block
 @property (nonatomic, copy) D3DataManagerFetchURLSuccessBlock successBlock;
-/// Image success block
-@property (nonatomic, copy) D3DataManagerFetchDataURLSuccessBlock dataSuccessBlock;
 /// Failure block
 @property (nonatomic, copy) D3DataManagerFetchURLFailureBlock failureBlock;
 
@@ -53,76 +51,43 @@
     if (connection) {
         self.rawData = [NSMutableData data];
     } else {
+#ifdef DEBUG
         NSLog(@"Connection failed!");
-    }
-}
-
-/// Methods starts request for image fetching to server
-- (void)fetchImageDataWithURL:(NSString *)url
-                 successBlock:(D3DataManagerFetchDataURLSuccessBlock)successBlock
-                 failureBlock:(D3DataManagerFetchURLFailureBlock)failureBlock {
-    self.dataSuccessBlock = successBlock;
-    self.failureBlock = failureBlock;
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]
-                                             cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                         timeoutInterval:5.0];
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
-    if (connection) {
-        self.rawData = [NSMutableData data];
-    } else {
-        NSLog(@"Connection failed!");
+#endif
     }
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     [self.rawData setLength:0];
+#ifdef DEBUG
     NSLog(@"connection:didReceiveResponse:");
+#endif
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     [self.rawData appendData:data];
+#ifdef DEBUG
     NSLog(@"connection:didReceiveData:");
+#endif
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"Connection failed! Error - %@ %@", [error localizedDescription], [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+#ifdef DEBUG
+    NSLog(@"Connection failed! Error - %@ %@",
+          [error localizedDescription],
+          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+#endif
     self.failureBlock(error);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+#ifdef DEBUG
     NSLog(@"Succeeded! Recieved %d bytes of data", [self.rawData length]);
+#endif
     
-    NSString *urlString = [[[connection currentRequest] URL] absoluteString];
-    NSLog(@"current url = %@", urlString);
-    /// Check for image url
-    NSRange range = [urlString rangeOfString:@"media.blizzard.com"];
-    
-    if (range.location == NSNotFound) {
-        /// Not an image - JSON
-        NSLog(@"Not found");
-        NSError *error = nil;
-        //NSString *jsonString = [[NSString alloc] initWithData:self.rawData encoding:NSUTF8StringEncoding];
-        //NSLog(@"JSON string: '%@'", jsonString);
-        NSDictionary *object = [NSJSONSerialization JSONObjectWithData:self.rawData options:0 error:&error];
-        if (object) {
-            self.successBlock(object);
-        } else {
-            self.failureBlock(error);
-        }
-    } else {
-        /// Image
-        NSLog(@"Found");
-        UIImage *image = [[UIImage alloc] initWithData:self.rawData];
-        NSLog(@"image %@", image);
-        if (self.rawData) {
-            self.dataSuccessBlock(self.rawData);
-        } else {
-            
-        }
+    if ([self.rawData length] > 0) {
+        self.successBlock(self.rawData);
     }
-    
 }
 
 @end

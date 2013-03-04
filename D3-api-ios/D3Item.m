@@ -21,9 +21,9 @@
                failure:(void (^)(NSError *error))failure {
     D3DataManager *manager = [[D3DataManager alloc] init];
     NSString *imageURL = [NSString stringWithFormat:@"%@%@.png", kD3DataManagerItemIconsPath, itemIconPath];
-    [manager fetchImageDataWithURL:imageURL
-                      successBlock:success
-                      failureBlock:failure];
+    [manager fetchDataWithURL:imageURL
+                 successBlock:success
+                 failureBlock:failure];
 }
 
 #pragma mark - Init Methods

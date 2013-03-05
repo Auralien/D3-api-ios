@@ -12,8 +12,8 @@
 
 @interface D3HeroPortraitVC : UIViewController
 
-@property (nonatomic, strong) D3Hero *hero;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil hero:(D3Hero *)heroVal;
+- (id)initWithNibName:(NSString *)nibNameOrNil
+               bundle:(NSBundle *)nibBundleOrNil
+                 hero:(D3Hero *)heroVal;
 
 @end

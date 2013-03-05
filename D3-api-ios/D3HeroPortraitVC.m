@@ -11,6 +11,8 @@
 
 @interface D3HeroPortraitVC ()
 
+@property (nonatomic, strong) D3Hero *hero;
+
 @property (nonatomic, weak) IBOutlet UIImageView *heroBackgroundImageView;
 @property (nonatomic, weak) IBOutlet UIImageView *heroPortraitImageView;
 @property (nonatomic, weak) IBOutlet UILabel *heroNameLabel;
@@ -85,11 +87,12 @@
     }
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil hero:(D3Hero *)heroVal {
+- (id)initWithNibName:(NSString *)nibNameOrNil
+               bundle:(NSBundle *)nibBundleOrNil
+                 hero:(D3Hero *)heroVal {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self setHero:heroVal];
-        //[self prepareHeroImage];
     }
     return self;
 }

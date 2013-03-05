@@ -57,6 +57,24 @@
 		8B3E9B2B16E0B70400F42BBD /* D3HeroPortraitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B2A16E0B70400F42BBD /* D3HeroPortraitVC.m */; };
 		8B3E9B2D16E0B72000F42BBD /* D3HeroPortraitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B2C16E0B72000F42BBD /* D3HeroPortraitView.xib */; };
 		8B92685A16D625A300E1A230 /* D3CompletedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B92685916D625A300E1A230 /* D3CompletedQuest.m */; };
+		8B9E01F316E5F73E00BA4A56 /* D3HeroGearVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E01F216E5F73E00BA4A56 /* D3HeroGearVC.m */; };
+		8B9E01F516E5F75200BA4A56 /* D3HeroGearView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E01F416E5F75200BA4A56 /* D3HeroGearView.xib */; };
+		8B9E020016E5F8CA00BA4A56 /* BarbarianFemaleBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E01F616E5F8C400BA4A56 /* BarbarianFemaleBackground.jpg */; };
+		8B9E020116E5F8CA00BA4A56 /* BarbarianMaleBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E01F716E5F8C400BA4A56 /* BarbarianMaleBackground.jpg */; };
+		8B9E020216E5F8CA00BA4A56 /* DemonHunterFemaleBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E01F816E5F8C500BA4A56 /* DemonHunterFemaleBackground.jpg */; };
+		8B9E020316E5F8CA00BA4A56 /* DemonHunterMaleBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E01F916E5F8C600BA4A56 /* DemonHunterMaleBackground.jpg */; };
+		8B9E020416E5F8CA00BA4A56 /* MonkFemaleBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E01FA16E5F8C600BA4A56 /* MonkFemaleBackground.jpg */; };
+		8B9E020516E5F8CA00BA4A56 /* MonkMaleBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E01FB16E5F8C700BA4A56 /* MonkMaleBackground.jpg */; };
+		8B9E020616E5F8CA00BA4A56 /* WitchDoctorFemaleBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E01FC16E5F8C800BA4A56 /* WitchDoctorFemaleBackground.jpg */; };
+		8B9E020716E5F8CA00BA4A56 /* WitchDoctorMaleBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E01FD16E5F8C800BA4A56 /* WitchDoctorMaleBackground.jpg */; };
+		8B9E020816E5F8CA00BA4A56 /* WizardFemaleBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E01FE16E5F8CA00BA4A56 /* WizardFemaleBackground.jpg */; };
+		8B9E020916E5F8CA00BA4A56 /* WizardMaleBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E01FF16E5F8CA00BA4A56 /* WizardMaleBackground.jpg */; };
+		8B9E020F16E626F000BA4A56 /* ItemBlueBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E020A16E626F000BA4A56 /* ItemBlueBackground.png */; };
+		8B9E021016E626F000BA4A56 /* ItemBrounBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E020B16E626F000BA4A56 /* ItemBrounBackground.png */; };
+		8B9E021116E626F000BA4A56 /* ItemGreenBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E020C16E626F000BA4A56 /* ItemGreenBackground.png */; };
+		8B9E021216E626F000BA4A56 /* ItemOrangeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E020D16E626F000BA4A56 /* ItemOrangeBackground.png */; };
+		8B9E021316E626F000BA4A56 /* ItemYellowBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E020E16E626F000BA4A56 /* ItemYellowBackground.png */; };
+		8B9E021516E62FAD00BA4A56 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9E021416E62FAD00BA4A56 /* QuartzCore.framework */; };
 		8BD036B216E460EB004D08D3 /* TimePlayedBarbarianActive1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036A316E460EB004D08D3 /* TimePlayedBarbarianActive1.png */; };
 		8BD036B316E460EB004D08D3 /* TimePlayedBarbarianActive2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036A416E460EB004D08D3 /* TimePlayedBarbarianActive2.png */; };
 		8BD036B416E460EB004D08D3 /* TimePlayedBarbarianInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD036A516E460EB004D08D3 /* TimePlayedBarbarianInactive.png */; };
@@ -147,6 +165,25 @@
 		8B3E9B2C16E0B72000F42BBD /* D3HeroPortraitView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = D3HeroPortraitView.xib; sourceTree = "<group>"; };
 		8B92685816D625A300E1A230 /* D3CompletedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3CompletedQuest.h; sourceTree = "<group>"; };
 		8B92685916D625A300E1A230 /* D3CompletedQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3CompletedQuest.m; sourceTree = "<group>"; };
+		8B9E01F116E5F73E00BA4A56 /* D3HeroGearVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3HeroGearVC.h; sourceTree = "<group>"; };
+		8B9E01F216E5F73E00BA4A56 /* D3HeroGearVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3HeroGearVC.m; sourceTree = "<group>"; };
+		8B9E01F416E5F75200BA4A56 /* D3HeroGearView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = D3HeroGearView.xib; sourceTree = "<group>"; };
+		8B9E01F616E5F8C400BA4A56 /* BarbarianFemaleBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BarbarianFemaleBackground.jpg; sourceTree = "<group>"; };
+		8B9E01F716E5F8C400BA4A56 /* BarbarianMaleBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BarbarianMaleBackground.jpg; sourceTree = "<group>"; };
+		8B9E01F816E5F8C500BA4A56 /* DemonHunterFemaleBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DemonHunterFemaleBackground.jpg; sourceTree = "<group>"; };
+		8B9E01F916E5F8C600BA4A56 /* DemonHunterMaleBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DemonHunterMaleBackground.jpg; sourceTree = "<group>"; };
+		8B9E01FA16E5F8C600BA4A56 /* MonkFemaleBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MonkFemaleBackground.jpg; sourceTree = "<group>"; };
+		8B9E01FB16E5F8C700BA4A56 /* MonkMaleBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MonkMaleBackground.jpg; sourceTree = "<group>"; };
+		8B9E01FC16E5F8C800BA4A56 /* WitchDoctorFemaleBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WitchDoctorFemaleBackground.jpg; sourceTree = "<group>"; };
+		8B9E01FD16E5F8C800BA4A56 /* WitchDoctorMaleBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WitchDoctorMaleBackground.jpg; sourceTree = "<group>"; };
+		8B9E01FE16E5F8CA00BA4A56 /* WizardFemaleBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WizardFemaleBackground.jpg; sourceTree = "<group>"; };
+		8B9E01FF16E5F8CA00BA4A56 /* WizardMaleBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WizardMaleBackground.jpg; sourceTree = "<group>"; };
+		8B9E020A16E626F000BA4A56 /* ItemBlueBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ItemBlueBackground.png; sourceTree = "<group>"; };
+		8B9E020B16E626F000BA4A56 /* ItemBrounBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ItemBrounBackground.png; sourceTree = "<group>"; };
+		8B9E020C16E626F000BA4A56 /* ItemGreenBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ItemGreenBackground.png; sourceTree = "<group>"; };
+		8B9E020D16E626F000BA4A56 /* ItemOrangeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ItemOrangeBackground.png; sourceTree = "<group>"; };
+		8B9E020E16E626F000BA4A56 /* ItemYellowBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ItemYellowBackground.png; sourceTree = "<group>"; };
+		8B9E021416E62FAD00BA4A56 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8BD036A316E460EB004D08D3 /* TimePlayedBarbarianActive1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedBarbarianActive1.png; sourceTree = "<group>"; };
 		8BD036A416E460EB004D08D3 /* TimePlayedBarbarianActive2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedBarbarianActive2.png; sourceTree = "<group>"; };
 		8BD036A516E460EB004D08D3 /* TimePlayedBarbarianInactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedBarbarianInactive.png; sourceTree = "<group>"; };
@@ -177,6 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B9E021516E62FAD00BA4A56 /* QuartzCore.framework in Frameworks */,
 				50E5A59F16C9FECD00D21111 /* libsqlite3.dylib in Frameworks */,
 				50E5A57C16C9FE8A00D21111 /* UIKit.framework in Frameworks */,
 				50E5A57E16C9FE8A00D21111 /* Foundation.framework in Frameworks */,
@@ -208,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				50E5A59E16C9FECD00D21111 /* libsqlite3.dylib */,
+				8B9E021416E62FAD00BA4A56 /* QuartzCore.framework */,
 				50E5A57B16C9FE8A00D21111 /* UIKit.framework */,
 				50E5A57D16C9FE8A00D21111 /* Foundation.framework */,
 				50E5A57F16C9FE8A00D21111 /* CoreGraphics.framework */,
@@ -266,6 +305,21 @@
 				8BD036AF16E460EB004D08D3 /* TimePlayedWizardActive1.png */,
 				8BD036B016E460EB004D08D3 /* TimePlayedWizardActive2.png */,
 				8BD036B116E460EB004D08D3 /* TimePlayedWizardInactive.png */,
+				8B9E01F616E5F8C400BA4A56 /* BarbarianFemaleBackground.jpg */,
+				8B9E01F716E5F8C400BA4A56 /* BarbarianMaleBackground.jpg */,
+				8B9E01F816E5F8C500BA4A56 /* DemonHunterFemaleBackground.jpg */,
+				8B9E01F916E5F8C600BA4A56 /* DemonHunterMaleBackground.jpg */,
+				8B9E01FA16E5F8C600BA4A56 /* MonkFemaleBackground.jpg */,
+				8B9E01FB16E5F8C700BA4A56 /* MonkMaleBackground.jpg */,
+				8B9E01FC16E5F8C800BA4A56 /* WitchDoctorFemaleBackground.jpg */,
+				8B9E01FD16E5F8C800BA4A56 /* WitchDoctorMaleBackground.jpg */,
+				8B9E01FE16E5F8CA00BA4A56 /* WizardFemaleBackground.jpg */,
+				8B9E01FF16E5F8CA00BA4A56 /* WizardMaleBackground.jpg */,
+				8B9E020B16E626F000BA4A56 /* ItemBrounBackground.png */,
+				8B9E020A16E626F000BA4A56 /* ItemBlueBackground.png */,
+				8B9E020E16E626F000BA4A56 /* ItemYellowBackground.png */,
+				8B9E020D16E626F000BA4A56 /* ItemOrangeBackground.png */,
+				8B9E020C16E626F000BA4A56 /* ItemGreenBackground.png */,
 				50E5A58316C9FE8A00D21111 /* D3-api-ios-Info.plist */,
 				50E5A58416C9FE8A00D21111 /* InfoPlist.strings */,
 				50E5A58716C9FE8A00D21111 /* main.m */,
@@ -325,9 +379,12 @@
 				8B3E9B2A16E0B70400F42BBD /* D3HeroPortraitVC.m */,
 				50836B0016E102750055DB78 /* D3ArtisansStatsVC.h */,
 				50836B0116E102750055DB78 /* D3ArtisansStatsVC.m */,
+				8B9E01F116E5F73E00BA4A56 /* D3HeroGearVC.h */,
+				8B9E01F216E5F73E00BA4A56 /* D3HeroGearVC.m */,
 				8B3E9B1416DF61E200F42BBD /* D3CareerView.xib */,
 				8B3E9B2C16E0B72000F42BBD /* D3HeroPortraitView.xib */,
 				50836B0316E1028E0055DB78 /* D3ArtisansStatsView.xib */,
+				8B9E01F416E5F75200BA4A56 /* D3HeroGearView.xib */,
 			);
 			name = "app-classes";
 			sourceTree = "<group>";
@@ -429,6 +486,22 @@
 				8BD036BE16E460EB004D08D3 /* TimePlayedWizardActive1.png in Resources */,
 				8BD036BF16E460EB004D08D3 /* TimePlayedWizardActive2.png in Resources */,
 				8BD036C016E460EB004D08D3 /* TimePlayedWizardInactive.png in Resources */,
+				8B9E01F516E5F75200BA4A56 /* D3HeroGearView.xib in Resources */,
+				8B9E020016E5F8CA00BA4A56 /* BarbarianFemaleBackground.jpg in Resources */,
+				8B9E020116E5F8CA00BA4A56 /* BarbarianMaleBackground.jpg in Resources */,
+				8B9E020216E5F8CA00BA4A56 /* DemonHunterFemaleBackground.jpg in Resources */,
+				8B9E020316E5F8CA00BA4A56 /* DemonHunterMaleBackground.jpg in Resources */,
+				8B9E020416E5F8CA00BA4A56 /* MonkFemaleBackground.jpg in Resources */,
+				8B9E020516E5F8CA00BA4A56 /* MonkMaleBackground.jpg in Resources */,
+				8B9E020616E5F8CA00BA4A56 /* WitchDoctorFemaleBackground.jpg in Resources */,
+				8B9E020716E5F8CA00BA4A56 /* WitchDoctorMaleBackground.jpg in Resources */,
+				8B9E020816E5F8CA00BA4A56 /* WizardFemaleBackground.jpg in Resources */,
+				8B9E020916E5F8CA00BA4A56 /* WizardMaleBackground.jpg in Resources */,
+				8B9E020F16E626F000BA4A56 /* ItemBlueBackground.png in Resources */,
+				8B9E021016E626F000BA4A56 /* ItemBrounBackground.png in Resources */,
+				8B9E021116E626F000BA4A56 /* ItemGreenBackground.png in Resources */,
+				8B9E021216E626F000BA4A56 /* ItemOrangeBackground.png in Resources */,
+				8B9E021316E626F000BA4A56 /* ItemYellowBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +532,7 @@
 				8B3E9B1316DF61C600F42BBD /* D3CareerVC.m in Sources */,
 				8B3E9B2B16E0B70400F42BBD /* D3HeroPortraitVC.m in Sources */,
 				50836B0216E102750055DB78 /* D3ArtisansStatsVC.m in Sources */,
+				8B9E01F316E5F73E00BA4A56 /* D3HeroGearVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,9 +13,14 @@
 #import "D3HeroPortraitVC.h"
 #import "D3ArtisansStatsVC.h"
 #import "D3Item.h"
+#import "D3HeroGearVC.h"
 
 //#define kTestBattleTag      @"Auralien#2166"
 #define kTestBattleTag      @"Kanonik#2981"
+//Nuthill#2237
+//Mythliss#2442
+//Winterdark#2821
+//Irrelevance#2153
 
 @interface D3CareerVC ()
 
@@ -32,11 +37,22 @@
 
 @property (nonatomic, weak) IBOutlet UIImageView *testItemIcon;
 
+- (IBAction)showHeroDetailsView:(id)sender;
+
 @end
 
 @implementation D3CareerVC
 
 @synthesize userCareer, battleTagLabel, battleTagTextField, hero1Portrait, hero2Portrait, hero3Portrait, artisansView, testItemIcon;
+
+- (IBAction)showHeroDetailsView:(id)sender {
+    if ([self.userHeroes count] > 0) {
+        D3HeroGearVC *heroDetailsVC = [[D3HeroGearVC alloc] initWithNibName:@"D3HeroGearView"
+                                                                     bundle:nil
+                                                                       hero:self.userHeroes[0]];
+        [[self navigationController] pushViewController:heroDetailsVC animated:YES];
+    }
+}
 
 - (IBAction)findCareerButtonPressed:(id)sender {
     [battleTagTextField resignFirstResponder];
@@ -48,7 +64,11 @@
                                   self.userCareer = career;
                                   self.battleTagLabel.text = career.battleTag;
                                   
-                                  D3ArtisansStatsVC *artisanStatsVC = [[D3ArtisansStatsVC alloc] initWithNibName:@"D3ArtisansStatsView" bundle:nil];
+                                  D3ArtisansStatsVC *artisanStatsVC = [[D3ArtisansStatsVC alloc]
+                                                                       initWithNibName:@"D3ArtisansStatsView"
+                                                                       bundle:nil
+                                                                       artisans:self.userCareer.artisans
+                                                                       hardcoreArtisans:self.userCareer.hardcoreArtisans];
                                   [[self artisansView] addSubview:artisanStatsVC.view];
                                   
                                   self.userHeroes = [self.userCareer.heroes mutableCopy];
@@ -71,17 +91,17 @@
                                       /// Test Hero profiles update
                                       for (D3Hero *hero in self.userCareer.heroes) {
                                           [hero completeHeroProfileWithSuccess:^(D3Hero *hero){
-                                              if (sortedHeroes[0]) {
+                                              if ([sortedHeroes count] > 0) {
                                                   D3HeroPortraitVC *portrait1VC = [[D3HeroPortraitVC alloc] initWithNibName:@"D3HeroPortraitView" bundle:nil hero:sortedHeroes[0]];
                                                   [[self hero1Portrait] addSubview:portrait1VC.view];
                                               }
                                               
-                                              if (sortedHeroes[1]) {
+                                              if ([sortedHeroes count] > 1) {
                                                   D3HeroPortraitVC *portrait2VC = [[D3HeroPortraitVC alloc] initWithNibName:@"D3HeroPortraitView" bundle:nil hero:sortedHeroes[1]];
                                                   [[self hero2Portrait] addSubview:portrait2VC.view];
                                               }
                                               
-                                              if (sortedHeroes[2]) {
+                                              if ([sortedHeroes count] > 2) {
                                                   D3HeroPortraitVC *portrait3VC = [[D3HeroPortraitVC alloc] initWithNibName:@"D3HeroPortraitView" bundle:nil hero:sortedHeroes[2]];
                                                   [[self hero3Portrait] addSubview:portrait3VC.view];
                                               }
@@ -113,7 +133,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
 
 - (void)didReceiveMemoryWarning {

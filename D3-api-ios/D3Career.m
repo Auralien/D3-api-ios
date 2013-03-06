@@ -178,7 +178,22 @@
             [hero setCareer:career];
             [mutableHeroes addObject:hero];
         }
-        career.heroes = mutableHeroes;
+        
+        NSArray *sortedHeroes = [mutableHeroes sortedArrayUsingComparator:^NSComparisonResult(id hero1, id hero2){
+            NSNumber *hero1Level = [NSNumber numberWithInteger:[(D3Hero *)hero1 heroLevel]];
+            NSNumber *hero2Level = [NSNumber numberWithInteger:[(D3Hero *)hero2 heroLevel]];
+            NSComparisonResult result = [hero1Level compare:hero2Level];
+            
+            if (result == NSOrderedAscending) {
+                return NSOrderedDescending;
+            } else if (result == NSOrderedDescending) {
+                return NSOrderedAscending;
+            } else {
+                return NSOrderedSame;
+            }
+        }];
+        
+        career.heroes = sortedHeroes;
     }
     
     /// Parsing fallen heroes information and putting it into career.fallenHeroes array

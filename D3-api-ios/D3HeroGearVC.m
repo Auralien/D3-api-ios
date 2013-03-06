@@ -99,6 +99,22 @@
 }
 */
 
+/*
+ Border-colors:
+ white - #56402c
+ blue - #6ba9ba
+ yellow - #b1a73c
+ orange - #c29337
+ green - #87a73d
+ 
+ Text-colors:
+ white - #fff
+ blue - #a0c3ff
+ yellow - #ffff00
+ orange - #fba412
+ green - #a4df44
+ */
+
 #import "D3HeroGearVC.h"
 #import <QuartzCore/QuartzCore.h>
 #import "D3Hero.h"
@@ -136,6 +152,23 @@
 @property (nonatomic, weak) IBOutlet UIImageView *leftFingerBackgroundImageView;
 @property (nonatomic, weak) IBOutlet UIImageView *neckBackgroundImageView;
 
+@property (nonatomic, weak) IBOutlet UILabel *heroClassAndLevelLabel;
+@property (nonatomic, weak) IBOutlet UILabel *heroNameLabel;
+
+@property (nonatomic, weak) IBOutlet UILabel *headItemNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *torsoItemNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *feetItemNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *handsItemNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *shouldersItemNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *legsItemNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *bracersItemNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *mainHandItemNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *offHandItemNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *waistItemNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *rightFingerItemNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *leftFingerItemNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *neckItemNameLabel;
+
 @property (nonatomic, strong) D3Hero *hero;
 
 @end
@@ -145,6 +178,42 @@
 @synthesize backgroundImageView, headImageView, torsoImageView, feetImageView, handsImageView, shouldersImageView, legsImageView, bracersImageView, mainHandImageView, offHandImageView, waistImageView, rightFingerImageView, leftFingerImageView, neckImageView;
 @synthesize headBackgroundImageView, torsoBackgroundImageView, feetBackgroundImageView, handsBackgroundImageView, shouldersBackgroundImageView, legsBackgroundImageView, bracersBackgroundImageView, mainHandBackgroundImageView, offHandBackgroundImageView, waistBackgroundImageView, rightFingerBackgroundImageView, leftFingerBackgroundImageView, neckBackgroundImageView;
 @synthesize hero;
+
+#pragma mark - Support Methods
+- (UIColor *)colorWithHexString:(NSString *)hex {
+    NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    
+    // String should be 6 or 8 characters
+    if ([cString length] < 6) return [UIColor grayColor];
+    
+    // strip 0X if it appears
+    if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
+    
+    if ([cString length] != 6) return  [UIColor grayColor];
+    
+    // Separate into r, g, b substrings
+    NSRange range;
+    range.location = 0;
+    range.length = 2;
+    NSString *rString = [cString substringWithRange:range];
+    
+    range.location = 2;
+    NSString *gString = [cString substringWithRange:range];
+    
+    range.location = 4;
+    NSString *bString = [cString substringWithRange:range];
+    
+    // Scan values
+    unsigned int r, g, b;
+    [[NSScanner scannerWithString:rString] scanHexInt:&r];
+    [[NSScanner scannerWithString:gString] scanHexInt:&g];
+    [[NSScanner scannerWithString:bString] scanHexInt:&b];
+    
+    return [UIColor colorWithRed:((float) r / 255.0f)
+                           green:((float) g / 255.0f)
+                            blue:((float) b / 255.0f)
+                           alpha:1.0f];
+}
 
 /// Custom init method
 - (id)initWithNibName:(NSString *)nibNameOrNil
@@ -205,103 +274,162 @@
         }
     }
     
+    /// Setting hero's name
+    [[self heroNameLabel] setText:[self.hero.heroName uppercaseString]];
+    
+    /// Setting hero's class and level
+    NSString *heroClass = nil;
+    switch (self.hero.heroClass) {
+        case kD3HeroClassBarbarian:
+            heroClass = NSLocalizedString(@"Barbarian", @"Barbarian");
+            break;
+        case kD3HeroClassDemonHunter:
+            heroClass = NSLocalizedString(@"Demon Hunter", @"Demon Hunter");
+            break;
+        case kD3HeroClassMonk:
+            heroClass = NSLocalizedString(@"Monk", @"Monk");
+            break;
+        case kD3HeroClassWitchDoctor:
+            heroClass = NSLocalizedString(@"Witch Doctor", @"Witch Doctor");
+            break;
+        case kD3HeroClassWizard:
+            heroClass = NSLocalizedString(@"Wizard", @"Wizard");
+            break;
+            
+        default:
+            break;
+    }
+    [[self heroClassAndLevelLabel] setText:[NSString stringWithFormat:@"%d (%d) %@",
+                                            self.hero.heroLevel,
+                                            self.hero.heroParagonLevel,
+                                            heroClass]];
+    
     /// Setting head item
     [self fetchImageForItem:self.hero.items[@"head"]
               intoImageView:self.headImageView
-    withBackgroundImageView:self.headBackgroundImageView];
+    withBackgroundImageView:self.headBackgroundImageView
+              itemNameLabel:self.headItemNameLabel];
     
     /// Setting torso item
     [self fetchImageForItem:self.hero.items[@"torso"]
               intoImageView:self.torsoImageView
-    withBackgroundImageView:self.torsoBackgroundImageView];
+    withBackgroundImageView:self.torsoBackgroundImageView
+              itemNameLabel:self.torsoItemNameLabel];
     
     /// Setting feet item
     [self fetchImageForItem:self.hero.items[@"feet"]
               intoImageView:self.feetImageView
-    withBackgroundImageView:self.feetBackgroundImageView];
+    withBackgroundImageView:self.feetBackgroundImageView
+              itemNameLabel:self.feetItemNameLabel];
     
     /// Setting hands item
     [self fetchImageForItem:self.hero.items[@"hands"]
               intoImageView:self.handsImageView
-    withBackgroundImageView:self.handsBackgroundImageView];
+    withBackgroundImageView:self.handsBackgroundImageView
+              itemNameLabel:self.handsItemNameLabel];
     
     /// Setting shoulders item
     [self fetchImageForItem:self.hero.items[@"shoulders"]
               intoImageView:self.shouldersImageView
-    withBackgroundImageView:self.shouldersBackgroundImageView];
+    withBackgroundImageView:self.shouldersBackgroundImageView
+              itemNameLabel:self.shouldersItemNameLabel];
     
     /// Setting legs item
     [self fetchImageForItem:self.hero.items[@"legs"]
               intoImageView:self.legsImageView
-    withBackgroundImageView:self.legsBackgroundImageView];
+    withBackgroundImageView:self.legsBackgroundImageView
+              itemNameLabel:self.legsItemNameLabel];
     
     /// Setting bracers item
     [self fetchImageForItem:self.hero.items[@"bracers"]
               intoImageView:self.bracersImageView
-    withBackgroundImageView:self.bracersBackgroundImageView];
+    withBackgroundImageView:self.bracersBackgroundImageView
+              itemNameLabel:self.bracersItemNameLabel];
     
     /// Setting main hand item
     [self fetchImageForItem:self.hero.items[@"mainHand"]
               intoImageView:self.mainHandImageView
-    withBackgroundImageView:self.mainHandBackgroundImageView];
+    withBackgroundImageView:self.mainHandBackgroundImageView
+              itemNameLabel:self.mainHandItemNameLabel];
     
     /// Setting off hand item
     [self fetchImageForItem:self.hero.items[@"offHand"]
               intoImageView:self.offHandImageView
-    withBackgroundImageView:self.offHandBackgroundImageView];
+    withBackgroundImageView:self.offHandBackgroundImageView
+              itemNameLabel:self.offHandItemNameLabel];
     
     /// Setting waist
     [self fetchImageForItem:self.hero.items[@"waist"]
               intoImageView:self.waistImageView
-    withBackgroundImageView:self.waistBackgroundImageView];
+    withBackgroundImageView:self.waistBackgroundImageView
+              itemNameLabel:self.waistItemNameLabel];
 
     /// Setting right finger item
     [self fetchImageForItem:self.hero.items[@"rightFinger"]
               intoImageView:self.rightFingerImageView
-    withBackgroundImageView:self.rightFingerBackgroundImageView];
+    withBackgroundImageView:self.rightFingerBackgroundImageView
+              itemNameLabel:self.rightFingerItemNameLabel];
 
     /// Setting left finger item
     [self fetchImageForItem:self.hero.items[@"leftFinger"]
               intoImageView:self.leftFingerImageView
-    withBackgroundImageView:self.leftFingerBackgroundImageView];
+    withBackgroundImageView:self.leftFingerBackgroundImageView
+              itemNameLabel:self.leftFingerItemNameLabel];
 
     /// Setting neck finger item
     [self fetchImageForItem:self.hero.items[@"neck"]
               intoImageView:self.neckImageView
-    withBackgroundImageView:self.neckBackgroundImageView];
+    withBackgroundImageView:self.neckBackgroundImageView
+              itemNameLabel:self.neckItemNameLabel];
 }
 
 /// Method fetches image for item and inserts it into image view
 - (void)fetchImageForItem:(D3Item *)item
             intoImageView:(UIImageView *)imageView
-  withBackgroundImageView:(UIImageView *)itemBackgroundImageView {
+  withBackgroundImageView:(UIImageView *)itemBackgroundImageView
+            itemNameLabel:(UILabel *)itemNameLabel {
     if (item) {
         [D3Item fetchItemImage:item.itemIcon
                        success:^(NSData *data){
+                           /// Getting image from data
                            [imageView setImage:[[UIImage alloc] initWithData:data]];
+                           
+                           /// Setting item name
+                           [itemNameLabel setText:[item itemName]];
+                           
+                           /// Setting correct image and background image
                            switch (item.itemDisplayColor) {
-                               case kD3ItemDisplayColorWhite:
+                               case kD3ItemDisplayColorWhite: {
                                    [itemBackgroundImageView setImage:[UIImage imageNamed:@"ItemBrounBackground.png"]];
-                                   break;
-                               case kD3ItemDisplayColorBlue:
+                                   [[itemBackgroundImageView layer] setBorderColor:[self colorWithHexString:@"56402c"].CGColor];
+                                   [itemNameLabel setTextColor:[self colorWithHexString:@"ffffff"]];
+                               }   break;
+                               case kD3ItemDisplayColorBlue: {
                                    [itemBackgroundImageView setImage:[UIImage imageNamed:@"ItemBlueBackground.png"]];
-                                   break;
-                               case kD3ItemDisplayColorYellow:
+                                   [[itemBackgroundImageView layer] setBorderColor:[self colorWithHexString:@"6ba9ba"].CGColor];
+                                   [itemNameLabel setTextColor:[self colorWithHexString:@"a0c3ff"]];
+                               }   break;
+                               case kD3ItemDisplayColorYellow: {
                                    [itemBackgroundImageView setImage:[UIImage imageNamed:@"ItemYellowBackground.png"]];
-                                   break;
-                               case kD3ItemDisplayColorOrange:
+                                   [[itemBackgroundImageView layer] setBorderColor:[self colorWithHexString:@"b1a73c"].CGColor];
+                                   [itemNameLabel setTextColor:[self colorWithHexString:@"ffff00"]];
+                               }   break;
+                               case kD3ItemDisplayColorOrange: {
                                    [itemBackgroundImageView setImage:[UIImage imageNamed:@"ItemOrangeBackground.png"]];
-                                   break;
-                               case kD3ItemDisplayColorGreen:
+                                   [[itemBackgroundImageView layer] setBorderColor:[self colorWithHexString:@"c29337"].CGColor];
+                                   [itemNameLabel setTextColor:[self colorWithHexString:@"fba412"]];
+                               }   break;
+                               case kD3ItemDisplayColorGreen: {
                                    [itemBackgroundImageView setImage:[UIImage imageNamed:@"ItemGreenBackground.png"]];
-                                   break;
+                                   [[itemBackgroundImageView layer] setBorderColor:[self colorWithHexString:@"87a73d"].CGColor];
+                                   [itemNameLabel setTextColor:[self colorWithHexString:@"a4df44"]];
+                               }   break;
                                    
                                default:
                                    break;
                            }
                            [[itemBackgroundImageView layer] setCornerRadius:4.0];
                            [[itemBackgroundImageView layer] setMasksToBounds:YES];
-                           [[itemBackgroundImageView layer] setBorderColor:[UIColor orangeColor].CGColor];
                            [[itemBackgroundImageView layer] setBorderWidth:1.0f];
                        }
                        failure:^(NSError *error) {

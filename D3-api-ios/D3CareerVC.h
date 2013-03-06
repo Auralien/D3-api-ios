@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface D3CareerVC : UIViewController
+@interface D3CareerVC : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

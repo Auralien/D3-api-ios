@@ -692,17 +692,20 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">D3CareerVC</string>
 					<string key="superclassName">UIViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">showHeroDetailsView:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">showHeroDetailsView:</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="findCareerButtonPressed:">id</string>
+						<string key="showHeroDetailsView:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="findCareerButtonPressed:">
+							<string key="name">findCareerButtonPressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="showHeroDetailsView:">
 							<string key="name">showHeroDetailsView:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="artisansView">UIView</string>
 						<string key="battleTagLabel">UILabel</string>

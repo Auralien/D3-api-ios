@@ -7,7 +7,7 @@
 //
 
 #import "D3HeroPortraitVC.h"
-#import "D3Hero.h"
+#import "D3API.h"
 
 @interface D3HeroPortraitVC ()
 

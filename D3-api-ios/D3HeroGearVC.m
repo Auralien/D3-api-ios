@@ -116,9 +116,8 @@
  */
 
 #import "D3HeroGearVC.h"
+#import "D3API.h"
 #import <QuartzCore/QuartzCore.h>
-#import "D3Hero.h"
-#import "D3Item.h"
 
 @interface D3HeroGearVC ()
 

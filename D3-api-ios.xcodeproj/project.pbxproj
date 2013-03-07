@@ -199,6 +199,7 @@
 		8BD036AF16E460EB004D08D3 /* TimePlayedWizardActive1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedWizardActive1.png; sourceTree = "<group>"; };
 		8BD036B016E460EB004D08D3 /* TimePlayedWizardActive2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedWizardActive2.png; sourceTree = "<group>"; };
 		8BD036B116E460EB004D08D3 /* TimePlayedWizardInactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimePlayedWizardInactive.png; sourceTree = "<group>"; };
+		8BD476F216E8B70F00AB0A41 /* D3API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3API.h; sourceTree = "<group>"; };
 		8BDADAE416CE3C6C00B90CE7 /* D3Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Skill.h; sourceTree = "<group>"; };
 		8BDADAE516CE3C6C00B90CE7 /* D3Skill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3Skill.m; sourceTree = "<group>"; };
 		8BDEAB8C16CB9432001734FC /* D3Progression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3Progression.h; sourceTree = "<group>"; };
@@ -334,6 +335,7 @@
 		50E5A5B216CA000A00D21111 /* api-classes */ = {
 			isa = PBXGroup;
 			children = (
+				8BD476F216E8B70F00AB0A41 /* D3API.h */,
 				50E5A5A016C9FEF500D21111 /* D3Object.h */,
 				50E5A5A116C9FEF500D21111 /* D3Object.m */,
 				50463E9C16D09C61004C2ED6 /* D3DataManager.h */,

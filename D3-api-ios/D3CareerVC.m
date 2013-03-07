@@ -7,25 +7,23 @@
 //
 
 #import "D3CareerVC.h"
-#import "D3DataManager.h"
-#import "D3Career.h"
-#import "D3Hero.h"
+#import "D3API.h"
 #import "D3HeroPortraitVC.h"
 #import "D3ArtisansStatsVC.h"
-#import "D3Item.h"
 #import "D3HeroGearVC.h"
 
-//#define kTestBattleTag      @"Auralien#2166"
-#define kTestBattleTag      @"Kanonik#2981"
-//Nuthill#2237
-//Mythliss#2442
-//Winterdark#2821
-//Irrelevance#2153
+// Auralien#2166
+// Kanonik#2981
+// Nuthill#2237
+// Mythliss#2442
+// Winterdark#2821
+// Irrelevance#2153
 
 @interface D3CareerVC ()
 
 @property (nonatomic, strong) D3Career *userCareer;
 @property (nonatomic, strong) NSMutableArray *userHeroes;
+
 @property (nonatomic, weak) IBOutlet UILabel *battleTagLabel;
 @property (nonatomic, weak) IBOutlet UITextField *battleTagTextField;
 
@@ -39,6 +37,8 @@
 
 - (IBAction)showHeroDetailsView:(id)sender;
 
+- (IBAction)findCareerButtonPressed:(id)sender;
+
 @end
 
 @implementation D3CareerVC
@@ -49,24 +49,24 @@
 - (IBAction)showHeroDetailsView:(id)sender {
     UIButton *senderButton = (UIButton *)sender;
     
-    if ((senderButton.tag == 1) && ([self.userHeroes count] > 0)) {
+    if ((senderButton.tag == 1) && ([self.userCareer.heroes count] > 0)) {
         D3HeroGearVC *heroDetailsVC = [[D3HeroGearVC alloc] initWithNibName:@"D3HeroGearView"
                                                                      bundle:nil
-                                                                       hero:self.userHeroes[0]];
+                                                                       hero:self.userCareer.heroes[0]];
         [[self navigationController] pushViewController:heroDetailsVC animated:YES];
     }
     
-    if ((senderButton.tag == 2) && ([self.userHeroes count] > 1)) {
+    if ((senderButton.tag == 2) && ([self.userCareer.heroes count] > 1)) {
         D3HeroGearVC *heroDetailsVC = [[D3HeroGearVC alloc] initWithNibName:@"D3HeroGearView"
                                                                      bundle:nil
-                                                                       hero:self.userHeroes[1]];
+                                                                       hero:self.userCareer.heroes[1]];
         [[self navigationController] pushViewController:heroDetailsVC animated:YES];
     }
     
-    if ((senderButton.tag == 3) && ([self.userHeroes count] > 2)) {
+    if ((senderButton.tag == 3) && ([self.userCareer.heroes count] > 2)) {
         D3HeroGearVC *heroDetailsVC = [[D3HeroGearVC alloc] initWithNibName:@"D3HeroGearView"
                                                                      bundle:nil
-                                                                       hero:self.userHeroes[2]];
+                                                                       hero:self.userCareer.heroes[2]];
         [[self navigationController] pushViewController:heroDetailsVC animated:YES];
     }
 }
@@ -88,26 +88,23 @@
                                                                        hardcoreArtisans:self.userCareer.hardcoreArtisans];
                                   [[self artisansView] addSubview:artisanStatsVC.view];
                                   
-                                  self.userHeroes = [self.userCareer.heroes mutableCopy];
-                                  
-                                  if ([self.userHeroes count] > 0) {
-                                      NSArray *sortedHeroes = self.userHeroes;
+                                  if ([self.userCareer.heroes count] > 0) {
                                       
                                       /// Test Hero profiles update
                                       for (D3Hero *hero in self.userCareer.heroes) {
                                           [hero completeHeroProfileWithSuccess:^(D3Hero *hero){
-                                              if ([sortedHeroes count] > 0) {
-                                                  D3HeroPortraitVC *portrait1VC = [[D3HeroPortraitVC alloc] initWithNibName:@"D3HeroPortraitView" bundle:nil hero:sortedHeroes[0]];
+                                              if ([self.userCareer.heroes count] > 0) {
+                                                  D3HeroPortraitVC *portrait1VC = [[D3HeroPortraitVC alloc] initWithNibName:@"D3HeroPortraitView" bundle:nil hero:self.userCareer.heroes[0]];
                                                   [[self hero1Portrait] addSubview:portrait1VC.view];
                                               }
                                               
-                                              if ([sortedHeroes count] > 1) {
-                                                  D3HeroPortraitVC *portrait2VC = [[D3HeroPortraitVC alloc] initWithNibName:@"D3HeroPortraitView" bundle:nil hero:sortedHeroes[1]];
+                                              if ([self.userCareer.heroes count] > 1) {
+                                                  D3HeroPortraitVC *portrait2VC = [[D3HeroPortraitVC alloc] initWithNibName:@"D3HeroPortraitView" bundle:nil hero:self.userCareer.heroes[1]];
                                                   [[self hero2Portrait] addSubview:portrait2VC.view];
                                               }
                                               
-                                              if ([sortedHeroes count] > 2) {
-                                                  D3HeroPortraitVC *portrait3VC = [[D3HeroPortraitVC alloc] initWithNibName:@"D3HeroPortraitView" bundle:nil hero:sortedHeroes[2]];
+                                              if ([self.userCareer.heroes count] > 2) {
+                                                  D3HeroPortraitVC *portrait3VC = [[D3HeroPortraitVC alloc] initWithNibName:@"D3HeroPortraitView" bundle:nil hero:self.userCareer.heroes[2]];
                                                   [[self hero3Portrait] addSubview:portrait3VC.view];
                                               }
                                           }
@@ -125,6 +122,8 @@
                                   NSLog(@"Error happened: %@", [error localizedDescription]);
                               }];
 }
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -295,6 +294,7 @@
 }
 
 #pragma mark - Support Methods
+
 - (UIColor *)colorWithHexString:(NSString *)hex {
     NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     

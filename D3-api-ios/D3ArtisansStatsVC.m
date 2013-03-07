@@ -7,7 +7,7 @@
 //
 
 #import "D3ArtisansStatsVC.h"
-#import "D3Artisan.h"
+#import "D3API.h"
 
 @interface D3ArtisansStatsVC ()
 

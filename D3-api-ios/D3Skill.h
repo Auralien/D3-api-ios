@@ -15,14 +15,6 @@ typedef enum {
     kD3SkillTypeFollower
 } D3SkillType;
 
-typedef enum {
-    kD3SkillOwnerTypeUndefined,
-    kD3SkillOwnerTypeHero,
-    kD3SkillOwnerTypeFollowerTemplar,
-    kD3SkillOwnerTypeFollowerScoundrel,
-    kD3SkillOwnerTypeFollowerEnchantress
-} D3SkillOwnerType;
-
 @class D3Rune;
 
 @interface D3Skill : D3Object
@@ -36,7 +28,7 @@ typedef enum {
 /// Skill's owner's hero
 @property (nonatomic) NSInteger skillOwnerHeroID;
 /// Type of skill's owner (hero himself or one of followers)
-@property (nonatomic) D3SkillOwnerType skillOwnerType;
+@property (nonatomic) D3OwnerType skillOwnerType;
 /// Skill's available level
 @property (nonatomic) NSInteger skillLevel;
 /// Skill's category ID
@@ -66,7 +58,7 @@ typedef enum {
               name:(NSString *)skillNameVal
               type:(D3SkillType)skillTypeVal
        ownerHeroID:(NSInteger)skillOwnerHeroIDVal
-         ownerType:(D3SkillOwnerType)skillOwnerTypeVal
+         ownerType:(D3OwnerType)skillOwnerTypeVal
               icon:(NSString *)skillIconVal
      tooltipParams:(NSString *)skillTooltipParamsVal
        description:(NSString *)skillDescriptionVal
@@ -75,7 +67,7 @@ typedef enum {
 /// Initialize skill object with json dictionary
 - (id)initWithJSON:(NSDictionary *)json
   skillOwnerHeroID:(NSInteger)skillOwnerHeroIDVal
-    skillOwnerType:(D3SkillOwnerType)skillOwnerTypeVal
+    skillOwnerType:(D3OwnerType)skillOwnerTypeVal
          skillType:(D3SkillType)skillTypeVal;
 
 @end

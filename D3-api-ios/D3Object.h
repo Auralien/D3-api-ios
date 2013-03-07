@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-#define kDatabase @"d3.sqlite3"
+/// Database name
+extern NSString * const kD3DatabaseName;
 
+/// Skills, items, etc owner type enum
 typedef enum {
     kD3OwnerTypeUndefined,
     kD3OwnerTypeHero,

@@ -90,21 +90,21 @@
         NSDictionary *rawItems = json[@"items"];
         NSMutableDictionary *mutableFollowerItems = [NSMutableDictionary dictionary];
         
-        D3ItemOwnerType itemOwnerType;
+        D3OwnerType itemOwnerType;
         
         switch ([follower followerType]) {
             case kD3FollowerTypeTemplar:
-                itemOwnerType = kD3ItemOwnerTypeFollowerTemplar;
+                itemOwnerType = kD3OwnerTypeTemplar;
                 break;
             case kD3FollowerTypeScoundrel:
-                itemOwnerType = kD3ItemOwnerTypeFollowerScoundrel;
+                itemOwnerType = kD3OwnerTypeScoundrel;
                 break;
             case kD3FollowerTypeEnchantress:
-                itemOwnerType = kD3ItemOwnerTypeFollowerEnchantress;
+                itemOwnerType = kD3OwnerTypeEnchantress;
                 break;
                 
             default:
-                itemOwnerType = kD3ItemOwnerTypeUndefined;
+                itemOwnerType = kD3OwnerTypeUndefined;
                 break;
         }
         
@@ -164,21 +164,21 @@
         NSArray *rawSkills = json[@"skills"];
         NSMutableArray *mutableFollowerSkills = [NSMutableArray array];
         
-        D3SkillOwnerType skillOwnerType;
+        D3OwnerType skillOwnerType;
         
         switch ([follower followerType]) {
             case kD3FollowerTypeTemplar:
-                skillOwnerType = kD3SkillOwnerTypeFollowerTemplar;
+                skillOwnerType = kD3OwnerTypeTemplar;
                 break;
             case kD3FollowerTypeScoundrel:
-                skillOwnerType = kD3SkillOwnerTypeFollowerScoundrel;
+                skillOwnerType = kD3OwnerTypeScoundrel;
                 break;
             case kD3FollowerTypeEnchantress:
-                skillOwnerType = kD3SkillOwnerTypeFollowerEnchantress;
+                skillOwnerType = kD3OwnerTypeEnchantress;
                 break;
                 
             default:
-                skillOwnerType = kD3SkillOwnerTypeUndefined;
+                skillOwnerType = kD3OwnerTypeUndefined;
                 break;
         }
         

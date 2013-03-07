@@ -32,7 +32,7 @@
 - (id)init {
     return [self initWithID:@""
                 ownerHeroID:0
-                  ownerType:kD3ItemOwnerTypeUndefined
+                  ownerType:kD3OwnerTypeUndefined
                        slot:kD3ItemSlotUndefined
                        name:@""
                        icon:@""
@@ -43,7 +43,7 @@
 /// Initialize item object with defined values
 - (id)initWithID:(NSString *)itemIDVal
      ownerHeroID:(NSInteger)itemOwnerHeroIDVal
-       ownerType:(D3ItemOwnerType)itemOwnerTypeVal
+       ownerType:(D3OwnerType)itemOwnerTypeVal
             slot:(D3ItemSlot)itemSlotVal
             name:(NSString *)itemNameVal
             icon:(NSString *)itemIconVal
@@ -65,7 +65,7 @@
 /// Initialize item object with json dictionary
 - (id)initWithJSON:(NSDictionary *)json
    itemOwnerHeroID:(NSInteger)itemOwnerHeroIDVal
-     itemOwnerType:(D3ItemOwnerType)itemOwnerTypeVal
+     itemOwnerType:(D3OwnerType)itemOwnerTypeVal
           itemSlot:(D3ItemSlot)itemSlotVal {
     D3Item *item = [[D3Item alloc] init];
     

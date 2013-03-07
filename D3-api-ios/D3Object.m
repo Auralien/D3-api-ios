@@ -8,6 +8,9 @@
 
 #import "D3Object.h"
 
+/// Database name
+NSString * const kD3DatabaseName = @"d3.sqlite3";
+
 @implementation D3Object
 
 @end

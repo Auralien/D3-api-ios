@@ -21,7 +21,7 @@
         [self setSkillName:@""];
         [self setSkillType:kD3SkillTypeUndefined];
         [self setSkillOwnerHeroID:0];
-        [self setSkillOwnerType:kD3SkillOwnerTypeUndefined];
+        [self setSkillOwnerType:kD3OwnerTypeUndefined];
         [self setSkillIcon:@""];
         [self setSkillTooltipURL:@""];
         [self setSkillDescription:@""];
@@ -35,7 +35,7 @@
               name:(NSString *)skillNameVal
               type:(D3SkillType)skillTypeVal
        ownerHeroID:(NSInteger)skillOwnerHeroIDVal
-         ownerType:(D3SkillOwnerType)skillOwnerTypeVal
+         ownerType:(D3OwnerType)skillOwnerTypeVal
               icon:(NSString *)skillIconVal
      tooltipParams:(NSString *)skillTooltipParamsVal
        description:(NSString *)skillDescriptionVal
@@ -57,7 +57,7 @@
 /// Initialize skill object with json dictionary
 - (id)initWithJSON:(NSDictionary *)json
   skillOwnerHeroID:(NSInteger)skillOwnerHeroIDVal
-    skillOwnerType:(D3SkillOwnerType)skillOwnerTypeVal
+    skillOwnerType:(D3OwnerType)skillOwnerTypeVal
          skillType:(D3SkillType)skillTypeVal {
     D3Skill *skill = [[D3Skill alloc] init];
     

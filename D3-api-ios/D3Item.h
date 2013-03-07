@@ -18,14 +18,6 @@ typedef enum {
 } D3ItemDisplayColor;
 
 typedef enum {
-    kD3ItemOwnerTypeUndefined,
-    kD3ItemOwnerTypeHero,
-    kD3ItemOwnerTypeFollowerTemplar,
-    kD3ItemOwnerTypeFollowerScoundrel,
-    kD3ItemOwnerTypeFollowerEnchantress
-} D3ItemOwnerType;
-
-typedef enum {
     kD3ItemSlotUndefined,
     kD3ItemSlotHead,
     kD3ItemSlotTorso,
@@ -50,7 +42,7 @@ typedef enum {
 /// Item's owner unique ID
 @property (nonatomic) NSInteger itemOwnerHeroID;
 /// Item's owner's type - hero or one of followers
-@property (nonatomic) D3ItemOwnerType itemOwnerType;
+@property (nonatomic) D3OwnerType itemOwnerType;
 /// Item's slot
 @property (nonatomic) D3ItemSlot itemSlot;
 /// Item name
@@ -77,7 +69,7 @@ typedef enum {
 /// Initialize item object with defined values
 - (id)initWithID:(NSString *)itemIDVal
      ownerHeroID:(NSInteger)itemOwnerHeroIDVal
-       ownerType:(D3ItemOwnerType)itemOwnerTypeVal
+       ownerType:(D3OwnerType)itemOwnerTypeVal
             slot:(D3ItemSlot)itemSlotVal
             name:(NSString *)itemNameVal
             icon:(NSString *)itemIconVal
@@ -87,7 +79,7 @@ typedef enum {
 /// Initialize item object with json dictionary
 - (id)initWithJSON:(NSDictionary *)json
    itemOwnerHeroID:(NSInteger)itemOwnerHeroIDVal
-     itemOwnerType:(D3ItemOwnerType)itemOwnerTypeVal
+     itemOwnerType:(D3OwnerType)itemOwnerTypeVal
           itemSlot:(D3ItemSlot)itemSlotVal;
 
 @end

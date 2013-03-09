@@ -30,6 +30,8 @@
 		50836AFF16E100AC0055DB78 /* CareerBottom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50836AFE16E100AC0055DB78 /* CareerBottom.jpg */; };
 		50836B0216E102750055DB78 /* D3ArtisansStatsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 50836B0116E102750055DB78 /* D3ArtisansStatsVC.m */; };
 		50836B0416E1028E0055DB78 /* D3ArtisansStatsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50836B0316E1028E0055DB78 /* D3ArtisansStatsView.xib */; };
+		50A43EA116EB057C00A31834 /* D3ChooseCareerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A43EA016EB057C00A31834 /* D3ChooseCareerVC.m */; };
+		50A43EA316EB059400A31834 /* D3ChooseCareerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A43EA216EB059400A31834 /* D3ChooseCareerView.xib */; };
 		50E5A57C16C9FE8A00D21111 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E5A57B16C9FE8A00D21111 /* UIKit.framework */; };
 		50E5A57E16C9FE8A00D21111 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E5A57D16C9FE8A00D21111 /* Foundation.framework */; };
 		50E5A58016C9FE8A00D21111 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E5A57F16C9FE8A00D21111 /* CoreGraphics.framework */; };
@@ -125,6 +127,9 @@
 		50836B0016E102750055DB78 /* D3ArtisansStatsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ArtisansStatsVC.h; sourceTree = "<group>"; };
 		50836B0116E102750055DB78 /* D3ArtisansStatsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3ArtisansStatsVC.m; sourceTree = "<group>"; };
 		50836B0316E1028E0055DB78 /* D3ArtisansStatsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = D3ArtisansStatsView.xib; sourceTree = "<group>"; };
+		50A43E9F16EB057C00A31834 /* D3ChooseCareerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3ChooseCareerVC.h; sourceTree = "<group>"; };
+		50A43EA016EB057C00A31834 /* D3ChooseCareerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3ChooseCareerVC.m; sourceTree = "<group>"; };
+		50A43EA216EB059400A31834 /* D3ChooseCareerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = D3ChooseCareerView.xib; sourceTree = "<group>"; };
 		50E5A57816C9FE8A00D21111 /* D3-api-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D3-api-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E5A57B16C9FE8A00D21111 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50E5A57D16C9FE8A00D21111 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -375,6 +380,8 @@
 			children = (
 				50E5A58A16C9FE8A00D21111 /* D3AppDelegate.h */,
 				50E5A58B16C9FE8A00D21111 /* D3AppDelegate.m */,
+				50A43E9F16EB057C00A31834 /* D3ChooseCareerVC.h */,
+				50A43EA016EB057C00A31834 /* D3ChooseCareerVC.m */,
 				8B3E9B1116DF61C500F42BBD /* D3CareerVC.h */,
 				8B3E9B1216DF61C500F42BBD /* D3CareerVC.m */,
 				8B3E9B2916E0B70400F42BBD /* D3HeroPortraitVC.h */,
@@ -383,6 +390,7 @@
 				50836B0116E102750055DB78 /* D3ArtisansStatsVC.m */,
 				8B9E01F116E5F73E00BA4A56 /* D3HeroGearVC.h */,
 				8B9E01F216E5F73E00BA4A56 /* D3HeroGearVC.m */,
+				50A43EA216EB059400A31834 /* D3ChooseCareerView.xib */,
 				8B3E9B1416DF61E200F42BBD /* D3CareerView.xib */,
 				8B3E9B2C16E0B72000F42BBD /* D3HeroPortraitView.xib */,
 				50836B0316E1028E0055DB78 /* D3ArtisansStatsView.xib */,
@@ -504,6 +512,7 @@
 				8B9E021116E626F000BA4A56 /* ItemGreenBackground.png in Resources */,
 				8B9E021216E626F000BA4A56 /* ItemOrangeBackground.png in Resources */,
 				8B9E021316E626F000BA4A56 /* ItemYellowBackground.png in Resources */,
+				50A43EA316EB059400A31834 /* D3ChooseCareerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +544,7 @@
 				8B3E9B2B16E0B70400F42BBD /* D3HeroPortraitVC.m in Sources */,
 				50836B0216E102750055DB78 /* D3ArtisansStatsVC.m in Sources */,
 				8B9E01F316E5F73E00BA4A56 /* D3HeroGearVC.m in Sources */,
+				50A43EA116EB057C00A31834 /* D3ChooseCareerVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

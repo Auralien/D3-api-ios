@@ -108,15 +108,17 @@
         [manager fetchDataWithURL:careerURL
                      successBlock:^(NSData *data){
 #ifdef DEBUG
-                         NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                         NSLog(@"JSON string: '%@'", jsonString);
+                         //NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                         //NSLog(@"JSON string: '%@'", jsonString);
 #endif
                          NSError *error = nil;
                          NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
                          D3Career *career = [D3Career parseCareerFromJSON:json];
-                         [career setCareerRegion:region];
-                         if (success)
-                             success(career);
+                         if (career) {
+                             [career setCareerRegion:region];
+                             if (success)
+                                 success(career);
+                         }
                      }
                      failureBlock:failure];
     }
@@ -147,6 +149,17 @@
 
 /// Method returns career object parsed from JSON
 + (D3Career *)parseCareerFromJSON:(NSDictionary *)json {
+    /// Checking for bad json of that kind:
+    /*
+     {
+        "code" : "OOPS",
+        "reason" : "There was a problem processing the request."
+     }
+     */
+    if (json[@"code"]) {
+        return nil;
+    }
+    
     NSDate *lastUpdated = [NSDate dateWithTimeIntervalSince1970:0.0];
     NSString *lastUpdatedString = json[@"lastUpdated"];
     if (lastUpdatedString) {

@@ -12,20 +12,12 @@
 #import "D3ArtisansStatsVC.h"
 #import "D3HeroGearVC.h"
 
-// Auralien#2166
-// Kanonik#2981
-// Nuthill#2237
-// Mythliss#2442
-// Winterdark#2821
-// Irrelevance#2153
-
 @interface D3CareerVC ()
 
 @property (nonatomic, strong) D3Career *userCareer;
 @property (nonatomic, strong) NSMutableArray *userHeroes;
 
 @property (nonatomic, weak) IBOutlet UILabel *battleTagLabel;
-@property (nonatomic, weak) IBOutlet UITextField *battleTagTextField;
 
 @property (nonatomic, weak) IBOutlet UIView *hero1Portrait;
 @property (nonatomic, weak) IBOutlet UIView *hero2Portrait;
@@ -37,13 +29,13 @@
 
 - (IBAction)showHeroDetailsView:(id)sender;
 
-- (IBAction)findCareerButtonPressed:(id)sender;
+//- (IBAction)findCareerButtonPressed:(id)sender;
 
 @end
 
 @implementation D3CareerVC
 
-@synthesize userCareer, battleTagLabel, battleTagTextField, hero1Portrait, hero2Portrait, hero3Portrait, artisansView, heroesTableView;
+@synthesize battleTag, region, userCareer, battleTagLabel, hero1Portrait, hero2Portrait, hero3Portrait, artisansView, heroesTableView;
 
 /// Method shows hero's details view
 - (IBAction)showHeroDetailsView:(id)sender {
@@ -71,12 +63,13 @@
     }
 }
 
-- (IBAction)findCareerButtonPressed:(id)sender {
-    [battleTagTextField resignFirstResponder];
+#pragma mark - Lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
-    NSString *battleTag = [battleTagTextField text];
-    [D3Career fetchCareerForBattleTag:battleTag
-                               region:kD3APIRegionEurope
+    [D3Career fetchCareerForBattleTag:self.battleTag
+                               region:self.region
                               success:^(D3Career *career){
                                   self.userCareer = career;
                                   self.battleTagLabel.text = career.battleTag;
@@ -121,12 +114,6 @@
                               failure:^(NSError *error) {
                                   NSLog(@"Error happened: %@", [error localizedDescription]);
                               }];
-}
-
-#pragma mark - Lifecycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {

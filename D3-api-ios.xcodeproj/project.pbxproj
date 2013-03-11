@@ -59,6 +59,13 @@
 		8B3E9B2B16E0B70400F42BBD /* D3HeroPortraitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B2A16E0B70400F42BBD /* D3HeroPortraitVC.m */; };
 		8B3E9B2D16E0B72000F42BBD /* D3HeroPortraitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B2C16E0B72000F42BBD /* D3HeroPortraitView.xib */; };
 		8B92685A16D625A300E1A230 /* D3CompletedQuest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B92685916D625A300E1A230 /* D3CompletedQuest.m */; };
+		8B98676416EDDD1000CF60A8 /* BarbarianTopBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B98675F16EDDD1000CF60A8 /* BarbarianTopBackground.jpg */; };
+		8B98676516EDDD1000CF60A8 /* DemonHunterTopBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B98676016EDDD1000CF60A8 /* DemonHunterTopBackground.jpg */; };
+		8B98676616EDDD1000CF60A8 /* MonkTopBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B98676116EDDD1000CF60A8 /* MonkTopBackground.jpg */; };
+		8B98676716EDDD1000CF60A8 /* WitchDoctorTopBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B98676216EDDD1000CF60A8 /* WitchDoctorTopBackground.jpg */; };
+		8B98676816EDDD1000CF60A8 /* WizardTopBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B98676316EDDD1000CF60A8 /* WizardTopBackground.jpg */; };
+		8B98676E16EDE7DC00CF60A8 /* D3CareersDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B98676D16EDE7DB00CF60A8 /* D3CareersDataSource.m */; };
+		8B98677016EDF00700CF60A8 /* InventoryLines.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B98676F16EDF00700CF60A8 /* InventoryLines.png */; };
 		8B9E01F316E5F73E00BA4A56 /* D3HeroGearVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E01F216E5F73E00BA4A56 /* D3HeroGearVC.m */; };
 		8B9E01F516E5F75200BA4A56 /* D3HeroGearView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E01F416E5F75200BA4A56 /* D3HeroGearView.xib */; };
 		8B9E020016E5F8CA00BA4A56 /* BarbarianFemaleBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E01F616E5F8C400BA4A56 /* BarbarianFemaleBackground.jpg */; };
@@ -170,6 +177,14 @@
 		8B3E9B2C16E0B72000F42BBD /* D3HeroPortraitView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = D3HeroPortraitView.xib; sourceTree = "<group>"; };
 		8B92685816D625A300E1A230 /* D3CompletedQuest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3CompletedQuest.h; sourceTree = "<group>"; };
 		8B92685916D625A300E1A230 /* D3CompletedQuest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3CompletedQuest.m; sourceTree = "<group>"; };
+		8B98675F16EDDD1000CF60A8 /* BarbarianTopBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BarbarianTopBackground.jpg; sourceTree = "<group>"; };
+		8B98676016EDDD1000CF60A8 /* DemonHunterTopBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DemonHunterTopBackground.jpg; sourceTree = "<group>"; };
+		8B98676116EDDD1000CF60A8 /* MonkTopBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MonkTopBackground.jpg; sourceTree = "<group>"; };
+		8B98676216EDDD1000CF60A8 /* WitchDoctorTopBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WitchDoctorTopBackground.jpg; sourceTree = "<group>"; };
+		8B98676316EDDD1000CF60A8 /* WizardTopBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WizardTopBackground.jpg; sourceTree = "<group>"; };
+		8B98676C16EDE7DB00CF60A8 /* D3CareersDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3CareersDataSource.h; sourceTree = "<group>"; };
+		8B98676D16EDE7DB00CF60A8 /* D3CareersDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3CareersDataSource.m; sourceTree = "<group>"; };
+		8B98676F16EDF00700CF60A8 /* InventoryLines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InventoryLines.png; sourceTree = "<group>"; };
 		8B9E01F116E5F73E00BA4A56 /* D3HeroGearVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3HeroGearVC.h; sourceTree = "<group>"; };
 		8B9E01F216E5F73E00BA4A56 /* D3HeroGearVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D3HeroGearVC.m; sourceTree = "<group>"; };
 		8B9E01F416E5F75200BA4A56 /* D3HeroGearView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = D3HeroGearView.xib; sourceTree = "<group>"; };
@@ -273,6 +288,7 @@
 		50E5A58216C9FE8A00D21111 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8B98676F16EDF00700CF60A8 /* InventoryLines.png */,
 				50836AFC16E0FFBE0055DB78 /* CareerBackground.jpg */,
 				50836AFE16E100AC0055DB78 /* CareerBottom.jpg */,
 				8B3E9B1616DF645400F42BBD /* CareerArtisans.jpg */,
@@ -326,6 +342,11 @@
 				8B9E020E16E626F000BA4A56 /* ItemYellowBackground.png */,
 				8B9E020D16E626F000BA4A56 /* ItemOrangeBackground.png */,
 				8B9E020C16E626F000BA4A56 /* ItemGreenBackground.png */,
+				8B98675F16EDDD1000CF60A8 /* BarbarianTopBackground.jpg */,
+				8B98676016EDDD1000CF60A8 /* DemonHunterTopBackground.jpg */,
+				8B98676116EDDD1000CF60A8 /* MonkTopBackground.jpg */,
+				8B98676216EDDD1000CF60A8 /* WitchDoctorTopBackground.jpg */,
+				8B98676316EDDD1000CF60A8 /* WizardTopBackground.jpg */,
 				50E5A58316C9FE8A00D21111 /* D3-api-ios-Info.plist */,
 				50E5A58416C9FE8A00D21111 /* InfoPlist.strings */,
 				50E5A58716C9FE8A00D21111 /* main.m */,
@@ -380,6 +401,8 @@
 			children = (
 				50E5A58A16C9FE8A00D21111 /* D3AppDelegate.h */,
 				50E5A58B16C9FE8A00D21111 /* D3AppDelegate.m */,
+				8B98676C16EDE7DB00CF60A8 /* D3CareersDataSource.h */,
+				8B98676D16EDE7DB00CF60A8 /* D3CareersDataSource.m */,
 				50A43E9F16EB057C00A31834 /* D3ChooseCareerVC.h */,
 				50A43EA016EB057C00A31834 /* D3ChooseCareerVC.m */,
 				8B3E9B1116DF61C500F42BBD /* D3CareerVC.h */,
@@ -513,6 +536,12 @@
 				8B9E021216E626F000BA4A56 /* ItemOrangeBackground.png in Resources */,
 				8B9E021316E626F000BA4A56 /* ItemYellowBackground.png in Resources */,
 				50A43EA316EB059400A31834 /* D3ChooseCareerView.xib in Resources */,
+				8B98676416EDDD1000CF60A8 /* BarbarianTopBackground.jpg in Resources */,
+				8B98676516EDDD1000CF60A8 /* DemonHunterTopBackground.jpg in Resources */,
+				8B98676616EDDD1000CF60A8 /* MonkTopBackground.jpg in Resources */,
+				8B98676716EDDD1000CF60A8 /* WitchDoctorTopBackground.jpg in Resources */,
+				8B98676816EDDD1000CF60A8 /* WizardTopBackground.jpg in Resources */,
+				8B98677016EDF00700CF60A8 /* InventoryLines.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +574,7 @@
 				50836B0216E102750055DB78 /* D3ArtisansStatsVC.m in Sources */,
 				8B9E01F316E5F73E00BA4A56 /* D3HeroGearVC.m in Sources */,
 				50A43EA116EB057C00A31834 /* D3ChooseCareerVC.m in Sources */,
+				8B98676E16EDE7DC00CF60A8 /* D3CareersDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

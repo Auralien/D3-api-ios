@@ -53,7 +53,7 @@
 /// Player's hardcore progression acts list
 @property (nonatomic, strong) NSArray *hardcoreProgression;
 
-#pragma mark - Fetch Career Methods
+#pragma mark - Fetch And Parse Methods
 
 /// Method fetches career data from Diablo 3 API
 + (void)fetchCareerForBattleTag:(NSString *)battleTag

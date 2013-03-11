@@ -9,12 +9,13 @@
 #import "D3AppDelegate.h"
 
 #import "D3CareerVC.h"
+#import "D3ChooseCareerVC.h"
 
 @implementation D3AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController = [[D3CareerVC alloc] initWithNibName:@"D3CareerView" bundle:nil];
+    self.viewController = [[D3ChooseCareerVC alloc] initWithNibName:@"D3ChooseCareerView" bundle:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];

@@ -21,6 +21,21 @@
 
 @implementation D3DataManager
 
+/// Method returns region D3APIRegion code from region 2-letter string
++ (D3APIRegion)getRegionCode:(NSString *)regionString {
+    D3APIRegion region = kD3APIRegionUndefined;
+    if ([regionString isEqualToString:kD3CareerRegionAmericasPath]) {
+        region = kD3APIRegionAmericas;
+    } else if ([regionString isEqualToString:kD3CareerRegionEuropePath]) {
+        region = kD3APIRegionEurope;
+    } else if ([regionString isEqualToString:kD3CareerRegionKoreaPath]) {
+        region = kD3APIRegionKorea;
+    } else if ([regionString isEqualToString:kD3CareerRegionTaiwanPath]) {
+        region = kD3APIRegionTaiwan;
+    }
+    return region;
+}
+
 /// Method returns region code for url
 + (NSString *)getRegion:(D3APIRegion)apiRegion {
     NSString *region = nil;

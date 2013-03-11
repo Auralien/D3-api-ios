@@ -64,6 +64,9 @@ typedef void (^D3DataManagerFetchURLFailureBlock)(NSError *error);
 
 @interface D3DataManager : D3Object <NSURLConnectionDataDelegate>
 
+/// Method returns region D3APIRegion code from region 2-letter string
++ (D3APIRegion)getRegionCode:(NSString *)regionString;
+
 /// Method returns region code for url
 + (NSString *)getRegion:(D3APIRegion)apiRegion;
 

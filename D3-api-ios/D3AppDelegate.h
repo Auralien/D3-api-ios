@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class D3CareerVC;
+@class D3ChooseCareerVC;
 
 @interface D3AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) D3CareerVC *viewController;
+@property (strong, nonatomic) D3ChooseCareerVC *viewController;
 
 @end

@@ -1,6 +1,6 @@
 # Diablo III iOS API
 
-This is an iOS wrapper above Diablo 3 Web API.
+This is an iOS wrapper above Diablo 3 Web API. It allows you to embed Diablo 3 player's career information into your iOS application.
 
 ## Overview
 
@@ -44,8 +44,21 @@ To begin work with this Kit copy following files from this repo into your iOS Pr
 
 After copying just import `D3API.h` header file into the proper classes according to your application logic and you are ready to use this Kit.
 
-## How to use it
+## Example Usage
 
-Diablo 3 Web API allows to get information concerning player's career, player's heroes, artisans and followers, items. You can find more information concerning returned values in [Blizzards API description on GitHub](https://github.com/Blizzard/d3-api-docs).
+Diablo 3 Web API allows to get information concerning player's career, player's heroes, artisans and followers, items. Blizzard provides this information in JSON format. This Kit parses information from JSON into a set of objects, which can be used in your iOS application.
 
-Also you can check sample project from this repo, using this Kit.
+You can find more information concerning Blizzard returned JSON in [Blizzards API description on GitHub](https://github.com/Blizzard/d3-api-docs).
+
+Also you can check sample project from this repository that uses this Kit.
+
+### Player's career fetching
+
+To get information concerning player's career you need to call this method:
+
+```
++ (void)fetchCareerForBattleTag:(NSString *)battleTag
+                         region:(D3APIRegion)region
+                        success:(void (^)(D3Career *career))success
+                        failure:(void (^)(NSError *error))failure;
+```

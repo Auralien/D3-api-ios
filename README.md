@@ -8,14 +8,15 @@ This API Kit provides support for iOS apps using Diablo 3 Web API. The Kit is wr
 
 ## Setup
 
-To begin work with this Kit copy following files into your iOS Project:
-*    D3API.h
-*    D3Object.h
-*    D3Object.m
-*    D3DataManager.h
-*    D3DataManager.m
-*    D3Career.h
-*    D3Career.m
+To begin work with this Kit copy following files from this repo into your iOS Project:
+
+* D3API.h
+* D3Object.h
+* D3Object.m
+* D3DataManager.h
+* D3DataManager.m
+* D3Career.h
+* D3Career.m
 * D3Hero.h
 * D3Hero.m
 * D3Skill.h
@@ -40,3 +41,11 @@ To begin work with this Kit copy following files into your iOS Project:
 * D3HeroCompletedQuest.m
 * D3CareerCompletedQuest.h
 * D3CareerCompletedQuest.m
+
+After copying just import `D3API.h` header file into the proper classes according to your application logic and you are ready to use this Kit.
+
+## How to use it
+
+Diablo 3 Web API allows to get information concerning player's career, player's heroes, artisans and followers, items. You can find more information concerning returned values in [Blizzards API description on GitHub](https://github.com/Blizzard/d3-api-docs).
+
+Also you can check sample project from this repo, using this Kit.

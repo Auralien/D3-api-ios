@@ -1,4 +1,4 @@
-# Diablo III iOS API
+# Diablo 3 iOS API
 
 This is an iOS wrapper above Diablo 3 Web API. It allows you to embed Diablo 3 player's career information into your iOS application.
 

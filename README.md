@@ -67,18 +67,41 @@ This code presents an example of fetching career for `battleTag` *Auralien-2166*
 
 ```
 // Create success block
-        void (^successBlock)(D3Career *) = ^(D3Career *career){
-            // Update user interface with fetched career object's data here.
-        };
-        
-        // Create failure block
-        void (^failureBlock)(NSError *) = ^(NSError *error){
-            NSLog(@"Error happened: %@", [error localizedDescription]);
-        };
-        
-        [D3Career fetchCareerForBattleTag:@"Auralien#2166"
-                                   region:kD3APIRegionEurope
-                                  success:successBlock
-                                  failure:failureBlock];
+void (^successBlock)(D3Career *) = ^(D3Career *career){
+    // Update user interface with fetched career object's data here.
+};
+
+// Create failure block
+void (^failureBlock)(NSError *) = ^(NSError *error){
+    NSLog(@"Error happened: %@", [error localizedDescription]);
+};
+
+// Fetch career
+[D3Career fetchCareerForBattleTag:@"Auralien#2166"
+                           region:kD3APIRegionEurope
+                          success:successBlock
+                          failure:failureBlock];
 ```
 
+### Hero's profile fetching
+
+For every hero object you can call a method that completed hero's information:
+
+```
+- (void)completeHeroProfileWithSuccess:(void (^)(D3Hero *hero))success
+                               failure:(void (^)(NSError *error))failure;
+```
+
+Example code above gets full hero's profiles for all heroes in player's career object named `userCareer`:
+
+```
+for (D3Hero *hero in self.userCareer.heroes) {
+	[hero completeHeroProfileWithSuccess:^(D3Hero *hero){
+		// Update user interface with fetched hero'es data here.
+	  
+	}
+	                             failure:^(NSError *error){
+	                             	 NSLog(@"Error fetching full hero profile: %@", [error localizedDescription]);
+	                             }];
+}
+```

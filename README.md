@@ -62,3 +62,23 @@ To get information concerning player's career you need to call this method:
                         success:(void (^)(D3Career *career))success
                         failure:(void (^)(NSError *error))failure;
 ```
+
+This code presents an example of fetching career for `battleTag` *Auralien-2166* in Europe region:
+
+```
+// Create success block
+        void (^successBlock)(D3Career *) = ^(D3Career *career){
+            // Update user interface with fetched career object's data here.
+        };
+        
+        // Create failure block
+        void (^failureBlock)(NSError *) = ^(NSError *error){
+            NSLog(@"Error happened: %@", [error localizedDescription]);
+        };
+        
+        [D3Career fetchCareerForBattleTag:@"Auralien#2166"
+                                   region:kD3APIRegionEurope
+                                  success:successBlock
+                                  failure:failureBlock];
+```
+

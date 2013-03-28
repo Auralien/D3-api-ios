@@ -6,6 +6,8 @@ This is an iOS wrapper above Diablo 3 Web API. It allows you to embed Diablo 3 p
 
 This API Kit provides support for iOS apps using Diablo 3 Web API. The Kit is written in Objective*C and is using The Blizzard Community Platform API which provides a number of resources for developers, third parties, and Diablo 3 enthusiasts to gather data about their accounts and heroes.
 
+**Be advised to read [Blizzard's Diablo 3 API description on GitHub](https://github.com/Blizzard/d3-api-docs) first before using this Kit.**
+
 ## Setup
 
 To begin work with this Kit copy following files from this repo into your iOS Project:
@@ -50,7 +52,7 @@ Diablo 3 Web API allows to get information concerning player's career, player's 
 
 You can find more information concerning Blizzard returned JSON in [Blizzards API description on GitHub](https://github.com/Blizzard/d3-api-docs).
 
-Also you can check sample project from this repository that uses this Kit.
+Also you can check sample iPad project from this repository that uses this Kit.
 
 ### Player's career fetching
 
@@ -105,3 +107,7 @@ for (D3Hero *hero in self.userCareer.heroes) {
 	                             }];
 }
 ```
+
+## Licence
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Diablo 3 iOS API</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
